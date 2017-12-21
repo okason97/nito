@@ -1,0 +1,713 @@
+Started GET "/" for 127.0.0.1 at 2017-12-21 02:01:50 -0300
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.1.4) lib/active_record/migration.rb:576:in `check_pending!'
+activerecord (5.1.4) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (90.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (77.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateTeachers (20171221013124)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "teachers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(64) NOT NULL, "password" varchar(64) NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171221013124"]]
+  [1m[35m (83.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateTests (20171221013132)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "tests" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(64) NOT NULL, "date" datetime NOT NULL, "min_score" float NOT NULL, "max_score" float NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171221013132"]]
+  [1m[35m (54.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateScores (20171221013327)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "scores" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "value" float DEFAULT -1.0 NOT NULL, "student_id" integer, "test_id" integer, CONSTRAINT "fk_rails_e7ff095b47"
+FOREIGN KEY ("student_id")
+  REFERENCES "students" ("id")
+, CONSTRAINT "fk_rails_8397ee673f"
+FOREIGN KEY ("test_id")
+  REFERENCES "tests" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_scores_on_student_id" ON "scores" ("student_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_scores_on_student_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_scores_on_student_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_scores_on_test_id" ON "scores" ("test_id")[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171221013327"]]
+  [1m[35m (96.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateStudents (20171221013337)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "students" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "last_name" varchar(64) NOT NULL, "first_name" varchar(64) NOT NULL, "email" varchar(64) NOT NULL, "legajo" integer NOT NULL, "dni" integer NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171221013337"]]
+  [1m[35m (77.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateCourses (20171221013345)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "courses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "year" integer NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_courses_on_year" ON "courses" ("year")[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171221013345"]]
+  [1m[35m (72.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateTestCourses (20171221015245)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "test_courses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "course_id" integer, "test_id" integer, CONSTRAINT "fk_rails_ff0e255836"
+FOREIGN KEY ("course_id")
+  REFERENCES "courses" ("id")
+, CONSTRAINT "fk_rails_66fcb0cac9"
+FOREIGN KEY ("test_id")
+  REFERENCES "tests" ("id")
+)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE  INDEX "index_test_courses_on_course_id" ON "test_courses" ("course_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_test_courses_on_course_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_test_courses_on_course_id' AND type='index'
+[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_test_courses_on_test_id" ON "test_courses" ("test_id")[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171221015245"]]
+  [1m[35m (58.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateEnrolls (20171221015421)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "enrolls" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "student_id" integer, "course_id" integer, CONSTRAINT "fk_rails_af08f3018a"
+FOREIGN KEY ("student_id")
+  REFERENCES "students" ("id")
+, CONSTRAINT "fk_rails_b7037a89c4"
+FOREIGN KEY ("course_id")
+  REFERENCES "courses" ("id")
+)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "index_enrolls_on_student_id" ON "enrolls" ("student_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_enrolls_on_student_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_enrolls_on_student_id' AND type='index'
+[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "index_enrolls_on_course_id" ON "enrolls" ("course_id")[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171221015421"]]
+  [1m[35m (92.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-12-21 05:04:15.995160"], ["updated_at", "2017-12-21 05:04:15.995160"]]
+  [1m[35m (52.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_courses_on_year' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_courses_on_year' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_enrolls_on_course_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_enrolls_on_course_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_enrolls_on_student_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_enrolls_on_student_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_scores_on_test_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_scores_on_test_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_scores_on_student_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_scores_on_student_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_test_courses_on_test_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_test_courses_on_test_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_test_courses_on_course_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_test_courses_on_course_id' AND type='index'
+[0m
+Started GET "/" for 127.0.0.1 at 2017-12-21 02:04:24 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (2.9ms)
+Completed 200 OK in 13ms (Views: 5.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/course" for 127.0.0.1 at 2017-12-21 02:04:30 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/course"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/courses" for 127.0.0.1 at 2017-12-21 02:04:36 -0300
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  Rendered courses/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 1033ms (Views: 1029.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/courses/new" for 127.0.0.1 at 2017-12-21 02:04:40 -0300
+Processing by CoursesController#new as HTML
+  Rendering courses/new.html.erb within layouts/application
+  Rendered courses/_form.html.erb (577.6ms)
+  Rendered courses/new.html.erb within layouts/application (579.2ms)
+Completed 200 OK in 609ms (Views: 603.7ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/courses" for 127.0.0.1 at 2017-12-21 02:04:43 -0300
+Processing by CoursesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0XrnOfIcE11/A5EiF8A10wxXDDmMkI9Wrr455vnNfxWwFpa1tUX8fd9FYOAJ9xsjtrOTdVb/+oYtDk8EO/GQ5A==", "commit"=>"Create Course"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "courses" DEFAULT VALUES[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.6ms)
+
+
+  
+ActiveRecord::NotNullViolation (SQLite3::ConstraintException: NOT NULL constraint failed: courses.year: INSERT INTO "courses" DEFAULT VALUES):
+  
+app/controllers/courses_controller.rb:30:in `block in create'
+app/controllers/courses_controller.rb:29:in `create'
+Started GET "/students" for 127.0.0.1 at 2017-12-21 02:05:07 -0300
+Processing by StudentsController#index as HTML
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  Rendered students/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 34ms (Views: 29.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/students/new" for 127.0.0.1 at 2017-12-21 02:05:09 -0300
+Processing by StudentsController#new as HTML
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/_form.html.erb (1.6ms)
+  Rendered students/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 45ms (Views: 33.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/students" for 127.0.0.1 at 2017-12-21 02:05:14 -0300
+Processing by StudentsController#index as HTML
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  Rendered students/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 42ms (Views: 40.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/students/new" for 127.0.0.1 at 2017-12-21 02:05:16 -0300
+Processing by StudentsController#new as HTML
+  Rendering students/new.html.erb within layouts/application
+  Rendered students/_form.html.erb (1.9ms)
+  Rendered students/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 42ms (Views: 40.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/students" for 127.0.0.1 at 2017-12-21 02:05:17 -0300
+Processing by StudentsController#index as HTML
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  Rendered students/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 34ms (Views: 32.9ms | ActiveRecord: 0.2ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (69.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "courses"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (74.5ms)[0m  [1m[35mCREATE TABLE "courses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "year" integer NOT NULL)[0m
+  [1m[35m (36.6ms)[0m  [1m[35mCREATE  INDEX "index_courses_on_year" ON "courses" ("year")[0m
+  [1m[35m (56.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "enrolls"[0m
+  [1m[35m (39.9ms)[0m  [1m[35mCREATE TABLE "enrolls" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "student_id" integer, "course_id" integer)[0m
+  [1m[35m (56.2ms)[0m  [1m[35mCREATE  INDEX "index_enrolls_on_course_id" ON "enrolls" ("course_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_enrolls_on_course_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_enrolls_on_course_id' AND type='index'
+[0m
+  [1m[35m (72.4ms)[0m  [1m[35mCREATE  INDEX "index_enrolls_on_student_id" ON "enrolls" ("student_id")[0m
+  [1m[35m (55.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "scores"[0m
+  [1m[35m (67.2ms)[0m  [1m[35mCREATE TABLE "scores" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "value" float DEFAULT -1.0 NOT NULL, "student_id" integer, "test_id" integer)[0m
+  [1m[35m (55.0ms)[0m  [1m[35mCREATE  INDEX "index_scores_on_student_id" ON "scores" ("student_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_scores_on_student_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_scores_on_student_id' AND type='index'
+[0m
+  [1m[35m (72.3ms)[0m  [1m[35mCREATE  INDEX "index_scores_on_test_id" ON "scores" ("test_id")[0m
+  [1m[35m (56.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "students"[0m
+  [1m[35m (55.4ms)[0m  [1m[35mCREATE TABLE "students" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "last_name" varchar(64) NOT NULL, "first_name" varchar(64) NOT NULL, "email" varchar(64) NOT NULL, "legajo" integer NOT NULL, "dni" integer NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (66.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "teachers"[0m
+  [1m[35m (58.0ms)[0m  [1m[35mCREATE TABLE "teachers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(64) NOT NULL, "password" varchar(64) NOT NULL)[0m
+  [1m[35m (63.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "test_courses"[0m
+  [1m[35m (57.6ms)[0m  [1m[35mCREATE TABLE "test_courses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "course_id" integer, "test_id" integer)[0m
+  [1m[35m (55.0ms)[0m  [1m[35mCREATE  INDEX "index_test_courses_on_course_id" ON "test_courses" ("course_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_test_courses_on_course_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_test_courses_on_course_id' AND type='index'
+[0m
+  [1m[35m (55.4ms)[0m  [1m[35mCREATE  INDEX "index_test_courses_on_test_id" ON "test_courses" ("test_id")[0m
+  [1m[35m (64.7ms)[0m  [1m[35mDROP TABLE IF EXISTS "tests"[0m
+  [1m[35m (47.4ms)[0m  [1m[35mCREATE TABLE "tests" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(64) NOT NULL, "date" datetime NOT NULL, "min_score" float NOT NULL, "max_score" float NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "courses"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (78.9ms)[0m  [1m[35mCREATE TABLE "courses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "year" integer NOT NULL)[0m
+  [1m[35m (83.5ms)[0m  [1m[35mCREATE  INDEX "index_courses_on_year" ON "courses" ("year")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "enrolls"[0m
+  [1m[35m (82.5ms)[0m  [1m[35mCREATE TABLE "enrolls" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "student_id" integer, "course_id" integer)[0m
+  [1m[35m (92.0ms)[0m  [1m[35mCREATE  INDEX "index_enrolls_on_course_id" ON "enrolls" ("course_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_enrolls_on_course_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_enrolls_on_course_id' AND type='index'
+[0m
+  [1m[35m (74.7ms)[0m  [1m[35mCREATE  INDEX "index_enrolls_on_student_id" ON "enrolls" ("student_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "scores"[0m
+  [1m[35m (56.2ms)[0m  [1m[35mCREATE TABLE "scores" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "value" float DEFAULT -1.0 NOT NULL, "student_id" integer, "test_id" integer)[0m
+  [1m[35m (58.9ms)[0m  [1m[35mCREATE  INDEX "index_scores_on_student_id" ON "scores" ("student_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_scores_on_student_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_scores_on_student_id' AND type='index'
+[0m
+  [1m[35m (76.1ms)[0m  [1m[35mCREATE  INDEX "index_scores_on_test_id" ON "scores" ("test_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "students"[0m
+  [1m[35m (72.0ms)[0m  [1m[35mCREATE TABLE "students" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "last_name" varchar(64) NOT NULL, "first_name" varchar(64) NOT NULL, "email" varchar(64) NOT NULL, "legajo" integer NOT NULL, "dni" integer NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "teachers"[0m
+  [1m[35m (59.7ms)[0m  [1m[35mCREATE TABLE "teachers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(64) NOT NULL, "password" varchar(64) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "test_courses"[0m
+  [1m[35m (89.9ms)[0m  [1m[35mCREATE TABLE "test_courses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "course_id" integer, "test_id" integer)[0m
+  [1m[35m (89.6ms)[0m  [1m[35mCREATE  INDEX "index_test_courses_on_course_id" ON "test_courses" ("course_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_test_courses_on_course_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_test_courses_on_course_id' AND type='index'
+[0m
+  [1m[35m (82.8ms)[0m  [1m[35mCREATE  INDEX "index_test_courses_on_test_id" ON "test_courses" ("test_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "tests"[0m
+  [1m[35m (72.5ms)[0m  [1m[35mCREATE TABLE "tests" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(64) NOT NULL, "date" datetime NOT NULL, "min_score" float NOT NULL, "max_score" float NOT NULL)[0m
+  [1m[35m (99.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (101.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20171221015421)[0m
+  [1m[35m (75.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20171221013327),
+(20171221013345),
+(20171221013132),
+(20171221015245),
+(20171221013124),
+(20171221013337);
+
+[0m
+  [1m[35m (113.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-12-21 05:07:13.630819"], ["updated_at", "2017-12-21 05:07:13.630819"]]
+  [1m[35m (447.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "teachers" ("username", "password") VALUES (?, ?)[0m  [["username", "admin"], ["password", "pass"]]
+  [1m[35m (104.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "courses" ("year") VALUES (?)[0m  [["year", 2017]]
+  [1m[35m (83.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "courses" ("year") VALUES (?)[0m  [["year", 2016]]
+  [1m[35m (37.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (65.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "courses"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (64.0ms)[0m  [1m[35mCREATE TABLE "courses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "year" integer NOT NULL)[0m
+  [1m[35m (39.6ms)[0m  [1m[35mCREATE  INDEX "index_courses_on_year" ON "courses" ("year")[0m
+  [1m[35m (72.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "enrolls"[0m
+  [1m[35m (49.4ms)[0m  [1m[35mCREATE TABLE "enrolls" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "student_id" integer, "course_id" integer)[0m
+  [1m[35m (61.7ms)[0m  [1m[35mCREATE  INDEX "index_enrolls_on_course_id" ON "enrolls" ("course_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_enrolls_on_course_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_enrolls_on_course_id' AND type='index'
+[0m
+  [1m[35m (71.4ms)[0m  [1m[35mCREATE  INDEX "index_enrolls_on_student_id" ON "enrolls" ("student_id")[0m
+  [1m[35m (57.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "scores"[0m
+  [1m[35m (63.7ms)[0m  [1m[35mCREATE TABLE "scores" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "value" float DEFAULT -1.0 NOT NULL, "student_id" integer, "test_id" integer)[0m
+  [1m[35m (49.9ms)[0m  [1m[35mCREATE  INDEX "index_scores_on_student_id" ON "scores" ("student_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_scores_on_student_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_scores_on_student_id' AND type='index'
+[0m
+  [1m[35m (53.5ms)[0m  [1m[35mCREATE  INDEX "index_scores_on_test_id" ON "scores" ("test_id")[0m
+  [1m[35m (75.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "students"[0m
+  [1m[35m (72.6ms)[0m  [1m[35mCREATE TABLE "students" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "last_name" varchar(64) NOT NULL, "first_name" varchar(64) NOT NULL, "email" varchar(64) NOT NULL, "legajo" integer NOT NULL, "dni" integer NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (66.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "teachers"[0m
+  [1m[35m (49.2ms)[0m  [1m[35mCREATE TABLE "teachers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(64) NOT NULL, "password" varchar(64) NOT NULL)[0m
+  [1m[35m (46.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "test_courses"[0m
+  [1m[35m (48.8ms)[0m  [1m[35mCREATE TABLE "test_courses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "course_id" integer, "test_id" integer)[0m
+  [1m[35m (55.8ms)[0m  [1m[35mCREATE  INDEX "index_test_courses_on_course_id" ON "test_courses" ("course_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_test_courses_on_course_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_test_courses_on_course_id' AND type='index'
+[0m
+  [1m[35m (54.1ms)[0m  [1m[35mCREATE  INDEX "index_test_courses_on_test_id" ON "test_courses" ("test_id")[0m
+  [1m[35m (57.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "tests"[0m
+  [1m[35m (56.1ms)[0m  [1m[35mCREATE TABLE "tests" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(64) NOT NULL, "date" datetime NOT NULL, "min_score" float NOT NULL, "max_score" float NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (60.7ms)[0m  [1m[35mDROP TABLE IF EXISTS "courses"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (57.6ms)[0m  [1m[35mCREATE TABLE "courses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "year" integer NOT NULL)[0m
+  [1m[35m (55.6ms)[0m  [1m[35mCREATE  INDEX "index_courses_on_year" ON "courses" ("year")[0m
+  [1m[35m (55.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "enrolls"[0m
+  [1m[35m (57.1ms)[0m  [1m[35mCREATE TABLE "enrolls" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "student_id" integer, "course_id" integer)[0m
+  [1m[35m (75.5ms)[0m  [1m[35mCREATE  INDEX "index_enrolls_on_course_id" ON "enrolls" ("course_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_enrolls_on_course_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_enrolls_on_course_id' AND type='index'
+[0m
+  [1m[35m (62.7ms)[0m  [1m[35mCREATE  INDEX "index_enrolls_on_student_id" ON "enrolls" ("student_id")[0m
+  [1m[35m (56.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "scores"[0m
+  [1m[35m (58.6ms)[0m  [1m[35mCREATE TABLE "scores" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "value" float DEFAULT -1.0 NOT NULL, "student_id" integer, "test_id" integer)[0m
+  [1m[35m (73.0ms)[0m  [1m[35mCREATE  INDEX "index_scores_on_student_id" ON "scores" ("student_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_scores_on_student_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_scores_on_student_id' AND type='index'
+[0m
+  [1m[35m (82.1ms)[0m  [1m[35mCREATE  INDEX "index_scores_on_test_id" ON "scores" ("test_id")[0m
+  [1m[35m (54.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "students"[0m
+  [1m[35m (57.0ms)[0m  [1m[35mCREATE TABLE "students" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "last_name" varchar(64) NOT NULL, "first_name" varchar(64) NOT NULL, "email" varchar(64) NOT NULL, "legajo" integer NOT NULL, "dni" integer NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (63.9ms)[0m  [1m[35mDROP TABLE IF EXISTS "teachers"[0m
+  [1m[35m (65.2ms)[0m  [1m[35mCREATE TABLE "teachers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(64) NOT NULL, "password" varchar(64) NOT NULL)[0m
+  [1m[35m (57.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "test_courses"[0m
+  [1m[35m (72.3ms)[0m  [1m[35mCREATE TABLE "test_courses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "course_id" integer, "test_id" integer)[0m
+  [1m[35m (66.4ms)[0m  [1m[35mCREATE  INDEX "index_test_courses_on_course_id" ON "test_courses" ("course_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_test_courses_on_course_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_test_courses_on_course_id' AND type='index'
+[0m
+  [1m[35m (36.3ms)[0m  [1m[35mCREATE  INDEX "index_test_courses_on_test_id" ON "test_courses" ("test_id")[0m
+  [1m[35m (78.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "tests"[0m
+  [1m[35m (54.3ms)[0m  [1m[35mCREATE TABLE "tests" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(64) NOT NULL, "date" datetime NOT NULL, "min_score" float NOT NULL, "max_score" float NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "teachers" ("username", "password") VALUES (?, ?)[0m  [["username", "admin"], ["password", "pass"]]
+  [1m[35m (58.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "courses" ("year") VALUES (?)[0m  [["year", 2017]]
+  [1m[35m (54.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "courses" ("year") VALUES (?)[0m  [["year", 2016]]
+  [1m[35m (54.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "tests" ("title", "date", "min_score", "max_score") VALUES (?, ?, ?, ?)[0m  [["title", "Examen 0"], ["date", "2017-12-21 00:00:00"], ["min_score", 8.0], ["max_score", 11.0]]
+  [1m[35m (64.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "test_courses" DEFAULT VALUES[0m
+  [1m[35m (55.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tests" ("title", "date", "min_score", "max_score") VALUES (?, ?, ?, ?)[0m  [["title", "Examen 1"], ["date", "2017-12-22 00:00:00"], ["min_score", 8.0], ["max_score", 11.0]]
+  [1m[35m (63.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "test_courses" DEFAULT VALUES[0m
+  [1m[35m (69.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "tests" ("title", "date", "min_score", "max_score") VALUES (?, ?, ?, ?)[0m  [["title", "Examen 2"], ["date", "2017-12-23 00:00:00"], ["min_score", 10.0], ["max_score", 14.0]]
+  [1m[35m (60.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "test_courses" DEFAULT VALUES[0m
+  [1m[35m (69.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "tests" ("title", "date", "min_score", "max_score") VALUES (?, ?, ?, ?)[0m  [["title", "Examen 3"], ["date", "2017-12-24 00:00:00"], ["min_score", 10.0], ["max_score", 14.0]]
+  [1m[35m (64.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "test_courses" DEFAULT VALUES[0m
+  [1m[35m (71.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "tests" ("title", "date", "min_score", "max_score") VALUES (?, ?, ?, ?)[0m  [["title", "Examen 0"], ["date", "2016-12-21 00:00:00"], ["min_score", 8.0], ["max_score", 12.0]]
+  [1m[35m (76.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "test_courses" DEFAULT VALUES[0m
+  [1m[35m (77.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "tests" ("title", "date", "min_score", "max_score") VALUES (?, ?, ?, ?)[0m  [["title", "Examen 1"], ["date", "2016-12-22 00:00:00"], ["min_score", 9.0], ["max_score", 13.0]]
+  [1m[35m (87.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "test_courses" DEFAULT VALUES[0m
+  [1m[35m (73.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "tests" ("title", "date", "min_score", "max_score") VALUES (?, ?, ?, ?)[0m  [["title", "Examen 2"], ["date", "2016-12-23 00:00:00"], ["min_score", 11.0], ["max_score", 15.0]]
+  [1m[35m (32.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "test_courses" DEFAULT VALUES[0m
+  [1m[35m (62.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "tests" ("title", "date", "min_score", "max_score") VALUES (?, ?, ?, ?)[0m  [["title", "Examen 3"], ["date", "2016-12-24 00:00:00"], ["min_score", 9.0], ["max_score", 13.0]]
+  [1m[35m (63.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "test_courses" DEFAULT VALUES[0m
+  [1m[35m (43.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTest Load (0.4ms)[0m  [1m[34mSELECT "tests".* FROM "tests"[0m
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT  "students".* FROM "students" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 7]]
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT  "students".* FROM "students" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 7]]
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT  "students".* FROM "students" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 7]]
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT  "students".* FROM "students" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 7]]
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT  "students".* FROM "students" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 7]]
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT  "students".* FROM "students" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 7]]
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT  "students".* FROM "students" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 7]]
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT  "students".* FROM "students" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 7]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "students" ("last_name", "first_name", "email", "legajo", "dni", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["last_name", "Caedus"], ["first_name", "Darth"], ["email", "Gamorreans@Geonosis.com"], ["legajo", 123456], ["dni", 39831178], ["created_at", "2017-12-21 05:07:57.170412"], ["updated_at", "2017-12-21 05:07:57.170412"]]
+  [1m[35m (65.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCourse Load (0.4ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "enrolls" DEFAULT VALUES[0m
+  [1m[35m (45.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "students" ("last_name", "first_name", "email", "legajo", "dni", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["last_name", "Solo"], ["first_name", "Han"], ["email", "Porg@Eadu.com"], ["legajo", 123457], ["dni", 39831179], ["created_at", "2017-12-21 05:07:57.296291"], ["updated_at", "2017-12-21 05:07:57.296291"]]
+  [1m[35m (43.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCourse Load (0.6ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "enrolls" DEFAULT VALUES[0m
+  [1m[35m (60.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "students" ("last_name", "first_name", "email", "legajo", "dni", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["last_name", "Mothma"], ["first_name", "Mon"], ["email", "Twi'lek@DQar.com"], ["legajo", 123458], ["dni", 39831180], ["created_at", "2017-12-21 05:07:57.413220"], ["updated_at", "2017-12-21 05:07:57.413220"]]
+  [1m[35m (60.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCourse Load (0.4ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "enrolls" DEFAULT VALUES[0m
+  [1m[35m (60.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "students" ("last_name", "first_name", "email", "legajo", "dni", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["last_name", "Skywalker"], ["first_name", "Shmi"], ["email", "Sullustan@Utapau.com"], ["legajo", 123459], ["dni", 39831181], ["created_at", "2017-12-21 05:07:57.546038"], ["updated_at", "2017-12-21 05:07:57.546038"]]
+  [1m[35m (71.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCourse Load (0.4ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "enrolls" DEFAULT VALUES[0m
+  [1m[35m (78.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "students" ("last_name", "first_name", "email", "legajo", "dni", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["last_name", "Vader"], ["first_name", "Darth"], ["email", "Kaminoan@Kamino.com"], ["legajo", 123460], ["dni", 39831182], ["created_at", "2017-12-21 05:07:57.705195"], ["updated_at", "2017-12-21 05:07:57.705195"]]
+  [1m[35m (69.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCourse Load (0.4ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "enrolls" DEFAULT VALUES[0m
+  [1m[35m (42.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "students" ("last_name", "first_name", "email", "legajo", "dni", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["last_name", "Hutt"], ["first_name", "Borvo"], ["email", "Jawa@Mandalore.com"], ["legajo", 123461], ["dni", 39831183], ["created_at", "2017-12-21 05:07:57.829573"], ["updated_at", "2017-12-21 05:07:57.829573"]]
+  [1m[35m (46.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCourse Load (0.5ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "enrolls" DEFAULT VALUES[0m
+  [1m[35m (58.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "students" ("last_name", "first_name", "email", "legajo", "dni", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["last_name", "Erso"], ["first_name", "Jyn"], ["email", "Kaminoan@Geonosis.com"], ["legajo", 123462], ["dni", 39831184], ["created_at", "2017-12-21 05:07:57.945845"], ["updated_at", "2017-12-21 05:07:57.945845"]]
+  [1m[35m (62.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "enrolls" DEFAULT VALUES[0m
+  [1m[35m (43.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "students" ("last_name", "first_name", "email", "legajo", "dni", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["last_name", "Snoke"], ["first_name", "Supreme"], ["email", "Dathomirian@Naboo.com"], ["legajo", 123463], ["dni", 39831185], ["created_at", "2017-12-21 05:07:58.062561"], ["updated_at", "2017-12-21 05:07:58.062561"]]
+  [1m[35m (62.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCourse Load (0.5ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "enrolls" DEFAULT VALUES[0m
+  [1m[35m (60.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "students" ("last_name", "first_name", "email", "legajo", "dni", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["last_name", "Wren"], ["first_name", "Sabine"], ["email", "Twi'lek@Sullust.com"], ["legajo", 123464], ["dni", 39831186], ["created_at", "2017-12-21 05:07:58.196545"], ["updated_at", "2017-12-21 05:07:58.196545"]]
+  [1m[35m (69.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "enrolls" DEFAULT VALUES[0m
+  [1m[35m (76.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "students" ("last_name", "first_name", "email", "legajo", "dni", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["last_name", "Rey"], ["first_name", "Rey"], ["email", "Porg@Hoth.com"], ["legajo", 123465], ["dni", 39831187], ["created_at", "2017-12-21 05:07:58.353740"], ["updated_at", "2017-12-21 05:07:58.353740"]]
+  [1m[35m (72.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" ORDER BY RANDOM() LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "enrolls" DEFAULT VALUES[0m
+  [1m[35m (85.9ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/students" for 127.0.0.1 at 2017-12-21 02:08:08 -0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StudentsController#index as HTML
+  Rendering students/index.html.erb within layouts/application
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  Rendered students/index.html.erb within layouts/application (16.8ms)
+Completed 200 OK in 221ms (Views: 211.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2017-12-21 02:08:14 -0300
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  Rendered courses/index.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 74ms (Views: 69.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/courses/1" for 127.0.0.1 at 2017-12-21 02:08:36 -0300
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering courses/show.html.erb within layouts/application
+  Rendered courses/show.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 120ms (Views: 63.5ms | ActiveRecord: 0.2ms)
+
+
