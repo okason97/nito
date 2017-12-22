@@ -3,7 +3,6 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 */
 $(document).ready(function() {
-    console.log("holis")
     $('#enrolls-table').DataTable({
         responsive: true
     });

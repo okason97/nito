@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
   resources :courses do
-    resources :tests, only: [:new, :create, :update, :destroy, :edit]
+    resources :tests do
+      resources :scores, only: [:index, :new, :create, :update, :destroy]
+    end
     resources :enrolls, only: [:index, :update, :destroy, :create]
   end
   resources :students
-  resources :scores, only: [:new, :create, :update, :destroy]
 
   devise_for :teachers
   

@@ -12,9 +12,13 @@
   <tbody>
     <% @tests.each do |test| %>
       <tr>
-        <td><%= link_to 'Show', test %></td>
-        <td><%= link_to 'Edit', edit_test_path(test) %></td>
-        <td><%= link_to 'Destroy', test, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= test.title %></td>
+        <td><%= test.date.strftime("%d/%m/%Y") %></td>
+        <td><%= test.min_score %></td>
+        <td><%= test.max_score %></td>
+        <td><%= link_to 'Scores', course_test_scores_path(@course, test) %></td>
+        <td><%= link_to 'Edit', edit_course_test_path(@course, test) %></td>
+        <td><%= link_to 'Destroy', [@course, test], method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -22,4 +26,5 @@
 
 <br>
 
-<%= link_to 'New Test', new_test_path %>
+<%= link_to 'New Test', new_course_test_path(@course) %>
+<%= link_to 'Back', courses_path %>

@@ -1,4 +1,4 @@
 <%= simple_form_for course do |f| %>
-  <%= f.input :year %>
+  <%= f.input :year, input_html: { min: 1990, max: 2100 }%>
   <%= f.button :submit %>
 <% end %>

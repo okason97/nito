@@ -30,7 +30,7 @@ class EnrollsController < ApplicationController
     student = Student.find_by(dni: params[:student_id])
     @enroll = Enroll.new( student: student, course: course)
     TestCourse.of(course).each do |tc|
-      @score = Score.new( student: student, test_id: tc.test_id, value: -2)
+      Score.create( student: student, test_id: tc.test_id, value: -2)
     end
     
     respond_to do |format|

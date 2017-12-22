@@ -2,24 +2,36 @@
 
 <h1>Scores</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @scores.each do |score| %>
+<%= form_tag("/courses/#{@course.id}/tests/#{@test.id}/scores", method: "post") do %>
+  <table>
+    <thead>
       <tr>
-        <td><%= link_to 'Show', score %></td>
-        <td><%= link_to 'Edit', edit_score_path(score) %></td>
-        <td><%= link_to 'Destroy', score, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Name</th>
+        <th>Score</th>
+        <th>Absent</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% i = 0 %>
+      <% @scores.each do |score| %>
+        <tr>
+          <td><%= score.first_name + ' ' + score.last_name %></td>
+          <td>
+            <%= number_field_tag 'score-input' + i.to_s, 
+              (score.value == -2)? 0 : score.value, 
+              in: 0..@test.max_score, step: 0.01 %>
+          </td>
+          <td><%= check_box_tag 'absent' + i.to_s, 'true', score.value == -2 %></td>
+        </tr>
+        <% i += 1 %>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Score', new_score_path %>
+  <br>
+
+  <%= submit_tag("Accept") %>
+<% end %>
+
+<%= link_to 'Back', course_tests_path(@course) %>

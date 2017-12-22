@@ -4,6 +4,6 @@ class CreateEnrolls < ActiveRecord::Migration[5.1]
       t.belongs_to :student, foreign_key: true, index: true
       t.belongs_to :course, foreign_key: true, index: true
     end
-    add_index :enrolled, [:student_id, :course_id], unique: true    
+    add_index :enrolls, [:student_id, :course_id], unique: true    
   end
 end

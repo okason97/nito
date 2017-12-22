@@ -21,11 +21,12 @@ ActiveRecord::Schema.define(version: 20171221190024) do
     t.integer "student_id"
     t.integer "course_id"
     t.index ["course_id"], name: "index_enrolls_on_course_id"
+    t.index ["student_id", "course_id"], name: "index_enrolls_on_student_id_and_course_id", unique: true
     t.index ["student_id"], name: "index_enrolls_on_student_id"
   end
 
   create_table "scores", force: :cascade do |t|
-    t.float "value", default: -1.0, null: false
+    t.float "value", null: false
     t.integer "student_id"
     t.integer "test_id"
     t.index ["student_id"], name: "index_scores_on_student_id"
@@ -40,11 +41,12 @@ ActiveRecord::Schema.define(version: 20171221190024) do
     t.integer "dni", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["dni"], name: "index_students_on_dni"
+    t.index ["legajo"], name: "index_students_on_legajo"
   end
 
   create_table "teachers", force: :cascade do |t|
     t.string "email", default: "", null: false
-    t.string "username", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"

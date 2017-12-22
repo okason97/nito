@@ -16,16 +16,9 @@ Course.all.each do |course|
         max_score = rand(10..15)
         min_score = (max_score * 0.7).round
         TestCourse.create(
-            course_id: course, 
-            test_id: Test.create(title: title, date: date, min_score: min_score, max_score: max_score)
+            course: course, 
+            test: Test.create(title: title, date: date, min_score: min_score, max_score: max_score)
         )
-    end
-end
-
-Test.all.each do |test|
-    Student.order("RANDOM()").first(7) do |student|
-        value = rand(exam.max_score + 1)
-        Score.create(value: value, student_id: student, test_id: test)
     end
 end
 
@@ -33,11 +26,22 @@ end
     name = Faker::StarWars.character.split(' ')
     email = Faker::StarWars.specie + '@' + Faker::StarWars.planet + '.com'
     Enroll.create(
-        student_id: 
+        student: 
             Student.create(
                 last_name: name.last, first_name: name.first,
                 email: email, legajo: (123456 + i), dni: (39_831_178 + i)
             ),
-        course_id: Course.order("RANDOM()").first     
+        course: Course.order("RANDOM()").first     
     )
+end
+
+Test.all.each do |test|
+    Enroll.where(course_id: TestCourse.find_by(test: test).course_id).each do |enroll|
+        if (rand > 0.5)
+            value = rand((test.max_score + 1))
+            Score.create( student_id: enroll.student_id, test: test, value: value)
+        else
+            Score.create( student_id: enroll.student_id, test: test, value: -2)
+        end
+    end
 end

@@ -11,18 +11,45 @@
   </thead>
 
   <tbody>
-    <% @students.each do |test| %>
+    <% @students.each do |student| %>
       <tr>
-        <td><%= test.title %></td>
-        <td><%= test.min_score %></td>
-        <td><%= test.max_score %></td>
-        <td><%= link_to 'Edit', edit_course_test_path(@course, test) %></td>
-        <td><%= link_to 'Destroy', [@course, test], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= student['first_name'] + ' ' + student['last_name'] %></td>
+        <% student['scores'].each do |score| %>
+          <% if score['value'] == -2 %>
+            <td> absent </td>
+          <% else %>
+            <td><%= score['value'] %></td>
+          <% end %>
+        <% end %>
       </tr>
     <% end %>
+    <tr></tr>
+    <tr>
+      <td>Cantidad de aprobados</td>
+      <% @tests.each do |test| %>
+        <td><%= test.pass %></td>
+      <% end %>
+    </tr>
+    <tr>
+      <td>Cantidad de desaprobados</td>
+      <% @tests.each do |test| %>
+        <td><%= test.fail %></td>
+      <% end %>
+    </tr>
+    <tr>
+      <td>Cantidad de ausentes</td>
+      <% @tests.each do |test| %>
+        <td><%= test.absent %></td>
+      <% end %>
+    </tr>
+    <tr>
+      <td>Porcentaje de aprobacion</td>
+      <% @tests.each do |test| %>
+        <td><%= test.percentage %></td>
+      <% end %>
+    </tr>
   </tbody>
 </table>
 
 
-<%= link_to 'Edit', edit_course_path(@course) %> |
 <%= link_to 'Back', courses_path %>

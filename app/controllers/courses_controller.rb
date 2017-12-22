@@ -10,13 +10,11 @@ class CoursesController < ApplicationController
   # GET /courses/1
   # GET /courses/1.json
   def show
-    @tests = Test.joins(:test_course).where("course_id = ?", params[:id])
-    students_course = Student.joins(:enroll).where("course_id = ?", params[:id])
-    @students = students_course.as_json
-    @students.map! do |student|
-      student[:scores] << students_course.joins("INNER JOIN scores ON #{student[:id]} = scores.student_id").as_json
+    @tests = Test.joins(:test_course).where("course_id = ?", params[:id]).order(:id)
+    @students = Student.joins(:enrolls).where("course_id = ?", params[:id]).as_json
+    @students.each do |student|
+      student['scores'] = Score.joins(:student).where(student_id: student['id']).order(:test_id).as_json
     end
-    puts @students
   end
 
   # GET /courses/new
@@ -47,8 +45,11 @@ class CoursesController < ApplicationController
   # PATCH/PUT /courses/1
   # PATCH/PUT /courses/1.json
   def update
-    respond_to do |format|
-      if @course.update(year: params[:course][:year])
+      respond_to do |format|
+      if @course.update(year: params[:course][:year]) 
+        Test.joins(:test_course).select('tests.*, test_courses.course_id').where('test_courses.course_id = ?', @course).each do |test|
+          test.update(date: test.date.to_date.change(year: params[:course][:year].to_i)) 
+        end
         format.html { redirect_to @course, notice: 'Course was successfully updated.' }
         format.json { render :show, status: :ok, location: @course }
       else

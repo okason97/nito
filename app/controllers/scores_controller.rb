@@ -4,7 +4,11 @@ class ScoresController < ApplicationController
   # GET /scores
   # GET /scores.json
   def index
-    @scores = Score.all
+    @course = Course.find(params[:course_id])
+    @test = Test.find(params[:test_id])
+    @scores = Score.joins(:student)
+      .select('scores.*, students.first_name, students.last_name')
+      .where(test: @test)
   end
 
   # GET /scores/1
@@ -24,15 +28,24 @@ class ScoresController < ApplicationController
   # POST /scores
   # POST /scores.json
   def create
-    @score = Score.new(score_params)
-
+    course = Course.find(params[:course_id])
+    test = Test.find(params[:test_id])
     respond_to do |format|
-      if @score.save
-        format.html { redirect_to @score, notice: 'Score was successfully created.' }
-        format.json { render :show, status: :created, location: @score }
-      else
-        format.html { render :new }
+      begin
+        puts params[:absent].nil?
+        i = 0
+        Score.where(test: test).each do |score|
+          if !score.update(value: (params[:"absent#{i}"]? -2 : params[:"score-input#{i}"]))
+            raise
+          end
+          i += 1
+        end
+      rescue => exception
+        format.html { render :edit }
         format.json { render json: @score.errors, status: :unprocessable_entity }
+      else
+        format.html { redirect_to course_test_scores_path(course, test), notice: 'Scores were successfully updated.' }
+        format.json { render :show, status: :ok, location: course_test_scores_path(course, test) }
       end
     end
   end

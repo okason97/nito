@@ -4,7 +4,8 @@ class TestsController < ApplicationController
   # GET /tests
   # GET /tests.json
   def index
-    @tests = Test.all
+    @course = Course.find(params[:course_id])
+    @tests = Test.joins(:test_course).select('tests.*, test_courses.course_id').where('test_courses.course_id = ?', @course.id)
   end
 
   # GET /tests/1
@@ -34,6 +35,10 @@ class TestsController < ApplicationController
     @test_course = TestCourse.new(
       test: @test, course: Course.find(params[:course_id])
     )
+
+    Enroll.where(course_id: params[:course_id]).each do |enroll|
+      Score.create( student_id: enroll.student_id, test: @test, value: -2)
+    end
 
     puts @test_course.as_json
 
@@ -66,6 +71,9 @@ class TestsController < ApplicationController
   # DELETE /tests/1
   # DELETE /tests/1.json
   def destroy
+    Score.where(test: @test).each do |score|
+      score.destroy
+    end
     @test.destroy
     respond_to do |format|
       format.html { redirect_to course_tests_url, notice: 'Test was successfully destroyed.' }
