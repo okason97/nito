@@ -29,7 +29,10 @@ class EnrollsController < ApplicationController
     course = Course.find(params[:course_id])
     student = Student.find_by(dni: params[:student_id])
     @enroll = Enroll.new( student: student, course: course)
-
+    Test.of(course).each do |test|
+      @score = Score.new( student: student, test: test, value: -2)
+    end
+    
     respond_to do |format|
       if @enroll.save
         format.html { redirect_to course_enrolls_path(course), notice: 'Enroll was successfully created.' }

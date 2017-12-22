@@ -20458,3 +20458,2693 @@ Processing by CoursesController#show as HTML
 Completed 200 OK in 82ms (Views: 78.7ms | ActiveRecord: 0.6ms)
 
 
+Started GET "/courses" for 127.0.0.1 at 2017-12-22 03:24:55 -0300
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  Rendered courses/index.html.erb within layouts/application (3.9ms)
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (1.7ms)
+  Rendered layouts/_navigation.html.erb (2.7ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 66ms (Views: 64.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:24:56 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (3.9ms)
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (1.5ms)
+  Rendered layouts/_navigation.html.erb (2.6ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 71ms (Views: 63.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:27:27 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (4.4ms)
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (2.3ms)
+  Rendered layouts/_navigation.html.erb (3.4ms)
+  Rendered layouts/_messages.html.erb (0.7ms)
+Completed 200 OK in 193ms (Views: 187.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:27:29 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (3.9ms)
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (1.6ms)
+  Rendered layouts/_navigation.html.erb (3.0ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 84ms (Views: 77.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:30:43 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.7ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (5.2ms)
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (2.1ms)
+  Rendered layouts/_navigation.html.erb (3.5ms)
+  Rendered layouts/_messages.html.erb (2.4ms)
+Completed 200 OK in 101ms (Views: 91.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/courses/assets/javascripts/enrolls.js" for 127.0.0.1 at 2017-12-22 03:30:44 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/courses/assets/javascripts/enrolls.js"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:30:45 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (4.5ms)
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (2.4ms)
+  Rendered layouts/_navigation.html.erb (4.0ms)
+  Rendered layouts/_messages.html.erb (0.8ms)
+Completed 200 OK in 96ms (Views: 87.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/courses/assets/javascripts/enrolls.js" for 127.0.0.1 at 2017-12-22 03:30:45 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/courses/assets/javascripts/enrolls.js"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:30:50 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (3.9ms)
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (1.8ms)
+  Rendered layouts/_navigation.html.erb (3.2ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 84ms (Views: 78.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/courses/1/assets/javascripts/enrolls.js" for 127.0.0.1 at 2017-12-22 03:30:51 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/courses/1/assets/javascripts/enrolls.js"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:30:51 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (17.7ms)
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (2.3ms)
+  Rendered layouts/_navigation.html.erb (3.9ms)
+  Rendered layouts/_messages.html.erb (0.8ms)
+Completed 200 OK in 111ms (Views: 101.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/courses/1/assets/javascripts/enrolls.js" for 127.0.0.1 at 2017-12-22 03:30:52 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/courses/1/assets/javascripts/enrolls.js"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:32:28 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (4.1ms)
+Completed 500 Internal Server Error in 54ms (ActiveRecord: 0.4ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'enrolls.' with type 'application/javascript'
+Checked in these paths: 
+  /home/gaston/facultad/ruby/tp/nito/app/assets/config
+  /home/gaston/facultad/ruby/tp/nito/app/assets/images
+  /home/gaston/facultad/ruby/tp/nito/app/assets/javascripts
+  /home/gaston/facultad/ruby/tp/nito/app/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/images
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/media
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actioncable-5.1.4/lib/assets/compiled
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionview-5.1.4/lib/assets/compiled
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/turbolinks-source-5.0.3/lib/assets/javascripts
+  /home/gaston/facultad/ruby/tp/nito/node_modules
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/fonts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/images:
+  app/assets/javascripts/application.js:18:in `'
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___704564196518341008_69838940490740'
+
+Started POST "/__better_errors/1afded0e6b4a50bc/variables" for 127.0.0.1 at 2017-12-22 03:32:28 -0300
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:32:29 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.8ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (5.5ms)
+Completed 500 Internal Server Error in 55ms (ActiveRecord: 0.8ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'enrolls.' with type 'application/javascript'
+Checked in these paths: 
+  /home/gaston/facultad/ruby/tp/nito/app/assets/config
+  /home/gaston/facultad/ruby/tp/nito/app/assets/images
+  /home/gaston/facultad/ruby/tp/nito/app/assets/javascripts
+  /home/gaston/facultad/ruby/tp/nito/app/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/images
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/media
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actioncable-5.1.4/lib/assets/compiled
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionview-5.1.4/lib/assets/compiled
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/turbolinks-source-5.0.3/lib/assets/javascripts
+  /home/gaston/facultad/ruby/tp/nito/node_modules
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/fonts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/images:
+  app/assets/javascripts/application.js:18:in `'
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___704564196518341008_69838937791360'
+
+Started POST "/__better_errors/3aab28d455583f15/variables" for 127.0.0.1 at 2017-12-22 03:32:29 -0300
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:32:45 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (5.3ms)
+Completed 500 Internal Server Error in 68ms (ActiveRecord: 0.5ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'enrolls.js.' with type 'application/javascript'
+Checked in these paths: 
+  /home/gaston/facultad/ruby/tp/nito/app/assets/config
+  /home/gaston/facultad/ruby/tp/nito/app/assets/images
+  /home/gaston/facultad/ruby/tp/nito/app/assets/javascripts
+  /home/gaston/facultad/ruby/tp/nito/app/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/images
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/media
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actioncable-5.1.4/lib/assets/compiled
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionview-5.1.4/lib/assets/compiled
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/turbolinks-source-5.0.3/lib/assets/javascripts
+  /home/gaston/facultad/ruby/tp/nito/node_modules
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/fonts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/images:
+  app/assets/javascripts/application.js:18:in `'
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___704564196518341008_69838967137740'
+
+Started POST "/__better_errors/4f69a6cd75f7aeca/variables" for 127.0.0.1 at 2017-12-22 03:32:45 -0300
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:32:46 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (4.9ms)
+Completed 500 Internal Server Error in 45ms (ActiveRecord: 0.5ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'enrolls.js.' with type 'application/javascript'
+Checked in these paths: 
+  /home/gaston/facultad/ruby/tp/nito/app/assets/config
+  /home/gaston/facultad/ruby/tp/nito/app/assets/images
+  /home/gaston/facultad/ruby/tp/nito/app/assets/javascripts
+  /home/gaston/facultad/ruby/tp/nito/app/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/images
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/media
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actioncable-5.1.4/lib/assets/compiled
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionview-5.1.4/lib/assets/compiled
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/turbolinks-source-5.0.3/lib/assets/javascripts
+  /home/gaston/facultad/ruby/tp/nito/node_modules
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/fonts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/images:
+  app/assets/javascripts/application.js:18:in `'
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___704564196518341008_69838886751600'
+
+Started POST "/__better_errors/fa3df49feb220772/variables" for 127.0.0.1 at 2017-12-22 03:32:46 -0300
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:33:43 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (4.7ms)
+Completed 500 Internal Server Error in 57ms (ActiveRecord: 0.4ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'enrolls.js.' with type 'application/javascript'
+Checked in these paths: 
+  /home/gaston/facultad/ruby/tp/nito/app/assets/config
+  /home/gaston/facultad/ruby/tp/nito/app/assets/images
+  /home/gaston/facultad/ruby/tp/nito/app/assets/javascripts
+  /home/gaston/facultad/ruby/tp/nito/app/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/images
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/media
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actioncable-5.1.4/lib/assets/compiled
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionview-5.1.4/lib/assets/compiled
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/turbolinks-source-5.0.3/lib/assets/javascripts
+  /home/gaston/facultad/ruby/tp/nito/node_modules
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/fonts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/images:
+  app/assets/javascripts/application.js:18:in `'
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___704564196518341008_47386834603620'
+
+Started POST "/__better_errors/25cbdad03b76812e/variables" for 127.0.0.1 at 2017-12-22 03:33:43 -0300
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:33:44 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (4.4ms)
+Completed 500 Internal Server Error in 50ms (ActiveRecord: 0.4ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'enrolls.js.' with type 'application/javascript'
+Checked in these paths: 
+  /home/gaston/facultad/ruby/tp/nito/app/assets/config
+  /home/gaston/facultad/ruby/tp/nito/app/assets/images
+  /home/gaston/facultad/ruby/tp/nito/app/assets/javascripts
+  /home/gaston/facultad/ruby/tp/nito/app/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/images
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/media
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actioncable-5.1.4/lib/assets/compiled
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionview-5.1.4/lib/assets/compiled
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/turbolinks-source-5.0.3/lib/assets/javascripts
+  /home/gaston/facultad/ruby/tp/nito/node_modules
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/fonts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/images:
+  app/assets/javascripts/application.js:18:in `'
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___704564196518341008_69838936507800'
+
+Started POST "/__better_errors/6e1a4bde8eb78c6a/variables" for 127.0.0.1 at 2017-12-22 03:33:44 -0300
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:33:44 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (5.0ms)
+Completed 500 Internal Server Error in 47ms (ActiveRecord: 0.4ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'enrolls.js.' with type 'application/javascript'
+Checked in these paths: 
+  /home/gaston/facultad/ruby/tp/nito/app/assets/config
+  /home/gaston/facultad/ruby/tp/nito/app/assets/images
+  /home/gaston/facultad/ruby/tp/nito/app/assets/javascripts
+  /home/gaston/facultad/ruby/tp/nito/app/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/images
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/media
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actioncable-5.1.4/lib/assets/compiled
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionview-5.1.4/lib/assets/compiled
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/turbolinks-source-5.0.3/lib/assets/javascripts
+  /home/gaston/facultad/ruby/tp/nito/node_modules
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/fonts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/images:
+  app/assets/javascripts/application.js:18:in `'
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___704564196518341008_69838969995700'
+
+Started POST "/__better_errors/130fb3e98c57d293/variables" for 127.0.0.1 at 2017-12-22 03:33:44 -0300
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:33:50 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (4.4ms)
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 0.4ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'enrolls.' with type 'application/javascript'
+Checked in these paths: 
+  /home/gaston/facultad/ruby/tp/nito/app/assets/config
+  /home/gaston/facultad/ruby/tp/nito/app/assets/images
+  /home/gaston/facultad/ruby/tp/nito/app/assets/javascripts
+  /home/gaston/facultad/ruby/tp/nito/app/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/images
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/media
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actioncable-5.1.4/lib/assets/compiled
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionview-5.1.4/lib/assets/compiled
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/turbolinks-source-5.0.3/lib/assets/javascripts
+  /home/gaston/facultad/ruby/tp/nito/node_modules
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/fonts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/images:
+  app/assets/javascripts/application.js:18:in `'
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___704564196518341008_69838786038520'
+
+Started POST "/__better_errors/3691ebc2b7cf6e3b/variables" for 127.0.0.1 at 2017-12-22 03:33:50 -0300
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:33:51 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (3.9ms)
+Completed 500 Internal Server Error in 46ms (ActiveRecord: 0.5ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'enrolls.' with type 'application/javascript'
+Checked in these paths: 
+  /home/gaston/facultad/ruby/tp/nito/app/assets/config
+  /home/gaston/facultad/ruby/tp/nito/app/assets/images
+  /home/gaston/facultad/ruby/tp/nito/app/assets/javascripts
+  /home/gaston/facultad/ruby/tp/nito/app/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/images
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/media
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actioncable-5.1.4/lib/assets/compiled
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionview-5.1.4/lib/assets/compiled
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/turbolinks-source-5.0.3/lib/assets/javascripts
+  /home/gaston/facultad/ruby/tp/nito/node_modules
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/fonts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/images:
+  app/assets/javascripts/application.js:18:in `'
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___704564196518341008_69838957308380'
+
+Started POST "/__better_errors/43fa16d29c984a09/variables" for 127.0.0.1 at 2017-12-22 03:33:51 -0300
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:33:51 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.6ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (5.2ms)
+Completed 500 Internal Server Error in 51ms (ActiveRecord: 0.6ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'enrolls.' with type 'application/javascript'
+Checked in these paths: 
+  /home/gaston/facultad/ruby/tp/nito/app/assets/config
+  /home/gaston/facultad/ruby/tp/nito/app/assets/images
+  /home/gaston/facultad/ruby/tp/nito/app/assets/javascripts
+  /home/gaston/facultad/ruby/tp/nito/app/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/images
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/media
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actioncable-5.1.4/lib/assets/compiled
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionview-5.1.4/lib/assets/compiled
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/turbolinks-source-5.0.3/lib/assets/javascripts
+  /home/gaston/facultad/ruby/tp/nito/node_modules
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/fonts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/images:
+  app/assets/javascripts/application.js:18:in `'
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___704564196518341008_69838939132740'
+
+Started POST "/__better_errors/bfb15a8e69bd70c1/variables" for 127.0.0.1 at 2017-12-22 03:33:52 -0300
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:33:57 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.6ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (10.7ms)
+Completed 500 Internal Server Error in 68ms (ActiveRecord: 0.6ms)
+
+
+
+ArgumentError - wrong number of arguments (given 2, expected 1):
+  app/assets/javascripts/application.js:18:in `'
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___704564196518341008_47386834123920'
+
+Started POST "/__better_errors/af22079b3626a527/variables" for 127.0.0.1 at 2017-12-22 03:33:57 -0300
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:33:58 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (4.0ms)
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 0.4ms)
+
+
+
+ArgumentError - wrong number of arguments (given 2, expected 1):
+  app/assets/javascripts/application.js:18:in `'
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___704564196518341008_69838967147100'
+
+Started POST "/__better_errors/1fc92d5596d94e82/variables" for 127.0.0.1 at 2017-12-22 03:33:58 -0300
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:33:59 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (4.3ms)
+Completed 500 Internal Server Error in 49ms (ActiveRecord: 0.4ms)
+
+
+
+ArgumentError - wrong number of arguments (given 2, expected 1):
+  app/assets/javascripts/application.js:18:in `'
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___704564196518341008_69838964746980'
+
+Started POST "/__better_errors/18949c1bc648eff6/variables" for 127.0.0.1 at 2017-12-22 03:33:59 -0300
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:33:59 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (4.2ms)
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 0.5ms)
+
+
+
+ArgumentError - wrong number of arguments (given 2, expected 1):
+  app/assets/javascripts/application.js:18:in `'
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___704564196518341008_69838957681960'
+
+Started POST "/__better_errors/24882d156e678808/variables" for 127.0.0.1 at 2017-12-22 03:33:59 -0300
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:34:00 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (4.9ms)
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 0.4ms)
+
+
+
+ArgumentError - wrong number of arguments (given 2, expected 1):
+  app/assets/javascripts/application.js:18:in `'
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___704564196518341008_69838939284380'
+
+Started POST "/__better_errors/d767bb7bc161ba73/variables" for 127.0.0.1 at 2017-12-22 03:34:00 -0300
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:34:01 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (5.1ms)
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 0.5ms)
+
+
+
+ArgumentError - wrong number of arguments (given 2, expected 1):
+  app/assets/javascripts/application.js:18:in `'
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___704564196518341008_69838936482240'
+
+Started POST "/__better_errors/b44f23b3bd93bff1/variables" for 127.0.0.1 at 2017-12-22 03:34:01 -0300
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:34:03 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (15.3ms)
+Completed 500 Internal Server Error in 50ms (ActiveRecord: 0.4ms)
+
+
+
+ArgumentError - wrong number of arguments (given 2, expected 1):
+  app/assets/javascripts/application.js:18:in `'
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___704564196518341008_47386825669260'
+
+Started POST "/__better_errors/8eefa4b02c8d6c12/variables" for 127.0.0.1 at 2017-12-22 03:34:03 -0300
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:34:08 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (4.5ms)
+Completed 500 Internal Server Error in 51ms (ActiveRecord: 0.4ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'enrolls' with type 'application/javascript'
+Checked in these paths: 
+  /home/gaston/facultad/ruby/tp/nito/app/assets/config
+  /home/gaston/facultad/ruby/tp/nito/app/assets/images
+  /home/gaston/facultad/ruby/tp/nito/app/assets/javascripts
+  /home/gaston/facultad/ruby/tp/nito/app/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/images
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/media
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actioncable-5.1.4/lib/assets/compiled
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionview-5.1.4/lib/assets/compiled
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/turbolinks-source-5.0.3/lib/assets/javascripts
+  /home/gaston/facultad/ruby/tp/nito/node_modules
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/fonts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/images:
+  app/assets/javascripts/application.js:18:in `'
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___704564196518341008_69838968818100'
+
+Started POST "/__better_errors/ef040eddff5427dd/variables" for 127.0.0.1 at 2017-12-22 03:34:08 -0300
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:34:09 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (5.9ms)
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 0.4ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'enrolls' with type 'application/javascript'
+Checked in these paths: 
+  /home/gaston/facultad/ruby/tp/nito/app/assets/config
+  /home/gaston/facultad/ruby/tp/nito/app/assets/images
+  /home/gaston/facultad/ruby/tp/nito/app/assets/javascripts
+  /home/gaston/facultad/ruby/tp/nito/app/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/images
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/media
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actioncable-5.1.4/lib/assets/compiled
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionview-5.1.4/lib/assets/compiled
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/turbolinks-source-5.0.3/lib/assets/javascripts
+  /home/gaston/facultad/ruby/tp/nito/node_modules
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/fonts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/images:
+  app/assets/javascripts/application.js:18:in `'
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___704564196518341008_69838958461480'
+
+Started POST "/__better_errors/7b4acdf5c2d5f16a/variables" for 127.0.0.1 at 2017-12-22 03:34:09 -0300
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:35:35 -0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (6.1ms)
+Completed 500 Internal Server Error in 427ms (ActiveRecord: 1.5ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'enrolls' with type 'application/javascript'
+Checked in these paths: 
+  /home/gaston/facultad/ruby/tp/nito/app/assets/config
+  /home/gaston/facultad/ruby/tp/nito/app/assets/images
+  /home/gaston/facultad/ruby/tp/nito/app/assets/javascripts
+  /home/gaston/facultad/ruby/tp/nito/app/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/images
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/media
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actioncable-5.1.4/lib/assets/compiled
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionview-5.1.4/lib/assets/compiled
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/turbolinks-source-5.0.3/lib/assets/javascripts
+  /home/gaston/facultad/ruby/tp/nito/node_modules
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/fonts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/images:
+  app/assets/javascripts/application.js:18:in `'
+  app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__3462503734082209885_47106113848860'
+
+Started POST "/__better_errors/5502775e68e50e10/variables" for 127.0.0.1 at 2017-12-22 03:35:36 -0300
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:35:37 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.6ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (5.3ms)
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 0.6ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'enrolls' with type 'application/javascript'
+Checked in these paths: 
+  /home/gaston/facultad/ruby/tp/nito/app/assets/config
+  /home/gaston/facultad/ruby/tp/nito/app/assets/images
+  /home/gaston/facultad/ruby/tp/nito/app/assets/javascripts
+  /home/gaston/facultad/ruby/tp/nito/app/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/images
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/media
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actioncable-5.1.4/lib/assets/compiled
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionview-5.1.4/lib/assets/compiled
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/turbolinks-source-5.0.3/lib/assets/javascripts
+  /home/gaston/facultad/ruby/tp/nito/node_modules
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/fonts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/images:
+  app/assets/javascripts/application.js:18:in `'
+  app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__3462503734082209885_70150386242620'
+
+Started POST "/__better_errors/959e172083010bd7/variables" for 127.0.0.1 at 2017-12-22 03:35:37 -0300
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:35:37 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (4.5ms)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 0.5ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'enrolls' with type 'application/javascript'
+Checked in these paths: 
+  /home/gaston/facultad/ruby/tp/nito/app/assets/config
+  /home/gaston/facultad/ruby/tp/nito/app/assets/images
+  /home/gaston/facultad/ruby/tp/nito/app/assets/javascripts
+  /home/gaston/facultad/ruby/tp/nito/app/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/images
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/media
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actioncable-5.1.4/lib/assets/compiled
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionview-5.1.4/lib/assets/compiled
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/turbolinks-source-5.0.3/lib/assets/javascripts
+  /home/gaston/facultad/ruby/tp/nito/node_modules
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/fonts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/images:
+  app/assets/javascripts/application.js:18:in `'
+  app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__3462503734082209885_70150306279260'
+
+Started POST "/__better_errors/fbdedb8dac010c55/variables" for 127.0.0.1 at 2017-12-22 03:35:38 -0300
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:35:38 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (8.8ms)
+Completed 500 Internal Server Error in 59ms (ActiveRecord: 0.5ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'enrolls' with type 'application/javascript'
+Checked in these paths: 
+  /home/gaston/facultad/ruby/tp/nito/app/assets/config
+  /home/gaston/facultad/ruby/tp/nito/app/assets/images
+  /home/gaston/facultad/ruby/tp/nito/app/assets/javascripts
+  /home/gaston/facultad/ruby/tp/nito/app/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/images
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/media
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actioncable-5.1.4/lib/assets/compiled
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionview-5.1.4/lib/assets/compiled
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/turbolinks-source-5.0.3/lib/assets/javascripts
+  /home/gaston/facultad/ruby/tp/nito/node_modules
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/fonts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/images:
+  app/assets/javascripts/application.js:18:in `'
+  app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__3462503734082209885_70150377570580'
+
+Started POST "/__better_errors/ca46c3b668acbb18/variables" for 127.0.0.1 at 2017-12-22 03:35:38 -0300
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:35:38 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.6ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (4.1ms)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 0.6ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'enrolls' with type 'application/javascript'
+Checked in these paths: 
+  /home/gaston/facultad/ruby/tp/nito/app/assets/config
+  /home/gaston/facultad/ruby/tp/nito/app/assets/images
+  /home/gaston/facultad/ruby/tp/nito/app/assets/javascripts
+  /home/gaston/facultad/ruby/tp/nito/app/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/images
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/media
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actioncable-5.1.4/lib/assets/compiled
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionview-5.1.4/lib/assets/compiled
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/turbolinks-source-5.0.3/lib/assets/javascripts
+  /home/gaston/facultad/ruby/tp/nito/node_modules
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/fonts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/images:
+  app/assets/javascripts/application.js:18:in `'
+  app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__3462503734082209885_70150307662920'
+
+Started POST "/__better_errors/1b0cdf0e1a9c149c/variables" for 127.0.0.1 at 2017-12-22 03:35:39 -0300
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:35:40 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (4.1ms)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 0.5ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'enrolls' with type 'application/javascript'
+Checked in these paths: 
+  /home/gaston/facultad/ruby/tp/nito/app/assets/config
+  /home/gaston/facultad/ruby/tp/nito/app/assets/images
+  /home/gaston/facultad/ruby/tp/nito/app/assets/javascripts
+  /home/gaston/facultad/ruby/tp/nito/app/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/images
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/media
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actioncable-5.1.4/lib/assets/compiled
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionview-5.1.4/lib/assets/compiled
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/turbolinks-source-5.0.3/lib/assets/javascripts
+  /home/gaston/facultad/ruby/tp/nito/node_modules
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/fonts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/images:
+  app/assets/javascripts/application.js:18:in `'
+  app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__3462503734082209885_70150384862260'
+
+Started POST "/__better_errors/8b4793d5c5d7c8a9/variables" for 127.0.0.1 at 2017-12-22 03:35:40 -0300
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:35:41 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (3.6ms)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.4ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'enrolls' with type 'application/javascript'
+Checked in these paths: 
+  /home/gaston/facultad/ruby/tp/nito/app/assets/config
+  /home/gaston/facultad/ruby/tp/nito/app/assets/images
+  /home/gaston/facultad/ruby/tp/nito/app/assets/javascripts
+  /home/gaston/facultad/ruby/tp/nito/app/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/images
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/media
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actioncable-5.1.4/lib/assets/compiled
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionview-5.1.4/lib/assets/compiled
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/turbolinks-source-5.0.3/lib/assets/javascripts
+  /home/gaston/facultad/ruby/tp/nito/node_modules
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/fonts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/images:
+  app/assets/javascripts/application.js:18:in `'
+  app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__3462503734082209885_70150307660220'
+
+Started POST "/__better_errors/7b8c2e4493f19866/variables" for 127.0.0.1 at 2017-12-22 03:35:41 -0300
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:37:14 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (4.5ms)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.4ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'enrolls' with type 'application/javascript'
+Checked in these paths: 
+  /home/gaston/facultad/ruby/tp/nito/app/assets/config
+  /home/gaston/facultad/ruby/tp/nito/app/assets/images
+  /home/gaston/facultad/ruby/tp/nito/app/assets/javascripts
+  /home/gaston/facultad/ruby/tp/nito/app/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/images
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/media
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actioncable-5.1.4/lib/assets/compiled
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionview-5.1.4/lib/assets/compiled
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/turbolinks-source-5.0.3/lib/assets/javascripts
+  /home/gaston/facultad/ruby/tp/nito/node_modules
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/fonts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/images:
+  app/assets/javascripts/application.js:18:in `'
+  app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__3462503734082209885_70150384815520'
+
+Started POST "/__better_errors/697d69b478f60f77/variables" for 127.0.0.1 at 2017-12-22 03:37:14 -0300
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:37:15 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (4.9ms)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 0.3ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'enrolls' with type 'application/javascript'
+Checked in these paths: 
+  /home/gaston/facultad/ruby/tp/nito/app/assets/config
+  /home/gaston/facultad/ruby/tp/nito/app/assets/images
+  /home/gaston/facultad/ruby/tp/nito/app/assets/javascripts
+  /home/gaston/facultad/ruby/tp/nito/app/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/images
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/media
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actioncable-5.1.4/lib/assets/compiled
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionview-5.1.4/lib/assets/compiled
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/turbolinks-source-5.0.3/lib/assets/javascripts
+  /home/gaston/facultad/ruby/tp/nito/node_modules
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/fonts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/images:
+  app/assets/javascripts/application.js:18:in `'
+  app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__3462503734082209885_70150306106740'
+
+Started POST "/__better_errors/91bfcd12bed88aad/variables" for 127.0.0.1 at 2017-12-22 03:37:15 -0300
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:37:15 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.6ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (3.9ms)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 0.6ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'enrolls' with type 'application/javascript'
+Checked in these paths: 
+  /home/gaston/facultad/ruby/tp/nito/app/assets/config
+  /home/gaston/facultad/ruby/tp/nito/app/assets/images
+  /home/gaston/facultad/ruby/tp/nito/app/assets/javascripts
+  /home/gaston/facultad/ruby/tp/nito/app/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/images
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/media
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actioncable-5.1.4/lib/assets/compiled
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionview-5.1.4/lib/assets/compiled
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/turbolinks-source-5.0.3/lib/assets/javascripts
+  /home/gaston/facultad/ruby/tp/nito/node_modules
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/fonts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/images:
+  app/assets/javascripts/application.js:18:in `'
+  app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__3462503734082209885_70150384610960'
+
+Started POST "/__better_errors/f6d795e8dff010c0/variables" for 127.0.0.1 at 2017-12-22 03:37:16 -0300
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:37:16 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (5.2ms)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 0.4ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'enrolls' with type 'application/javascript'
+Checked in these paths: 
+  /home/gaston/facultad/ruby/tp/nito/app/assets/config
+  /home/gaston/facultad/ruby/tp/nito/app/assets/images
+  /home/gaston/facultad/ruby/tp/nito/app/assets/javascripts
+  /home/gaston/facultad/ruby/tp/nito/app/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/images
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/media
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actioncable-5.1.4/lib/assets/compiled
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionview-5.1.4/lib/assets/compiled
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/turbolinks-source-5.0.3/lib/assets/javascripts
+  /home/gaston/facultad/ruby/tp/nito/node_modules
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/fonts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/images:
+  app/assets/javascripts/application.js:18:in `'
+  app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__3462503734082209885_70150305537020'
+
+Started POST "/__better_errors/9fbae44da5b8b643/variables" for 127.0.0.1 at 2017-12-22 03:37:16 -0300
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:37:16 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (5.8ms)
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 0.5ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'enrolls' with type 'application/javascript'
+Checked in these paths: 
+  /home/gaston/facultad/ruby/tp/nito/app/assets/config
+  /home/gaston/facultad/ruby/tp/nito/app/assets/images
+  /home/gaston/facultad/ruby/tp/nito/app/assets/javascripts
+  /home/gaston/facultad/ruby/tp/nito/app/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/images
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/media
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actioncable-5.1.4/lib/assets/compiled
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionview-5.1.4/lib/assets/compiled
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/turbolinks-source-5.0.3/lib/assets/javascripts
+  /home/gaston/facultad/ruby/tp/nito/node_modules
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/fonts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/images:
+  app/assets/javascripts/application.js:18:in `'
+  app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__3462503734082209885_70150382706500'
+
+Started POST "/__better_errors/fd2a87175ffc99da/variables" for 127.0.0.1 at 2017-12-22 03:37:16 -0300
+Started GET "/courses" for 127.0.0.1 at 2017-12-22 03:37:17 -0300
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  Rendered courses/index.html.erb within layouts/application (4.9ms)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.6ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'enrolls' with type 'application/javascript'
+Checked in these paths: 
+  /home/gaston/facultad/ruby/tp/nito/app/assets/config
+  /home/gaston/facultad/ruby/tp/nito/app/assets/images
+  /home/gaston/facultad/ruby/tp/nito/app/assets/javascripts
+  /home/gaston/facultad/ruby/tp/nito/app/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/images
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/media
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actioncable-5.1.4/lib/assets/compiled
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionview-5.1.4/lib/assets/compiled
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/turbolinks-source-5.0.3/lib/assets/javascripts
+  /home/gaston/facultad/ruby/tp/nito/node_modules
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/fonts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/images:
+  app/assets/javascripts/application.js:18:in `'
+  app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__3462503734082209885_70150388030740'
+
+Started POST "/__better_errors/89ba9a52a1476e36/variables" for 127.0.0.1 at 2017-12-22 03:37:18 -0300
+Started GET "/courses" for 127.0.0.1 at 2017-12-22 03:37:18 -0300
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  Rendered courses/index.html.erb within layouts/application (2.1ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.2ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'enrolls' with type 'application/javascript'
+Checked in these paths: 
+  /home/gaston/facultad/ruby/tp/nito/app/assets/config
+  /home/gaston/facultad/ruby/tp/nito/app/assets/images
+  /home/gaston/facultad/ruby/tp/nito/app/assets/javascripts
+  /home/gaston/facultad/ruby/tp/nito/app/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/images
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/media
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actioncable-5.1.4/lib/assets/compiled
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionview-5.1.4/lib/assets/compiled
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/turbolinks-source-5.0.3/lib/assets/javascripts
+  /home/gaston/facultad/ruby/tp/nito/node_modules
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/fonts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/images:
+  app/assets/javascripts/application.js:18:in `'
+  app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__3462503734082209885_70150380063980'
+
+Started POST "/__better_errors/f7c409b26b977f51/variables" for 127.0.0.1 at 2017-12-22 03:37:18 -0300
+Started GET "/courses/1" for 127.0.0.1 at 2017-12-22 03:37:18 -0300
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mTest Load (0.2ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "test_courses" ON "test_courses"."test_id" = "tests"."id" WHERE (course_id = '1')[0m
+  Rendered courses/show.html.erb within layouts/application (32.6ms)
+Completed 500 Internal Server Error in 74ms (ActiveRecord: 1.0ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'enrolls' with type 'application/javascript'
+Checked in these paths: 
+  /home/gaston/facultad/ruby/tp/nito/app/assets/config
+  /home/gaston/facultad/ruby/tp/nito/app/assets/images
+  /home/gaston/facultad/ruby/tp/nito/app/assets/javascripts
+  /home/gaston/facultad/ruby/tp/nito/app/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/images
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/media
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actioncable-5.1.4/lib/assets/compiled
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionview-5.1.4/lib/assets/compiled
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/turbolinks-source-5.0.3/lib/assets/javascripts
+  /home/gaston/facultad/ruby/tp/nito/node_modules
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/fonts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/images:
+  app/assets/javascripts/application.js:18:in `'
+  app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__3462503734082209885_70150386117520'
+
+Started POST "/__better_errors/4f3f115e3f6bc22c/variables" for 127.0.0.1 at 2017-12-22 03:37:19 -0300
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:37:19 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (6.1ms)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 0.4ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'enrolls' with type 'application/javascript'
+Checked in these paths: 
+  /home/gaston/facultad/ruby/tp/nito/app/assets/config
+  /home/gaston/facultad/ruby/tp/nito/app/assets/images
+  /home/gaston/facultad/ruby/tp/nito/app/assets/javascripts
+  /home/gaston/facultad/ruby/tp/nito/app/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/images
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/media
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actioncable-5.1.4/lib/assets/compiled
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionview-5.1.4/lib/assets/compiled
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/turbolinks-source-5.0.3/lib/assets/javascripts
+  /home/gaston/facultad/ruby/tp/nito/node_modules
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/fonts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/images:
+  app/assets/javascripts/application.js:18:in `'
+  app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__3462503734082209885_70150307545200'
+
+Started POST "/__better_errors/34bc5d1e5085e4f3/variables" for 127.0.0.1 at 2017-12-22 03:37:19 -0300
+Started GET "/courses" for 127.0.0.1 at 2017-12-22 03:37:19 -0300
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  Rendered courses/index.html.erb within layouts/application (4.4ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.3ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'enrolls' with type 'application/javascript'
+Checked in these paths: 
+  /home/gaston/facultad/ruby/tp/nito/app/assets/config
+  /home/gaston/facultad/ruby/tp/nito/app/assets/images
+  /home/gaston/facultad/ruby/tp/nito/app/assets/javascripts
+  /home/gaston/facultad/ruby/tp/nito/app/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/images
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/media
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actioncable-5.1.4/lib/assets/compiled
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionview-5.1.4/lib/assets/compiled
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/turbolinks-source-5.0.3/lib/assets/javascripts
+  /home/gaston/facultad/ruby/tp/nito/node_modules
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/fonts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/images:
+  app/assets/javascripts/application.js:18:in `'
+  app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__3462503734082209885_70150384020440'
+
+Started POST "/__better_errors/a104960e5a8613c0/variables" for 127.0.0.1 at 2017-12-22 03:37:20 -0300
+Started GET "/courses/1" for 127.0.0.1 at 2017-12-22 03:37:20 -0300
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mTest Load (0.7ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "test_courses" ON "test_courses"."test_id" = "tests"."id" WHERE (course_id = '1')[0m
+  Rendered courses/show.html.erb within layouts/application (6.5ms)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 0.9ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'enrolls' with type 'application/javascript'
+Checked in these paths: 
+  /home/gaston/facultad/ruby/tp/nito/app/assets/config
+  /home/gaston/facultad/ruby/tp/nito/app/assets/images
+  /home/gaston/facultad/ruby/tp/nito/app/assets/javascripts
+  /home/gaston/facultad/ruby/tp/nito/app/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/images
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/media
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actioncable-5.1.4/lib/assets/compiled
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionview-5.1.4/lib/assets/compiled
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/turbolinks-source-5.0.3/lib/assets/javascripts
+  /home/gaston/facultad/ruby/tp/nito/node_modules
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/fonts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/images:
+  app/assets/javascripts/application.js:18:in `'
+  app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__3462503734082209885_70150385766460'
+
+Started POST "/__better_errors/9a4808d5fd55a9e8/variables" for 127.0.0.1 at 2017-12-22 03:37:20 -0300
+Started GET "/courses" for 127.0.0.1 at 2017-12-22 03:37:20 -0300
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  Rendered courses/index.html.erb within layouts/application (4.6ms)
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 0.2ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'enrolls' with type 'application/javascript'
+Checked in these paths: 
+  /home/gaston/facultad/ruby/tp/nito/app/assets/config
+  /home/gaston/facultad/ruby/tp/nito/app/assets/images
+  /home/gaston/facultad/ruby/tp/nito/app/assets/javascripts
+  /home/gaston/facultad/ruby/tp/nito/app/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/images
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/media
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actioncable-5.1.4/lib/assets/compiled
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionview-5.1.4/lib/assets/compiled
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/turbolinks-source-5.0.3/lib/assets/javascripts
+  /home/gaston/facultad/ruby/tp/nito/node_modules
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/fonts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/images:
+  app/assets/javascripts/application.js:18:in `'
+  app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__3462503734082209885_70150387348360'
+
+Started POST "/__better_errors/5289a72c18e90b19/variables" for 127.0.0.1 at 2017-12-22 03:37:20 -0300
+Started GET "/courses/1" for 127.0.0.1 at 2017-12-22 03:37:21 -0300
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mTest Load (0.4ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "test_courses" ON "test_courses"."test_id" = "tests"."id" WHERE (course_id = '1')[0m
+  Rendered courses/show.html.erb within layouts/application (3.9ms)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 0.6ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'enrolls' with type 'application/javascript'
+Checked in these paths: 
+  /home/gaston/facultad/ruby/tp/nito/app/assets/config
+  /home/gaston/facultad/ruby/tp/nito/app/assets/images
+  /home/gaston/facultad/ruby/tp/nito/app/assets/javascripts
+  /home/gaston/facultad/ruby/tp/nito/app/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/images
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/media
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actioncable-5.1.4/lib/assets/compiled
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionview-5.1.4/lib/assets/compiled
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/turbolinks-source-5.0.3/lib/assets/javascripts
+  /home/gaston/facultad/ruby/tp/nito/node_modules
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/fonts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/images:
+  app/assets/javascripts/application.js:18:in `'
+  app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__3462503734082209885_47106104794040'
+
+Started POST "/__better_errors/2a141d701348ad02/variables" for 127.0.0.1 at 2017-12-22 03:37:21 -0300
+Started GET "/courses" for 127.0.0.1 at 2017-12-22 03:37:21 -0300
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  Rendered courses/index.html.erb within layouts/application (5.4ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.2ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'enrolls' with type 'application/javascript'
+Checked in these paths: 
+  /home/gaston/facultad/ruby/tp/nito/app/assets/config
+  /home/gaston/facultad/ruby/tp/nito/app/assets/images
+  /home/gaston/facultad/ruby/tp/nito/app/assets/javascripts
+  /home/gaston/facultad/ruby/tp/nito/app/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/images
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/media
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actioncable-5.1.4/lib/assets/compiled
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionview-5.1.4/lib/assets/compiled
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/turbolinks-source-5.0.3/lib/assets/javascripts
+  /home/gaston/facultad/ruby/tp/nito/node_modules
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/fonts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/images:
+  app/assets/javascripts/application.js:18:in `'
+  app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__3462503734082209885_70150384873260'
+
+Started POST "/__better_errors/b6cc308afa5a1dc0/variables" for 127.0.0.1 at 2017-12-22 03:37:21 -0300
+Started GET "/courses/1" for 127.0.0.1 at 2017-12-22 03:37:24 -0300
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mTest Load (0.3ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "test_courses" ON "test_courses"."test_id" = "tests"."id" WHERE (course_id = '1')[0m
+  Rendered courses/show.html.erb within layouts/application (4.5ms)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 0.6ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'enrolls' with type 'application/javascript'
+Checked in these paths: 
+  /home/gaston/facultad/ruby/tp/nito/app/assets/config
+  /home/gaston/facultad/ruby/tp/nito/app/assets/images
+  /home/gaston/facultad/ruby/tp/nito/app/assets/javascripts
+  /home/gaston/facultad/ruby/tp/nito/app/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/images
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/media
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actioncable-5.1.4/lib/assets/compiled
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionview-5.1.4/lib/assets/compiled
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/turbolinks-source-5.0.3/lib/assets/javascripts
+  /home/gaston/facultad/ruby/tp/nito/node_modules
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/fonts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/images:
+  app/assets/javascripts/application.js:18:in `'
+  app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__3462503734082209885_70150387507140'
+
+Started POST "/__better_errors/dcdc5ef4391a0ff9/variables" for 127.0.0.1 at 2017-12-22 03:37:24 -0300
+Started GET "/courses/1" for 127.0.0.1 at 2017-12-22 03:37:24 -0300
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mTest Load (0.2ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "test_courses" ON "test_courses"."test_id" = "tests"."id" WHERE (course_id = '1')[0m
+  Rendered courses/show.html.erb within layouts/application (2.6ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.4ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'enrolls' with type 'application/javascript'
+Checked in these paths: 
+  /home/gaston/facultad/ruby/tp/nito/app/assets/config
+  /home/gaston/facultad/ruby/tp/nito/app/assets/images
+  /home/gaston/facultad/ruby/tp/nito/app/assets/javascripts
+  /home/gaston/facultad/ruby/tp/nito/app/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/images
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/media
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actioncable-5.1.4/lib/assets/compiled
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionview-5.1.4/lib/assets/compiled
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/turbolinks-source-5.0.3/lib/assets/javascripts
+  /home/gaston/facultad/ruby/tp/nito/node_modules
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/fonts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/images:
+  app/assets/javascripts/application.js:18:in `'
+  app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__3462503734082209885_70150380496360'
+
+Started POST "/__better_errors/945748fdb58b7c3c/variables" for 127.0.0.1 at 2017-12-22 03:37:24 -0300
+Started GET "/courses/1" for 127.0.0.1 at 2017-12-22 03:37:25 -0300
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mTest Load (0.3ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "test_courses" ON "test_courses"."test_id" = "tests"."id" WHERE (course_id = '1')[0m
+  Rendered courses/show.html.erb within layouts/application (3.8ms)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 0.5ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'enrolls' with type 'application/javascript'
+Checked in these paths: 
+  /home/gaston/facultad/ruby/tp/nito/app/assets/config
+  /home/gaston/facultad/ruby/tp/nito/app/assets/images
+  /home/gaston/facultad/ruby/tp/nito/app/assets/javascripts
+  /home/gaston/facultad/ruby/tp/nito/app/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/images
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/media
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actioncable-5.1.4/lib/assets/compiled
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionview-5.1.4/lib/assets/compiled
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/turbolinks-source-5.0.3/lib/assets/javascripts
+  /home/gaston/facultad/ruby/tp/nito/node_modules
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/fonts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/images:
+  app/assets/javascripts/application.js:18:in `'
+  app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__3462503734082209885_70150388160660'
+
+Started POST "/__better_errors/b9f22dfed99e7bb5/variables" for 127.0.0.1 at 2017-12-22 03:37:25 -0300
+Started GET "/courses/1" for 127.0.0.1 at 2017-12-22 03:37:25 -0300
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mTest Load (0.3ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "test_courses" ON "test_courses"."test_id" = "tests"."id" WHERE (course_id = '1')[0m
+  Rendered courses/show.html.erb within layouts/application (2.9ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.5ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'enrolls' with type 'application/javascript'
+Checked in these paths: 
+  /home/gaston/facultad/ruby/tp/nito/app/assets/config
+  /home/gaston/facultad/ruby/tp/nito/app/assets/images
+  /home/gaston/facultad/ruby/tp/nito/app/assets/javascripts
+  /home/gaston/facultad/ruby/tp/nito/app/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/images
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/media
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actioncable-5.1.4/lib/assets/compiled
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionview-5.1.4/lib/assets/compiled
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/turbolinks-source-5.0.3/lib/assets/javascripts
+  /home/gaston/facultad/ruby/tp/nito/node_modules
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/fonts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/images:
+  app/assets/javascripts/application.js:18:in `'
+  app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__3462503734082209885_70150381063780'
+
+Started POST "/__better_errors/154235754a13d92a/variables" for 127.0.0.1 at 2017-12-22 03:37:25 -0300
+Started GET "/courses/1" for 127.0.0.1 at 2017-12-22 03:37:26 -0300
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mTest Load (0.3ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "test_courses" ON "test_courses"."test_id" = "tests"."id" WHERE (course_id = '1')[0m
+  Rendered courses/show.html.erb within layouts/application (4.4ms)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 0.6ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'enrolls' with type 'application/javascript'
+Checked in these paths: 
+  /home/gaston/facultad/ruby/tp/nito/app/assets/config
+  /home/gaston/facultad/ruby/tp/nito/app/assets/images
+  /home/gaston/facultad/ruby/tp/nito/app/assets/javascripts
+  /home/gaston/facultad/ruby/tp/nito/app/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/images
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/media
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actioncable-5.1.4/lib/assets/compiled
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionview-5.1.4/lib/assets/compiled
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/turbolinks-source-5.0.3/lib/assets/javascripts
+  /home/gaston/facultad/ruby/tp/nito/node_modules
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/fonts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/images:
+  app/assets/javascripts/application.js:18:in `'
+  app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__3462503734082209885_70150388440580'
+
+Started POST "/__better_errors/c3acff38a767a04b/variables" for 127.0.0.1 at 2017-12-22 03:37:26 -0300
+Started GET "/courses/1" for 127.0.0.1 at 2017-12-22 03:37:26 -0300
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mTest Load (0.3ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "test_courses" ON "test_courses"."test_id" = "tests"."id" WHERE (course_id = '1')[0m
+  Rendered courses/show.html.erb within layouts/application (4.3ms)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 0.5ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'enrolls' with type 'application/javascript'
+Checked in these paths: 
+  /home/gaston/facultad/ruby/tp/nito/app/assets/config
+  /home/gaston/facultad/ruby/tp/nito/app/assets/images
+  /home/gaston/facultad/ruby/tp/nito/app/assets/javascripts
+  /home/gaston/facultad/ruby/tp/nito/app/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/images
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/media
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actioncable-5.1.4/lib/assets/compiled
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionview-5.1.4/lib/assets/compiled
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/turbolinks-source-5.0.3/lib/assets/javascripts
+  /home/gaston/facultad/ruby/tp/nito/node_modules
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/fonts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/images:
+  app/assets/javascripts/application.js:18:in `'
+  app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__3462503734082209885_70150381179740'
+
+Started POST "/__better_errors/1d1af2d9e4467974/variables" for 127.0.0.1 at 2017-12-22 03:37:26 -0300
+Started GET "/courses/1" for 127.0.0.1 at 2017-12-22 03:37:26 -0300
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mTest Load (0.3ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "test_courses" ON "test_courses"."test_id" = "tests"."id" WHERE (course_id = '1')[0m
+  Rendered courses/show.html.erb within layouts/application (3.4ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.6ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'enrolls' with type 'application/javascript'
+Checked in these paths: 
+  /home/gaston/facultad/ruby/tp/nito/app/assets/config
+  /home/gaston/facultad/ruby/tp/nito/app/assets/images
+  /home/gaston/facultad/ruby/tp/nito/app/assets/javascripts
+  /home/gaston/facultad/ruby/tp/nito/app/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/images
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/media
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actioncable-5.1.4/lib/assets/compiled
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionview-5.1.4/lib/assets/compiled
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/turbolinks-source-5.0.3/lib/assets/javascripts
+  /home/gaston/facultad/ruby/tp/nito/node_modules
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/fonts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/images:
+  app/assets/javascripts/application.js:18:in `'
+  app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__3462503734082209885_70150387878120'
+
+Started POST "/__better_errors/cac1e0f86131e7ae/variables" for 127.0.0.1 at 2017-12-22 03:37:27 -0300
+Started GET "/courses/1" for 127.0.0.1 at 2017-12-22 03:37:27 -0300
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mTest Load (0.3ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "test_courses" ON "test_courses"."test_id" = "tests"."id" WHERE (course_id = '1')[0m
+  Rendered courses/show.html.erb within layouts/application (3.1ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.5ms)
+
+
+
+Sprockets::FileNotFound - couldn't find file 'enrolls' with type 'application/javascript'
+Checked in these paths: 
+  /home/gaston/facultad/ruby/tp/nito/app/assets/config
+  /home/gaston/facultad/ruby/tp/nito/app/assets/images
+  /home/gaston/facultad/ruby/tp/nito/app/assets/javascripts
+  /home/gaston/facultad/ruby/tp/nito/app/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/images
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/media
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-datatables-rails-3.4.0/app/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actioncable-5.1.4/lib/assets/compiled
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/actionview-5.1.4/lib/assets/compiled
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/turbolinks-source-5.0.3/lib/assets/javascripts
+  /home/gaston/facultad/ruby/tp/nito/node_modules
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/stylesheets
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/javascripts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/fonts
+  /home/gaston/.rbenv/versions/2.4.1/lib/ruby/gems/2.4.0/gems/bootstrap-sass-3.3.7/assets/images:
+  app/assets/javascripts/application.js:18:in `'
+  app/views/layouts/application.html.erb:7:in `_app_views_layouts_application_html_erb__3462503734082209885_70150380631780'
+
+Started POST "/__better_errors/45d1b2d58b3fd2cd/variables" for 127.0.0.1 at 2017-12-22 03:37:27 -0300
+Started GET "/courses/1" for 127.0.0.1 at 2017-12-22 03:37:38 -0300
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.9ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mTest Load (0.2ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "test_courses" ON "test_courses"."test_id" = "tests"."id" WHERE (course_id = '1')[0m
+  Rendered courses/show.html.erb within layouts/application (2.8ms)
+Completed 500 Internal Server Error in 361ms (ActiveRecord: 1.1ms)
+
+
+
+Sprockets::Rails::Helper::AssetNotFound - The asset "default.js" is not present in the asset pipeline.:
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__3462503734082209885_70150386110580'
+
+Started POST "/__better_errors/cf5f3604478df41b/variables" for 127.0.0.1 at 2017-12-22 03:37:38 -0300
+Started GET "/courses/1" for 127.0.0.1 at 2017-12-22 03:37:39 -0300
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mTest Load (0.3ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "test_courses" ON "test_courses"."test_id" = "tests"."id" WHERE (course_id = '1')[0m
+  Rendered courses/show.html.erb within layouts/application (3.2ms)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 0.5ms)
+
+
+
+Sprockets::Rails::Helper::AssetNotFound - The asset "default.js" is not present in the asset pipeline.:
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__3462503734082209885_70150384697300'
+
+Started POST "/__better_errors/37db5b30a5f1380c/variables" for 127.0.0.1 at 2017-12-22 03:37:39 -0300
+Started GET "/courses/1" for 127.0.0.1 at 2017-12-22 03:37:40 -0300
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mTest Load (0.2ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "test_courses" ON "test_courses"."test_id" = "tests"."id" WHERE (course_id = '1')[0m
+  Rendered courses/show.html.erb within layouts/application (3.0ms)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 0.5ms)
+
+
+
+Sprockets::Rails::Helper::AssetNotFound - The asset "default.js" is not present in the asset pipeline.:
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__3462503734082209885_70150304863720'
+
+Started POST "/__better_errors/a6b2f26dca207ca1/variables" for 127.0.0.1 at 2017-12-22 03:37:40 -0300
+Started GET "/courses/1" for 127.0.0.1 at 2017-12-22 03:37:40 -0300
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mTest Load (0.3ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "test_courses" ON "test_courses"."test_id" = "tests"."id" WHERE (course_id = '1')[0m
+  Rendered courses/show.html.erb within layouts/application (3.8ms)
+Completed 500 Internal Server Error in 44ms (ActiveRecord: 0.6ms)
+
+
+
+Sprockets::Rails::Helper::AssetNotFound - The asset "default.js" is not present in the asset pipeline.:
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__3462503734082209885_70150379752220'
+
+Started POST "/__better_errors/9c1a718c3918d972/variables" for 127.0.0.1 at 2017-12-22 03:37:41 -0300
+Started GET "/courses/1" for 127.0.0.1 at 2017-12-22 03:37:41 -0300
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mTest Load (0.3ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "test_courses" ON "test_courses"."test_id" = "tests"."id" WHERE (course_id = '1')[0m
+  Rendered courses/show.html.erb within layouts/application (6.6ms)
+Completed 500 Internal Server Error in 78ms (ActiveRecord: 0.6ms)
+
+
+
+Sprockets::Rails::Helper::AssetNotFound - The asset "default.js" is not present in the asset pipeline.:
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__3462503734082209885_47106103113200'
+
+Started POST "/__better_errors/14bdd059cf1f886b/variables" for 127.0.0.1 at 2017-12-22 03:37:41 -0300
+Started GET "/courses/1" for 127.0.0.1 at 2017-12-22 03:37:42 -0300
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mTest Load (0.3ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "test_courses" ON "test_courses"."test_id" = "tests"."id" WHERE (course_id = '1')[0m
+  Rendered courses/show.html.erb within layouts/application (3.5ms)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 0.6ms)
+
+
+
+Sprockets::Rails::Helper::AssetNotFound - The asset "default.js" is not present in the asset pipeline.:
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__3462503734082209885_70150305413540'
+
+Started POST "/__better_errors/87b6392cba2152bf/variables" for 127.0.0.1 at 2017-12-22 03:37:42 -0300
+Started GET "/courses/1" for 127.0.0.1 at 2017-12-22 03:37:42 -0300
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mTest Load (0.3ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "test_courses" ON "test_courses"."test_id" = "tests"."id" WHERE (course_id = '1')[0m
+  Rendered courses/show.html.erb within layouts/application (3.4ms)
+Completed 500 Internal Server Error in 45ms (ActiveRecord: 0.5ms)
+
+
+
+Sprockets::Rails::Helper::AssetNotFound - The asset "default.js" is not present in the asset pipeline.:
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__3462503734082209885_70150382046620'
+
+Started POST "/__better_errors/4eb8bd3675139d66/variables" for 127.0.0.1 at 2017-12-22 03:37:42 -0300
+Started GET "/courses/1" for 127.0.0.1 at 2017-12-22 03:37:42 -0300
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mTest Load (0.4ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "test_courses" ON "test_courses"."test_id" = "tests"."id" WHERE (course_id = '1')[0m
+  Rendered courses/show.html.erb within layouts/application (5.2ms)
+Completed 500 Internal Server Error in 48ms (ActiveRecord: 0.7ms)
+
+
+
+Sprockets::Rails::Helper::AssetNotFound - The asset "default.js" is not present in the asset pipeline.:
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__3462503734082209885_70150390476000'
+
+Started POST "/__better_errors/cfff79d851946092/variables" for 127.0.0.1 at 2017-12-22 03:37:42 -0300
+Started GET "/courses/1" for 127.0.0.1 at 2017-12-22 03:37:43 -0300
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mTest Load (0.2ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "test_courses" ON "test_courses"."test_id" = "tests"."id" WHERE (course_id = '1')[0m
+  Rendered courses/show.html.erb within layouts/application (3.8ms)
+Completed 500 Internal Server Error in 43ms (ActiveRecord: 0.6ms)
+
+
+
+Sprockets::Rails::Helper::AssetNotFound - The asset "default.js" is not present in the asset pipeline.:
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__3462503734082209885_70150380250360'
+
+Started POST "/__better_errors/7d43191c6579c060/variables" for 127.0.0.1 at 2017-12-22 03:37:43 -0300
+Started GET "/courses/1" for 127.0.0.1 at 2017-12-22 03:37:43 -0300
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mTest Load (0.3ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "test_courses" ON "test_courses"."test_id" = "tests"."id" WHERE (course_id = '1')[0m
+  Rendered courses/show.html.erb within layouts/application (3.3ms)
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 0.5ms)
+
+
+
+Sprockets::Rails::Helper::AssetNotFound - The asset "default.js" is not present in the asset pipeline.:
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__3462503734082209885_70150386008840'
+
+Started POST "/__better_errors/b75530a06355ed37/variables" for 127.0.0.1 at 2017-12-22 03:37:43 -0300
+Started GET "/courses/1" for 127.0.0.1 at 2017-12-22 03:37:44 -0300
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mTest Load (0.3ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "test_courses" ON "test_courses"."test_id" = "tests"."id" WHERE (course_id = '1')[0m
+  Rendered courses/show.html.erb within layouts/application (3.7ms)
+Completed 500 Internal Server Error in 43ms (ActiveRecord: 0.5ms)
+
+
+
+Sprockets::Rails::Helper::AssetNotFound - The asset "default.js" is not present in the asset pipeline.:
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__3462503734082209885_70150377573800'
+
+Started POST "/__better_errors/64d43e9d71368b9d/variables" for 127.0.0.1 at 2017-12-22 03:37:44 -0300
+Started GET "/courses/1" for 127.0.0.1 at 2017-12-22 03:37:44 -0300
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mTest Load (0.2ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "test_courses" ON "test_courses"."test_id" = "tests"."id" WHERE (course_id = '1')[0m
+  Rendered courses/show.html.erb within layouts/application (2.7ms)
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 0.5ms)
+
+
+
+Sprockets::Rails::Helper::AssetNotFound - The asset "default.js" is not present in the asset pipeline.:
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb__3462503734082209885_70150384844080'
+
+Started POST "/__better_errors/72f91034082f85a8/variables" for 127.0.0.1 at 2017-12-22 03:37:45 -0300
+Started GET "/courses/1" for 127.0.0.1 at 2017-12-22 03:37:51 -0300
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mTest Load (0.2ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "test_courses" ON "test_courses"."test_id" = "tests"."id" WHERE (course_id = '1')[0m
+  Rendered courses/show.html.erb within layouts/application (3.3ms)
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (22.1ms)
+  Rendered layouts/_navigation.html.erb (23.7ms)
+  Rendered layouts/_messages.html.erb (0.7ms)
+Completed 200 OK in 150ms (Views: 146.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/courses/1" for 127.0.0.1 at 2017-12-22 03:37:53 -0300
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mTest Load (0.4ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "test_courses" ON "test_courses"."test_id" = "tests"."id" WHERE (course_id = '1')[0m
+  Rendered courses/show.html.erb within layouts/application (4.2ms)
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (2.2ms)
+  Rendered layouts/_navigation.html.erb (4.8ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 107ms (Views: 103.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2017-12-22 03:37:54 -0300
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  Rendered courses/index.html.erb within layouts/application (2.2ms)
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (1.8ms)
+  Rendered layouts/_navigation.html.erb (2.9ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 69ms (Views: 67.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:37:55 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (7.3ms)
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (1.9ms)
+  Rendered layouts/_navigation.html.erb (2.9ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 113ms (Views: 107.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:37:56 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.6ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (6.3ms)
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (1.9ms)
+  Rendered layouts/_navigation.html.erb (5.7ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 169ms (Views: 161.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:38:29 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (4.4ms)
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (2.5ms)
+  Rendered layouts/_navigation.html.erb (4.2ms)
+  Rendered layouts/_messages.html.erb (0.7ms)
+Completed 200 OK in 172ms (Views: 163.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:38:30 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (4.3ms)
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (1.7ms)
+  Rendered layouts/_navigation.html.erb (2.8ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 90ms (Views: 83.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:38:31 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (5.6ms)
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (1.8ms)
+  Rendered layouts/_navigation.html.erb (2.9ms)
+  Rendered layouts/_messages.html.erb (0.6ms)
+Completed 200 OK in 98ms (Views: 90.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:38:32 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (4.7ms)
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (2.3ms)
+  Rendered layouts/_navigation.html.erb (3.9ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 100ms (Views: 91.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/courses/1" for 127.0.0.1 at 2017-12-22 03:38:34 -0300
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mTest Load (0.3ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "test_courses" ON "test_courses"."test_id" = "tests"."id" WHERE (course_id = '1')[0m
+  Rendered courses/show.html.erb within layouts/application (6.0ms)
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (1.8ms)
+  Rendered layouts/_navigation.html.erb (2.9ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 86ms (Views: 83.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2017-12-22 03:38:35 -0300
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  Rendered courses/index.html.erb within layouts/application (3.8ms)
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (1.8ms)
+  Rendered layouts/_navigation.html.erb (2.9ms)
+  Rendered layouts/_messages.html.erb (0.6ms)
+Completed 200 OK in 83ms (Views: 80.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:38:37 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.8ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (8.6ms)
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (2.9ms)
+  Rendered layouts/_navigation.html.erb (5.1ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 126ms (Views: 118.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/courses/1" for 127.0.0.1 at 2017-12-22 03:38:38 -0300
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mTest Load (0.2ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "test_courses" ON "test_courses"."test_id" = "tests"."id" WHERE (course_id = '1')[0m
+  Rendered courses/show.html.erb within layouts/application (2.5ms)
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (1.7ms)
+  Rendered layouts/_navigation.html.erb (2.8ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 72ms (Views: 68.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2017-12-22 03:38:42 -0300
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  Rendered courses/index.html.erb within layouts/application (2.0ms)
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (1.8ms)
+  Rendered layouts/_navigation.html.erb (3.0ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 80ms (Views: 78.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:38:43 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (4.9ms)
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (2.6ms)
+  Rendered layouts/_navigation.html.erb (4.2ms)
+  Rendered layouts/_messages.html.erb (0.8ms)
+Completed 200 OK in 105ms (Views: 97.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:39:32 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (11.5ms)
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (2.4ms)
+  Rendered layouts/_navigation.html.erb (4.3ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 210ms (Views: 201.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:42:28 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (4.4ms)
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:42:29 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (8.6ms)
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (16.9ms)
+  Rendered layouts/_navigation.html.erb (18.9ms)
+  Rendered layouts/_messages.html.erb (0.6ms)
+Completed 200 OK in 1271ms (Views: 1234.9ms | ActiveRecord: 2.1ms)
+
+
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (2.3ms)
+  Rendered layouts/_navigation.html.erb (3.6ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 716ms (Views: 688.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:42:31 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.8ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (11.3ms)
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (2.2ms)
+  Rendered layouts/_navigation.html.erb (3.5ms)
+  Rendered layouts/_messages.html.erb (0.7ms)
+Completed 200 OK in 147ms (Views: 138.2ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:43:10 -0300
+Processing by EnrollsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hqvLMk10P66asMN7UyfX5utlBVIvW5hakAk4h1NNrluZnJAfB3PZYAZCBmnt4AMyFTKskb56R60z7S4SFziGbw==", "student_id"=>"42156456", "course_id"=>"1", "commit"=>"Enroll"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."dni" = ? LIMIT ?[0m  [["dni", 42156456], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.8ms)[0m  [1m[32mINSERT INTO "enrolls" ("student_id", "course_id") VALUES (?, ?)[0m  [["student_id", 11], ["course_id", 1]]
+  [1m[35m (139.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/courses/1/enrolls
+Completed 302 Found in 181ms (ActiveRecord: 143.5ms)
+
+
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:43:10 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.6ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (3.8ms)
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (2.1ms)
+  Rendered layouts/_navigation.html.erb (3.4ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 106ms (Views: 98.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:44:03 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.6ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (5.3ms)
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (1.8ms)
+  Rendered layouts/_navigation.html.erb (2.9ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 238ms (Views: 232.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:44:05 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (4.6ms)
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (2.1ms)
+  Rendered layouts/_navigation.html.erb (3.2ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 115ms (Views: 108.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:44:09 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (3.8ms)
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (2.2ms)
+  Rendered layouts/_navigation.html.erb (4.0ms)
+  Rendered layouts/_messages.html.erb (0.6ms)
+Completed 200 OK in 125ms (Views: 119.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:45:32 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.6ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (8.1ms)
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (2.4ms)
+  Rendered layouts/_navigation.html.erb (3.9ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 111ms (Views: 104.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/courses/1" for 127.0.0.1 at 2017-12-22 03:47:52 -0300
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mTest Load (0.2ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "test_courses" ON "test_courses"."test_id" = "tests"."id" WHERE (course_id = '1')[0m
+  Rendered courses/show.html.erb within layouts/application (14.9ms)
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (2.1ms)
+  Rendered layouts/_navigation.html.erb (3.4ms)
+  Rendered layouts/_messages.html.erb (0.6ms)
+Completed 200 OK in 117ms (Views: 110.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2017-12-22 03:48:05 -0300
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  Rendered courses/index.html.erb within layouts/application (2.5ms)
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (1.8ms)
+  Rendered layouts/_navigation.html.erb (2.9ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 87ms (Views: 85.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:48:08 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.6ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (8.1ms)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.6ms)
+
+
+
+ActionController::UrlGenerationError - No route matches {:action=>"show", :controller=>"courses", :course_id=>"1"}, missing required keys: [:id]:
+  app/views/enrolls/index.html.erb:39:in `_app_views_enrolls_index_html_erb__4528570963485844871_70038651583680'
+
+Started POST "/__better_errors/9e2cd082dd3bd3e8/variables" for 127.0.0.1 at 2017-12-22 03:48:08 -0300
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:48:09 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (5.6ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.4ms)
+
+
+
+ActionController::UrlGenerationError - No route matches {:action=>"show", :controller=>"courses", :course_id=>"1"}, missing required keys: [:id]:
+  app/views/enrolls/index.html.erb:39:in `_app_views_enrolls_index_html_erb__4528570963485844871_70038640156740'
+
+Started POST "/__better_errors/d0b49b76d6951883/variables" for 127.0.0.1 at 2017-12-22 03:48:09 -0300
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:48:10 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (7.4ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.4ms)
+
+
+
+ActionController::UrlGenerationError - No route matches {:action=>"show", :controller=>"courses", :course_id=>"1"}, missing required keys: [:id]:
+  app/views/enrolls/index.html.erb:39:in `_app_views_enrolls_index_html_erb__4528570963485844871_70038644663440'
+
+Started POST "/__better_errors/02701bd7c3240847/variables" for 127.0.0.1 at 2017-12-22 03:48:10 -0300
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:48:15 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.6ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (7.4ms)
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (1.7ms)
+  Rendered layouts/_navigation.html.erb (2.8ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 158ms (Views: 145.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2017-12-22 03:48:20 -0300
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  Rendered courses/index.html.erb within layouts/application (2.3ms)
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (1.7ms)
+  Rendered layouts/_navigation.html.erb (2.8ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 84ms (Views: 82.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/courses/1/tests/new" for 127.0.0.1 at 2017-12-22 03:48:23 -0300
+Processing by TestsController#new as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering tests/new.html.erb within layouts/application
+  Rendered tests/_form.html.erb (660.3ms)
+  Rendered tests/new.html.erb within layouts/application (661.7ms)
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (1.8ms)
+  Rendered layouts/_navigation.html.erb (2.9ms)
+  Rendered layouts/_messages.html.erb (0.8ms)
+Completed 200 OK in 749ms (Views: 745.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2017-12-22 03:48:26 -0300
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  Rendered courses/index.html.erb within layouts/application (3.0ms)
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (2.1ms)
+  Rendered layouts/_navigation.html.erb (3.4ms)
+  Rendered layouts/_messages.html.erb (0.6ms)
+Completed 200 OK in 93ms (Views: 86.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/courses/1" for 127.0.0.1 at 2017-12-22 03:48:27 -0300
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mTest Load (0.3ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "test_courses" ON "test_courses"."test_id" = "tests"."id" WHERE (course_id = '1')[0m
+  Rendered courses/show.html.erb within layouts/application (3.8ms)
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (2.3ms)
+  Rendered layouts/_navigation.html.erb (4.7ms)
+  Rendered layouts/_messages.html.erb (0.7ms)
+Completed 200 OK in 109ms (Views: 105.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2017-12-22 03:48:52 -0300
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  Rendered courses/index.html.erb within layouts/application (4.1ms)
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (5.1ms)
+  Rendered layouts/_navigation.html.erb (7.0ms)
+  Rendered layouts/_messages.html.erb (0.6ms)
+Completed 200 OK in 102ms (Views: 99.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/courses/1" for 127.0.0.1 at 2017-12-22 03:48:54 -0300
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mTest Load (0.3ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "test_courses" ON "test_courses"."test_id" = "tests"."id" WHERE (course_id = '1')[0m
+  Rendered courses/show.html.erb within layouts/application (7.8ms)
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (1.9ms)
+  Rendered layouts/_navigation.html.erb (3.0ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 106ms (Views: 103.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/courses/1/edit" for 127.0.0.1 at 2017-12-22 03:48:55 -0300
+Processing by CoursesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (1.0ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering courses/edit.html.erb within layouts/application
+  Rendered courses/_form.html.erb (3.4ms)
+  Rendered courses/edit.html.erb within layouts/application (14.6ms)
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (2.9ms)
+  Rendered layouts/_navigation.html.erb (4.4ms)
+  Rendered layouts/_messages.html.erb (0.7ms)
+Completed 200 OK in 113ms (Views: 103.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2017-12-22 03:48:57 -0300
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  Rendered courses/index.html.erb within layouts/application (3.9ms)
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (1.9ms)
+  Rendered layouts/_navigation.html.erb (3.0ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 106ms (Views: 104.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/courses/1/edit" for 127.0.0.1 at 2017-12-22 03:49:00 -0300
+Processing by CoursesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering courses/edit.html.erb within layouts/application
+  Rendered courses/_form.html.erb (3.9ms)
+  Rendered courses/edit.html.erb within layouts/application (5.4ms)
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (1.8ms)
+  Rendered layouts/_navigation.html.erb (3.3ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 114ms (Views: 111.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2017-12-22 03:49:01 -0300
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.5ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  Rendered courses/index.html.erb within layouts/application (5.5ms)
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (2.4ms)
+  Rendered layouts/_navigation.html.erb (3.9ms)
+  Rendered layouts/_messages.html.erb (0.7ms)
+Completed 200 OK in 100ms (Views: 97.6ms | ActiveRecord: 0.9ms)
+
+

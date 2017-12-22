@@ -3,7 +3,10 @@
 <table>
   <thead>
     <tr>
-      <th colspan="3"></th>
+      <th>Students</th>
+      <% @tests.each do |test| %>
+        <th><%= test.title %></th>
+      <% end %>
     </tr>
   </thead>
 
