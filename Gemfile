@@ -49,6 +49,8 @@ gem 'high_voltage'
 
 gem 'jquery-rails'
 
+gem 'jquery-datatables-rails'
+
 group :production do
   gem 'pg'
 end

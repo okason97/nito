@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  resources :enrolls, only: [:new, :create]
   resources :courses do
     resources :tests, only: [:new, :create, :update, :destroy, :edit]
+    resources :enrolls, only: [:index, :update, :destroy, :create]
   end
   resources :students
   resources :scores, only: [:new, :create, :update, :destroy]

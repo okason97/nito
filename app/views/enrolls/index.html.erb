@@ -2,19 +2,32 @@
 
 <h1>Enrolls</h1>
 
-<table>
+<table id="enrolls-table" class="display responsive no-wrap" cellspacing="0" width="100%">
   <thead>
     <tr>
-      <th colspan="3"></th>
+      <th>Full Name</th>
+      <th>DNI</th>
+      <th>Legajo</th>
+      <th>Enrolled</th>
     </tr>
   </thead>
 
   <tbody>
-    <% @enrolls.each do |enroll| %>
+    <% @students.each do |student| %>
       <tr>
-        <td><%= link_to 'Show', enroll %></td>
-        <td><%= link_to 'Edit', edit_enroll_path(enroll) %></td>
-        <td><%= link_to 'Destroy', enroll, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= student.first_name + ' ' + student.last_name %></td>
+        <td><%= student.dni %></td>
+        <td><%= student.legajo %></td>
+        <% if student.respond_to?(:enroll_id) %>
+          <td><%= link_to 'Disenroll', delete_course_enroll_path(@course, student.enroll_id), data: { confirm: 'Are you sure?' } %></td>
+        <% else %>
+          <td>
+            <%= form_tag("/courses/#{@course}/enrolls", method: "post") do %>
+              <%= hidden_field_tag(:student_id, student.id) %>
+              <%= submit_tag("Enroll") %>
+            <% end %>
+          </td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -22,4 +35,4 @@
 
 <br>
 
-<%= link_to 'New Enroll', new_enroll_path %>
+<%= link_to 'Back', @course %>

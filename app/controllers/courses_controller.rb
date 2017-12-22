@@ -11,10 +11,6 @@ class CoursesController < ApplicationController
   # GET /courses/1.json
   def show
     @tests = Test.joins(:test_course).where("course_id = ?", params[:id])
-    puts "TESTS"
-    for value in @tests do
-      puts value.title      
-    end
   end
 
   # GET /courses/new

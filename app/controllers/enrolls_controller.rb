@@ -4,7 +4,9 @@ class EnrollsController < ApplicationController
   # GET /enrolls
   # GET /enrolls.json
   def index
-    @enrolls = Enroll.all
+    @course = params[:course_id]
+    @students = Student.left_outer_joins(Enroll.where('course_id=?', @course))
+    puts @students.as_json
   end
 
   # GET /enrolls/1
@@ -21,7 +23,7 @@ class EnrollsController < ApplicationController
   def edit
   end
 
-  # POST /enrolls
+  # POST /course/:course_id/enrolls
   # POST /enrolls.json
   def create
     @enroll = Enroll.new(enroll_params)
