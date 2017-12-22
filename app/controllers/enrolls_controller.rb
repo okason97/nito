@@ -5,7 +5,7 @@ class EnrollsController < ApplicationController
   # GET /enrolls.json
   def index
     @course = params[:course_id]
-    @students = Student.left_outer_joins(Enroll.where('course_id=?', @course))
+    @students = Student.left_join_enrolls @course
     puts @students.as_json
   end
 
@@ -26,12 +26,14 @@ class EnrollsController < ApplicationController
   # POST /course/:course_id/enrolls
   # POST /enrolls.json
   def create
-    @enroll = Enroll.new(enroll_params)
+    course = Course.find(params[:course_id])
+    student = Student.find_by(dni: params[:student_id])
+    @enroll = Enroll.new( student: student, course: course)
 
     respond_to do |format|
       if @enroll.save
-        format.html { redirect_to @enroll, notice: 'Enroll was successfully created.' }
-        format.json { render :show, status: :created, location: @enroll }
+        format.html { redirect_to course_enrolls_path(course), notice: 'Enroll was successfully created.' }
+        format.json { render :show, status: :created, location: course_enrolls_path(course) }
       else
         format.html { render :new }
         format.json { render json: @enroll.errors, status: :unprocessable_entity }
@@ -56,9 +58,10 @@ class EnrollsController < ApplicationController
   # DELETE /enrolls/1
   # DELETE /enrolls/1.json
   def destroy
+    course = Course.find(params[:course_id])
     @enroll.destroy
     respond_to do |format|
-      format.html { redirect_to enrolls_url, notice: 'Enroll was successfully destroyed.' }
+      format.html { redirect_to course_enrolls_path(course), notice: 'Enroll was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

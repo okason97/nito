@@ -18254,3 +18254,2207 @@ NameError - undefined local variable or method `enrolls_path' for #<#<Class:0x00
   app/controllers/enrolls_controller.rb:31:in `create'
 
 Started POST "/__better_errors/eb27c946b4690931/variables" for 127.0.0.1 at 2017-12-22 02:19:25 -0300
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 02:25:50 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mEnroll Load (0.2ms)[0m  [1m[34mSELECT "enrolls".* FROM "enrolls" WHERE (course_id='1')[0m
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students"[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (6.0ms)
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (17.4ms)
+  Rendered layouts/_navigation.html.erb (18.8ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 127ms (Views: 101.4ms | ActiveRecord: 3.5ms)
+
+
+Started POST "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 02:25:52 -0300
+Processing by EnrollsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9AlcXGMoITYdTuv8yeK2uE2rjYKu/zxpSQNUehZHqy/rPgdxKS/H+IG8Lu53JWJss/wkQT/e457q50LvUjKDGw==", "student_id"=>"1", "course_id"=>"1", "commit"=>"Enroll"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "enrolls" ("student_id", "course_id") VALUES (?, ?)[0m  [["student_id", 1], ["course_id", 1]]
+  [1m[35m (77.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/courses/1/enrolls
+Completed 302 Found in 124ms (ActiveRecord: 79.7ms)
+
+
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 02:25:52 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mEnroll Load (0.2ms)[0m  [1m[34mSELECT "enrolls".* FROM "enrolls" WHERE (course_id='1')[0m
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.2ms)
+
+
+
+ArgumentError - only Hash, Symbol and Array are allowed:
+  app/controllers/enrolls_controller.rb:9:in `index'
+
+Started POST "/__better_errors/a462bd7d0a979fac/variables" for 127.0.0.1 at 2017-12-22 02:25:52 -0300
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 02:26:43 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mEnroll Load (0.2ms)[0m  [1m[34mSELECT "enrolls".* FROM "enrolls" WHERE (course_id='1')[0m
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 1.2ms)
+
+
+
+ArgumentError - only Hash, Symbol and Array are allowed:
+  app/controllers/enrolls_controller.rb:9:in `index'
+
+Started POST "/__better_errors/e0f531c360749b99/variables" for 127.0.0.1 at 2017-12-22 02:26:43 -0300
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 02:26:44 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mEnroll Load (0.3ms)[0m  [1m[34mSELECT "enrolls".* FROM "enrolls" WHERE (course_id='1')[0m
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.3ms)
+
+
+
+ArgumentError - only Hash, Symbol and Array are allowed:
+  app/controllers/enrolls_controller.rb:9:in `index'
+
+Started POST "/__better_errors/da019fd1061aded1/variables" for 127.0.0.1 at 2017-12-22 02:26:44 -0300
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 02:26:44 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mEnroll Load (0.3ms)[0m  [1m[34mSELECT "enrolls".* FROM "enrolls" WHERE (course_id='1')[0m
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.3ms)
+
+
+
+ArgumentError - only Hash, Symbol and Array are allowed:
+  app/controllers/enrolls_controller.rb:9:in `index'
+
+Started POST "/__better_errors/dc84d6c430c43e58/variables" for 127.0.0.1 at 2017-12-22 02:26:44 -0300
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 02:26:44 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mEnroll Load (0.3ms)[0m  [1m[34mSELECT "enrolls".* FROM "enrolls" WHERE (course_id='1')[0m
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.3ms)
+
+
+
+ArgumentError - only Hash, Symbol and Array are allowed:
+  app/controllers/enrolls_controller.rb:9:in `index'
+
+Started POST "/__better_errors/c74b1dc608b95066/variables" for 127.0.0.1 at 2017-12-22 02:26:44 -0300
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 02:26:44 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mEnroll Load (0.3ms)[0m  [1m[34mSELECT "enrolls".* FROM "enrolls" WHERE (course_id='1')[0m
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.3ms)
+
+
+
+ArgumentError - only Hash, Symbol and Array are allowed:
+  app/controllers/enrolls_controller.rb:9:in `index'
+
+Started POST "/__better_errors/077a148f3234956c/variables" for 127.0.0.1 at 2017-12-22 02:26:44 -0300
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 02:26:45 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mEnroll Load (0.3ms)[0m  [1m[34mSELECT "enrolls".* FROM "enrolls" WHERE (course_id='1')[0m
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.3ms)
+
+
+
+ArgumentError - only Hash, Symbol and Array are allowed:
+  app/controllers/enrolls_controller.rb:9:in `index'
+
+Started POST "/__better_errors/0a372d5bba6ebe64/variables" for 127.0.0.1 at 2017-12-22 02:26:45 -0300
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 02:26:46 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mEnroll Load (0.3ms)[0m  [1m[34mSELECT "enrolls".* FROM "enrolls" WHERE (course_id='1')[0m
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.3ms)
+
+
+
+ArgumentError - only Hash, Symbol and Array are allowed:
+  app/controllers/enrolls_controller.rb:9:in `index'
+
+Started POST "/__better_errors/f6011ae85d915eb8/variables" for 127.0.0.1 at 2017-12-22 02:26:46 -0300
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 02:26:46 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mEnroll Load (0.3ms)[0m  [1m[34mSELECT "enrolls".* FROM "enrolls" WHERE (course_id='1')[0m
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.3ms)
+
+
+
+ArgumentError - only Hash, Symbol and Array are allowed:
+  app/controllers/enrolls_controller.rb:9:in `index'
+
+Started POST "/__better_errors/efc774747b5a308c/variables" for 127.0.0.1 at 2017-12-22 02:26:46 -0300
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 02:26:46 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mEnroll Load (0.4ms)[0m  [1m[34mSELECT "enrolls".* FROM "enrolls" WHERE (course_id='1')[0m
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.4ms)
+
+
+
+ArgumentError - only Hash, Symbol and Array are allowed:
+  app/controllers/enrolls_controller.rb:9:in `index'
+
+Started POST "/__better_errors/48af366019d9fd37/variables" for 127.0.0.1 at 2017-12-22 02:26:47 -0300
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 02:26:56 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mEnroll Load (0.2ms)[0m  [1m[34mSELECT "enrolls".* FROM "enrolls" WHERE (course_id='1')[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (2.1ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 1.4ms)
+
+
+
+ArgumentError - only Hash, Symbol and Array are allowed:
+  app/views/enrolls/index.html.erb:16:in `_app_views_enrolls_index_html_erb__3657794422829846931_69838935614400'
+
+Started POST "/__better_errors/dcf463a6487bc9c8/variables" for 127.0.0.1 at 2017-12-22 02:26:56 -0300
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 02:26:56 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mEnroll Load (0.3ms)[0m  [1m[34mSELECT "enrolls".* FROM "enrolls" WHERE (course_id='1')[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (2.0ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.3ms)
+
+
+
+ArgumentError - only Hash, Symbol and Array are allowed:
+  app/views/enrolls/index.html.erb:16:in `_app_views_enrolls_index_html_erb__3657794422829846931_69838960409260'
+
+Started POST "/__better_errors/6d95654fb1e95501/variables" for 127.0.0.1 at 2017-12-22 02:26:56 -0300
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 02:26:57 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mEnroll Load (0.3ms)[0m  [1m[34mSELECT "enrolls".* FROM "enrolls" WHERE (course_id='1')[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (2.8ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.3ms)
+
+
+
+ArgumentError - only Hash, Symbol and Array are allowed:
+  app/views/enrolls/index.html.erb:16:in `_app_views_enrolls_index_html_erb__3657794422829846931_69838855129040'
+
+Started POST "/__better_errors/798993cb1d780828/variables" for 127.0.0.1 at 2017-12-22 02:26:57 -0300
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 02:26:57 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mEnroll Load (0.3ms)[0m  [1m[34mSELECT "enrolls".* FROM "enrolls" WHERE (course_id='1')[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (2.7ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.3ms)
+
+
+
+ArgumentError - only Hash, Symbol and Array are allowed:
+  app/views/enrolls/index.html.erb:16:in `_app_views_enrolls_index_html_erb__3657794422829846931_69838968822000'
+
+Started POST "/__better_errors/c064769d06dfd01f/variables" for 127.0.0.1 at 2017-12-22 02:26:57 -0300
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 02:27:01 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mEnroll Load (0.2ms)[0m  [1m[34mSELECT "enrolls".* FROM "enrolls" WHERE (course_id='1')[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (1.9ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.2ms)
+
+
+
+ArgumentError - only Hash, Symbol and Array are allowed:
+  app/views/enrolls/index.html.erb:16:in `_app_views_enrolls_index_html_erb__3657794422829846931_69838964251960'
+
+Started POST "/__better_errors/78a6292efca8054c/variables" for 127.0.0.1 at 2017-12-22 02:27:02 -0300
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 02:27:02 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mEnroll Load (0.2ms)[0m  [1m[34mSELECT "enrolls".* FROM "enrolls" WHERE (course_id='1')[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (1.9ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.2ms)
+
+
+
+ArgumentError - only Hash, Symbol and Array are allowed:
+  app/views/enrolls/index.html.erb:16:in `_app_views_enrolls_index_html_erb__3657794422829846931_69838959527020'
+
+Started POST "/__better_errors/ce1e4bebbcaa4f00/variables" for 127.0.0.1 at 2017-12-22 02:27:02 -0300
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 02:27:03 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mEnroll Load (0.2ms)[0m  [1m[34mSELECT "enrolls".* FROM "enrolls" WHERE (course_id='1')[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (1.7ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.2ms)
+
+
+
+ArgumentError - only Hash, Symbol and Array are allowed:
+  app/views/enrolls/index.html.erb:16:in `_app_views_enrolls_index_html_erb__3657794422829846931_69838940810280'
+
+Started POST "/__better_errors/37f19836939c4c91/variables" for 127.0.0.1 at 2017-12-22 02:27:03 -0300
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 02:27:03 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mEnroll Load (0.3ms)[0m  [1m[34mSELECT "enrolls".* FROM "enrolls" WHERE (course_id='1')[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (2.3ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.3ms)
+
+
+
+ArgumentError - only Hash, Symbol and Array are allowed:
+  app/views/enrolls/index.html.erb:16:in `_app_views_enrolls_index_html_erb__3657794422829846931_47386826566520'
+
+Started POST "/__better_errors/366f5afe2ffacad4/variables" for 127.0.0.1 at 2017-12-22 02:27:03 -0300
+Started GET "/courses/1" for 127.0.0.1 at 2017-12-22 02:27:30 -0300
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mTest Load (0.1ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "test_courses" ON "test_courses"."test_id" = "tests"."id" WHERE (course_id = '1')[0m
+  Rendered courses/show.html.erb within layouts/application (33.8ms)
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (15.7ms)
+  Rendered layouts/_navigation.html.erb (17.1ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 141ms (Views: 110.5ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2017-12-22 02:27:33 -0300
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  Rendered courses/index.html.erb within layouts/application (1.7ms)
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (1.5ms)
+  Rendered layouts/_navigation.html.erb (2.4ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 55ms (Views: 53.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/courses/1" for 127.0.0.1 at 2017-12-22 02:27:36 -0300
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mTest Load (0.3ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "test_courses" ON "test_courses"."test_id" = "tests"."id" WHERE (course_id = '1')[0m
+  Rendered courses/show.html.erb within layouts/application (2.6ms)
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (1.9ms)
+  Rendered layouts/_navigation.html.erb (3.3ms)
+  Rendered layouts/_messages.html.erb (0.6ms)
+Completed 200 OK in 90ms (Views: 86.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2017-12-22 02:27:39 -0300
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  Rendered courses/index.html.erb within layouts/application (3.3ms)
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (1.6ms)
+  Rendered layouts/_navigation.html.erb (2.6ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 94ms (Views: 92.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 02:27:40 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mEnroll Load (0.3ms)[0m  [1m[34mSELECT "enrolls".* FROM "enrolls" WHERE (course_id='1')[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (2.8ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.3ms)
+
+
+
+ArgumentError - only Hash, Symbol and Array are allowed:
+  app/views/enrolls/index.html.erb:16:in `_app_views_enrolls_index_html_erb__3657794422829846931_69838946027860'
+
+Started POST "/__better_errors/c7dfb4fc242756f1/variables" for 127.0.0.1 at 2017-12-22 02:27:40 -0300
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 02:28:36 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mEnroll Load (0.2ms)[0m  [1m[34mSELECT "enrolls".* FROM "enrolls" WHERE (course_id='1')[0m
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 1.3ms)
+
+
+
+ArgumentError - only Hash, Symbol and Array are allowed:
+  app/controllers/enrolls_controller.rb:9:in `puts'
+  app/controllers/enrolls_controller.rb:9:in `puts'
+  app/controllers/enrolls_controller.rb:9:in `index'
+
+Started POST "/__better_errors/81adf1543dc22a08/variables" for 127.0.0.1 at 2017-12-22 02:28:36 -0300
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 02:28:37 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mEnroll Load (0.3ms)[0m  [1m[34mSELECT "enrolls".* FROM "enrolls" WHERE (course_id='1')[0m
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.3ms)
+
+
+
+ArgumentError - only Hash, Symbol and Array are allowed:
+  app/controllers/enrolls_controller.rb:9:in `puts'
+  app/controllers/enrolls_controller.rb:9:in `puts'
+  app/controllers/enrolls_controller.rb:9:in `index'
+
+Started POST "/__better_errors/729b9c7e8aee75fe/variables" for 127.0.0.1 at 2017-12-22 02:28:37 -0300
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 02:28:37 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mEnroll Load (0.2ms)[0m  [1m[34mSELECT "enrolls".* FROM "enrolls" WHERE (course_id='1')[0m
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.2ms)
+
+
+
+ArgumentError - only Hash, Symbol and Array are allowed:
+  app/controllers/enrolls_controller.rb:9:in `puts'
+  app/controllers/enrolls_controller.rb:9:in `puts'
+  app/controllers/enrolls_controller.rb:9:in `index'
+
+Started POST "/__better_errors/67c5ece38892ca8a/variables" for 127.0.0.1 at 2017-12-22 02:28:38 -0300
+Started POST "/__better_errors/67c5ece38892ca8a/variables" for 127.0.0.1 at 2017-12-22 02:28:38 -0300
+Started POST "/__better_errors/67c5ece38892ca8a/variables" for 127.0.0.1 at 2017-12-22 02:28:39 -0300
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 02:46:06 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = ?) as e 
+                ON e.student_id = student.id[0m
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.6ms)
+
+
+
+SQLite3::SQLException - no such column: student.id:
+  app/controllers/enrolls_controller.rb:9:in `puts'
+  app/controllers/enrolls_controller.rb:9:in `puts'
+  app/controllers/enrolls_controller.rb:9:in `index'
+
+Started POST "/__better_errors/211d6a1e65bf3792/variables" for 127.0.0.1 at 2017-12-22 02:46:06 -0300
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT  "students".* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = ?) as e 
+                ON e.student_id = student.id LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 02:46:07 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT "students".* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = ?) as e 
+                ON e.student_id = student.id[0m
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.5ms)
+
+
+
+SQLite3::SQLException - no such column: student.id:
+  app/controllers/enrolls_controller.rb:9:in `puts'
+  app/controllers/enrolls_controller.rb:9:in `puts'
+  app/controllers/enrolls_controller.rb:9:in `index'
+
+Started POST "/__better_errors/89003607ade44883/variables" for 127.0.0.1 at 2017-12-22 02:46:07 -0300
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT  "students".* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = ?) as e 
+                ON e.student_id = student.id LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 02:46:07 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT "students".* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = ?) as e 
+                ON e.student_id = student.id[0m
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.4ms)
+
+
+
+SQLite3::SQLException - no such column: student.id:
+  app/controllers/enrolls_controller.rb:9:in `puts'
+  app/controllers/enrolls_controller.rb:9:in `puts'
+  app/controllers/enrolls_controller.rb:9:in `index'
+
+Started POST "/__better_errors/166ef811ea6354af/variables" for 127.0.0.1 at 2017-12-22 02:46:07 -0300
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT  "students".* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = ?) as e 
+                ON e.student_id = student.id LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 02:46:07 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.6ms)[0m  [1m[34mSELECT "students".* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = ?) as e 
+                ON e.student_id = student.id[0m
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.6ms)
+
+
+
+SQLite3::SQLException - no such column: student.id:
+  app/controllers/enrolls_controller.rb:9:in `puts'
+  app/controllers/enrolls_controller.rb:9:in `puts'
+  app/controllers/enrolls_controller.rb:9:in `index'
+
+Started POST "/__better_errors/074c797686c11872/variables" for 127.0.0.1 at 2017-12-22 02:46:07 -0300
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT  "students".* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = ?) as e 
+                ON e.student_id = student.id LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 02:46:08 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT "students".* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = ?) as e 
+                ON e.student_id = student.id[0m
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.5ms)
+
+
+
+SQLite3::SQLException - no such column: student.id:
+  app/controllers/enrolls_controller.rb:9:in `puts'
+  app/controllers/enrolls_controller.rb:9:in `puts'
+  app/controllers/enrolls_controller.rb:9:in `index'
+
+Started POST "/__better_errors/f9a9350478d27005/variables" for 127.0.0.1 at 2017-12-22 02:46:08 -0300
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT  "students".* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = ?) as e 
+                ON e.student_id = student.id LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 02:46:09 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT "students".* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = ?) as e 
+                ON e.student_id = student.id[0m
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.5ms)
+
+
+
+SQLite3::SQLException - no such column: student.id:
+  app/controllers/enrolls_controller.rb:9:in `puts'
+  app/controllers/enrolls_controller.rb:9:in `puts'
+  app/controllers/enrolls_controller.rb:9:in `index'
+
+Started POST "/__better_errors/d105182820a0898e/variables" for 127.0.0.1 at 2017-12-22 02:46:09 -0300
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT  "students".* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = ?) as e 
+                ON e.student_id = student.id LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 02:46:10 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT "students".* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = ?) as e 
+                ON e.student_id = student.id[0m
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.5ms)
+
+
+
+SQLite3::SQLException - no such column: student.id:
+  app/controllers/enrolls_controller.rb:9:in `puts'
+  app/controllers/enrolls_controller.rb:9:in `puts'
+  app/controllers/enrolls_controller.rb:9:in `index'
+
+Started POST "/__better_errors/b86875368a713919/variables" for 127.0.0.1 at 2017-12-22 02:46:10 -0300
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT  "students".* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = ?) as e 
+                ON e.student_id = student.id LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 02:46:10 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT "students".* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = ?) as e 
+                ON e.student_id = student.id[0m
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.5ms)
+
+
+
+SQLite3::SQLException - no such column: student.id:
+  app/controllers/enrolls_controller.rb:9:in `puts'
+  app/controllers/enrolls_controller.rb:9:in `puts'
+  app/controllers/enrolls_controller.rb:9:in `index'
+
+Started POST "/__better_errors/67c1a385e32a89d4/variables" for 127.0.0.1 at 2017-12-22 02:46:10 -0300
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT  "students".* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = ?) as e 
+                ON e.student_id = student.id LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 02:46:10 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.6ms)[0m  [1m[34mSELECT "students".* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = ?) as e 
+                ON e.student_id = student.id[0m
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.6ms)
+
+
+
+SQLite3::SQLException - no such column: student.id:
+  app/controllers/enrolls_controller.rb:9:in `puts'
+  app/controllers/enrolls_controller.rb:9:in `puts'
+  app/controllers/enrolls_controller.rb:9:in `index'
+
+Started POST "/__better_errors/41f5ff237fe457a3/variables" for 127.0.0.1 at 2017-12-22 02:46:10 -0300
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT  "students".* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = ?) as e 
+                ON e.student_id = student.id LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 02:49:24 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = student.id[0m
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.6ms)
+
+
+
+SQLite3::SQLException - no such column: student.id:
+  app/controllers/enrolls_controller.rb:9:in `puts'
+  app/controllers/enrolls_controller.rb:9:in `puts'
+  app/controllers/enrolls_controller.rb:9:in `index'
+
+Started POST "/__better_errors/7f91973813532702/variables" for 127.0.0.1 at 2017-12-22 02:49:24 -0300
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT  "students".* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = student.id LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 02:49:25 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.6ms)[0m  [1m[34mSELECT "students".* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = student.id[0m
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.6ms)
+
+
+
+SQLite3::SQLException - no such column: student.id:
+  app/controllers/enrolls_controller.rb:9:in `puts'
+  app/controllers/enrolls_controller.rb:9:in `puts'
+  app/controllers/enrolls_controller.rb:9:in `index'
+
+Started POST "/__better_errors/9ebce6721057d7ea/variables" for 127.0.0.1 at 2017-12-22 02:49:25 -0300
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT  "students".* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = student.id LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 02:49:25 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT "students".* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = student.id[0m
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.5ms)
+
+
+
+SQLite3::SQLException - no such column: student.id:
+  app/controllers/enrolls_controller.rb:9:in `puts'
+  app/controllers/enrolls_controller.rb:9:in `puts'
+  app/controllers/enrolls_controller.rb:9:in `index'
+
+Started POST "/__better_errors/aa9cbae0ef6d5734/variables" for 127.0.0.1 at 2017-12-22 02:49:25 -0300
+  [1m[36mStudent Load (0.6ms)[0m  [1m[34mSELECT  "students".* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = student.id LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 02:49:25 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT "students".* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = student.id[0m
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.5ms)
+
+
+
+SQLite3::SQLException - no such column: student.id:
+  app/controllers/enrolls_controller.rb:9:in `puts'
+  app/controllers/enrolls_controller.rb:9:in `puts'
+  app/controllers/enrolls_controller.rb:9:in `index'
+
+Started POST "/__better_errors/8c7d3cc128bd418c/variables" for 127.0.0.1 at 2017-12-22 02:49:25 -0300
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT  "students".* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = student.id LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 02:50:32 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT "students".* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (4.1ms)
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (18.8ms)
+  Rendered layouts/_navigation.html.erb (20.3ms)
+  Rendered layouts/_messages.html.erb (0.6ms)
+Completed 200 OK in 113ms (Views: 97.5ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 02:50:39 -0300
+Processing by EnrollsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lJma9uKvPMwtBtzxrfrraKaiE/u+avKEycauBhH5VsGLrsHbqKjaArH0GeMTPT+8WPW6OC9LLXNqIriTVYx+9Q==", "student_id"=>"1", "course_id"=>"1", "commit"=>"Enroll"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "enrolls" ("student_id", "course_id") VALUES (?, ?)[0m  [["student_id", 1], ["course_id", 1]]
+  [1m[35m (108.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/courses/1/enrolls
+Completed 302 Found in 133ms (ActiveRecord: 110.7ms)
+
+
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 02:50:39 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.8ms)[0m  [1m[34mSELECT "students".* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (5.9ms)
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (1.8ms)
+  Rendered layouts/_navigation.html.erb (3.2ms)
+  Rendered layouts/_messages.html.erb (0.7ms)
+Completed 200 OK in 97ms (Views: 91.7ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 02:50:46 -0300
+Processing by EnrollsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"T7oTJPt3smHPR8iXKMxEGXORm8Q3kY2CtrzdsB57rDVQjUgJsXBUr1O1DYWWC5DNjcYyB6awUnUVWMslWg6EAQ==", "student_id"=>"1", "course_id"=>"1", "commit"=>"Enroll"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "enrolls" ("student_id", "course_id") VALUES (?, ?)[0m  [["student_id", 1], ["course_id", 1]]
+  [1m[35m (62.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/courses/1/enrolls
+Completed 302 Found in 70ms (ActiveRecord: 64.0ms)
+
+
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 02:50:46 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (5.4ms)
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (1.5ms)
+  Rendered layouts/_navigation.html.erb (2.5ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 69ms (Views: 66.4ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 02:50:47 -0300
+Processing by EnrollsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qKv3pyIY+IDiXEDbNnEnAcX6c6Poo3DJpA9QDids2sW3nKyKaB8eTn6uhcmItvPVO63aYHmCrz4H60abYxny8Q==", "student_id"=>"1", "course_id"=>"1", "commit"=>"Enroll"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.8ms)[0m  [1m[32mINSERT INTO "enrolls" ("student_id", "course_id") VALUES (?, ?)[0m  [["student_id", 1], ["course_id", 1]]
+  [1m[35m (184.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/courses/1/enrolls
+Completed 302 Found in 192ms (ActiveRecord: 186.2ms)
+
+
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 02:50:47 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT "students".* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (5.7ms)
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (1.6ms)
+  Rendered layouts/_navigation.html.erb (2.6ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 88ms (Views: 84.8ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 02:50:52 -0300
+Processing by EnrollsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jDADdDm0xBLyq2vSt6p12mjo6Z5FNKBXgFNY/WGyetuTB1hZc7Mi3G5ZrsAJbaEOlr9AXdQVf6Ajt05oJcdS7w==", "student_id"=>"1", "course_id"=>"1", "commit"=>"Enroll"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "enrolls" ("student_id", "course_id") VALUES (?, ?)[0m  [["student_id", 1], ["course_id", 1]]
+  [1m[35m (188.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/courses/1/enrolls
+Completed 302 Found in 194ms (ActiveRecord: 188.8ms)
+
+
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 02:50:53 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT "students".* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (5.9ms)
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (1.9ms)
+  Rendered layouts/_navigation.html.erb (2.9ms)
+  Rendered layouts/_messages.html.erb (0.6ms)
+Completed 200 OK in 89ms (Views: 85.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 02:56:48 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (5.1ms)
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (18.4ms)
+  Rendered layouts/_navigation.html.erb (20.2ms)
+  Rendered layouts/_messages.html.erb (0.8ms)
+Completed 200 OK in 113ms (Views: 97.4ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 02:57:52 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT "students".* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (5.6ms)
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (16.3ms)
+  Rendered layouts/_navigation.html.erb (18.0ms)
+  Rendered layouts/_messages.html.erb (0.7ms)
+Completed 200 OK in 124ms (Views: 106.5ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 02:58:00 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.7ms)[0m  [1m[34mSELECT "students".* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (4.8ms)
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (1.8ms)
+  Rendered layouts/_navigation.html.erb (3.3ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 90ms (Views: 86.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 02:59:52 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (5.1ms)
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (18.3ms)
+  Rendered layouts/_navigation.html.erb (19.9ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 121ms (Views: 97.7ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:01:22 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT "students".* FROM "students" INNER JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (2.3ms)
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (25.1ms)
+  Rendered layouts/_navigation.html.erb (26.3ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 120ms (Views: 104.0ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:03:15 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT students.*, enrolls.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.9ms)
+
+
+
+SQLite3::SQLException - no such table: enrolls:
+  app/controllers/enrolls_controller.rb:9:in `index'
+
+Started POST "/__better_errors/ace9ef4c039ea015/variables" for 127.0.0.1 at 2017-12-22 03:03:15 -0300
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT  students.*, enrolls.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:03:16 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT students.*, enrolls.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.5ms)
+
+
+
+SQLite3::SQLException - no such table: enrolls:
+  app/controllers/enrolls_controller.rb:9:in `index'
+
+Started POST "/__better_errors/768ff5fbbbdef50c/variables" for 127.0.0.1 at 2017-12-22 03:03:17 -0300
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT  students.*, enrolls.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:03:17 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT students.*, enrolls.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.4ms)
+
+
+
+SQLite3::SQLException - no such table: enrolls:
+  app/controllers/enrolls_controller.rb:9:in `index'
+
+Started POST "/__better_errors/480c5effec444ab5/variables" for 127.0.0.1 at 2017-12-22 03:03:17 -0300
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT  students.*, enrolls.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:03:28 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.6ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (6.8ms)
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (18.2ms)
+  Rendered layouts/_navigation.html.erb (19.3ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 142ms (Views: 116.6ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:04:22 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (10.7ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.5ms)
+
+
+
+NoMethodError - undefined method `enroll_id' for #<Student:0x007f093806fbd8>
+Did you mean?  enroll_ids
+               enroll_ids=
+               enrolls
+               enrolls=:
+  app/views/enrolls/index.html.erb:22:in `block in _app_views_enrolls_index_html_erb__3657794422829846931_69838964388620'
+  app/views/enrolls/index.html.erb:16:in `_app_views_enrolls_index_html_erb__3657794422829846931_69838964388620'
+
+Started POST "/__better_errors/288f3331ad0d295c/variables" for 127.0.0.1 at 2017-12-22 03:04:22 -0300
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:04:46 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (2.4ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (258.5ms)
+Completed 500 Internal Server Error in 271ms (ActiveRecord: 2.4ms)
+
+
+
+NoMethodError - undefined method `delete_course_enroll_path' for #<#<Class:0x007f09499c1ea0>:0x007f094cb64a20>
+Did you mean?  delegate_number_helper_method:
+  app/views/enrolls/index.html.erb:22:in `block in _app_views_enrolls_index_html_erb__3657794422829846931_69838959225620'
+  app/views/enrolls/index.html.erb:16:in `_app_views_enrolls_index_html_erb__3657794422829846931_69838959225620'
+
+Started POST "/__better_errors/5617213ce4850c8b/variables" for 127.0.0.1 at 2017-12-22 03:04:47 -0300
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:04:48 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (256.3ms)
+Completed 500 Internal Server Error in 266ms (ActiveRecord: 0.4ms)
+
+
+
+NoMethodError - undefined method `delete_course_enroll_path' for #<#<Class:0x007f09499c1ea0>:0x007f0944ac4500>
+Did you mean?  delegate_number_helper_method:
+  app/views/enrolls/index.html.erb:22:in `block in _app_views_enrolls_index_html_erb__3657794422829846931_69838891789520'
+  app/views/enrolls/index.html.erb:16:in `_app_views_enrolls_index_html_erb__3657794422829846931_69838891789520'
+
+Started POST "/__better_errors/f6a7d24a4f67c3ff/variables" for 127.0.0.1 at 2017-12-22 03:04:49 -0300
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:05:17 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (271.5ms)
+Completed 500 Internal Server Error in 279ms (ActiveRecord: 0.4ms)
+
+
+
+NoMethodError - undefined method `destroy_course_enroll_path' for #<#<Class:0x007f09499c1ea0>:0x007f09400b5658>
+Did you mean?  destroy_session_path:
+  app/views/enrolls/index.html.erb:22:in `block in _app_views_enrolls_index_html_erb__3657794422829846931_69838852960340'
+  app/views/enrolls/index.html.erb:16:in `_app_views_enrolls_index_html_erb__3657794422829846931_69838852960340'
+
+Started POST "/__better_errors/303478b1b1934f55/variables" for 127.0.0.1 at 2017-12-22 03:05:17 -0300
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:05:19 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.6ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (291.9ms)
+Completed 500 Internal Server Error in 302ms (ActiveRecord: 0.6ms)
+
+
+
+NoMethodError - undefined method `destroy_course_enroll_path' for #<#<Class:0x007f09499c1ea0>:0x007f094cdb06a8>
+Did you mean?  destroy_session_path:
+  app/views/enrolls/index.html.erb:22:in `block in _app_views_enrolls_index_html_erb__3657794422829846931_69838960429340'
+  app/views/enrolls/index.html.erb:16:in `_app_views_enrolls_index_html_erb__3657794422829846931_69838960429340'
+
+Started POST "/__better_errors/8ea7913dc12ec1bb/variables" for 127.0.0.1 at 2017-12-22 03:05:19 -0300
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:05:19 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (451.3ms)
+Completed 500 Internal Server Error in 463ms (ActiveRecord: 0.5ms)
+
+
+
+NoMethodError - undefined method `destroy_course_enroll_path' for #<#<Class:0x007f09499c1ea0>:0x007f094a0d9418>
+Did you mean?  destroy_session_path:
+  app/views/enrolls/index.html.erb:22:in `block in _app_views_enrolls_index_html_erb__3657794422829846931_69838936921460'
+  app/views/enrolls/index.html.erb:16:in `_app_views_enrolls_index_html_erb__3657794422829846931_69838936921460'
+
+Started POST "/__better_errors/0c0c0adfc195b9d9/variables" for 127.0.0.1 at 2017-12-22 03:05:20 -0300
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:07:37 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (1.1ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (495.6ms)
+Completed 500 Internal Server Error in 507ms (ActiveRecord: 1.1ms)
+
+
+
+NameError - undefined local variable or method `id' for #<#<Class:0x007f09499c1ea0>:0x007f094ad1ab78>:
+  app/views/enrolls/index.html.erb:22:in `block in _app_views_enrolls_index_html_erb__3657794422829846931_69838943345360'
+  app/views/enrolls/index.html.erb:16:in `_app_views_enrolls_index_html_erb__3657794422829846931_69838943345360'
+
+Started POST "/__better_errors/22da3567ed2e2b91/variables" for 127.0.0.1 at 2017-12-22 03:07:38 -0300
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:07:53 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (252.7ms)
+Completed 500 Internal Server Error in 260ms (ActiveRecord: 0.4ms)
+
+
+
+NoMethodError - undefined method `destroy_course_enroll_path' for #<#<Class:0x007f09499c1ea0>:0x007f094d303e48>
+Did you mean?  destroy_session_path:
+  app/views/enrolls/index.html.erb:22:in `block in _app_views_enrolls_index_html_erb__3657794422829846931_69838963217900'
+  app/views/enrolls/index.html.erb:16:in `_app_views_enrolls_index_html_erb__3657794422829846931_69838963217900'
+
+Started POST "/__better_errors/9618327c1ee01a81/variables" for 127.0.0.1 at 2017-12-22 03:07:54 -0300
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:09:10 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (2.5ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.5ms)
+
+
+
+ActionController::UrlGenerationError - No route matches {:action=>"update", :controller=>"enrolls", :course_id=>"1", :id=>nil}, missing required keys: [:id]:
+  app/views/enrolls/index.html.erb:22:in `block in _app_views_enrolls_index_html_erb__3657794422829846931_69838585057440'
+  app/views/enrolls/index.html.erb:16:in `_app_views_enrolls_index_html_erb__3657794422829846931_69838585057440'
+
+Started POST "/__better_errors/4342afa7b9495139/variables" for 127.0.0.1 at 2017-12-22 03:09:10 -0300
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:09:11 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (3.0ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.5ms)
+
+
+
+ActionController::UrlGenerationError - No route matches {:action=>"update", :controller=>"enrolls", :course_id=>"1", :id=>nil}, missing required keys: [:id]:
+  app/views/enrolls/index.html.erb:22:in `block in _app_views_enrolls_index_html_erb__3657794422829846931_69838970255200'
+  app/views/enrolls/index.html.erb:16:in `_app_views_enrolls_index_html_erb__3657794422829846931_69838970255200'
+
+Started POST "/__better_errors/b0ee6cdb6929ce4a/variables" for 127.0.0.1 at 2017-12-22 03:09:11 -0300
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:09:11 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.6ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (2.9ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.6ms)
+
+
+
+ActionController::UrlGenerationError - No route matches {:action=>"update", :controller=>"enrolls", :course_id=>"1", :id=>nil}, missing required keys: [:id]:
+  app/views/enrolls/index.html.erb:22:in `block in _app_views_enrolls_index_html_erb__3657794422829846931_69838854142260'
+  app/views/enrolls/index.html.erb:16:in `_app_views_enrolls_index_html_erb__3657794422829846931_69838854142260'
+
+Started POST "/__better_errors/41ba8aeae151add7/variables" for 127.0.0.1 at 2017-12-22 03:09:11 -0300
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:09:11 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (2.6ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.4ms)
+
+
+
+ActionController::UrlGenerationError - No route matches {:action=>"update", :controller=>"enrolls", :course_id=>"1", :id=>nil}, missing required keys: [:id]:
+  app/views/enrolls/index.html.erb:22:in `block in _app_views_enrolls_index_html_erb__3657794422829846931_69838966160280'
+  app/views/enrolls/index.html.erb:16:in `_app_views_enrolls_index_html_erb__3657794422829846931_69838966160280'
+
+Started POST "/__better_errors/3e37bd001a115e22/variables" for 127.0.0.1 at 2017-12-22 03:09:11 -0300
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:09:12 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.7ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (2.9ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.7ms)
+
+
+
+ActionController::UrlGenerationError - No route matches {:action=>"update", :controller=>"enrolls", :course_id=>"1", :id=>nil}, missing required keys: [:id]:
+  app/views/enrolls/index.html.erb:22:in `block in _app_views_enrolls_index_html_erb__3657794422829846931_69838963390660'
+  app/views/enrolls/index.html.erb:16:in `_app_views_enrolls_index_html_erb__3657794422829846931_69838963390660'
+
+Started POST "/__better_errors/6abbbf33e3a6e1a7/variables" for 127.0.0.1 at 2017-12-22 03:09:12 -0300
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:09:12 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (3.2ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.5ms)
+
+
+
+ActionController::UrlGenerationError - No route matches {:action=>"update", :controller=>"enrolls", :course_id=>"1", :id=>nil}, missing required keys: [:id]:
+  app/views/enrolls/index.html.erb:22:in `block in _app_views_enrolls_index_html_erb__3657794422829846931_69838585549640'
+  app/views/enrolls/index.html.erb:16:in `_app_views_enrolls_index_html_erb__3657794422829846931_69838585549640'
+
+Started POST "/__better_errors/50e70e0582aa9680/variables" for 127.0.0.1 at 2017-12-22 03:09:12 -0300
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:09:12 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (2.8ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.4ms)
+
+
+
+ActionController::UrlGenerationError - No route matches {:action=>"update", :controller=>"enrolls", :course_id=>"1", :id=>nil}, missing required keys: [:id]:
+  app/views/enrolls/index.html.erb:22:in `block in _app_views_enrolls_index_html_erb__3657794422829846931_69838939954360'
+  app/views/enrolls/index.html.erb:16:in `_app_views_enrolls_index_html_erb__3657794422829846931_69838939954360'
+
+Started POST "/__better_errors/e2f5e97846018c4a/variables" for 127.0.0.1 at 2017-12-22 03:09:12 -0300
+Started GET "/course" for 127.0.0.1 at 2017-12-22 03:09:44 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/course"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:10:23 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (223.7ms)
+Completed 500 Internal Server Error in 234ms (ActiveRecord: 0.5ms)
+
+
+
+NoMethodError - undefined method `destroy_course_enroll_path' for #<#<Class:0x007f09499c1ea0>:0x00563235d7ede0>
+Did you mean?  destroy_session_path:
+  app/views/enrolls/index.html.erb:22:in `block in _app_views_enrolls_index_html_erb__3657794422829846931_47386825770020'
+  app/views/enrolls/index.html.erb:16:in `_app_views_enrolls_index_html_erb__3657794422829846931_47386825770020'
+
+Started POST "/__better_errors/71234cb7b34091e3/variables" for 127.0.0.1 at 2017-12-22 03:10:23 -0300
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:10:24 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (238.8ms)
+Completed 500 Internal Server Error in 248ms (ActiveRecord: 0.5ms)
+
+
+
+NoMethodError - undefined method `destroy_course_enroll_path' for #<#<Class:0x007f09499c1ea0>:0x007f0940a6add8>
+Did you mean?  destroy_session_path:
+  app/views/enrolls/index.html.erb:22:in `block in _app_views_enrolls_index_html_erb__3657794422829846931_69838858051540'
+  app/views/enrolls/index.html.erb:16:in `_app_views_enrolls_index_html_erb__3657794422829846931_69838858051540'
+
+Started POST "/__better_errors/6595f1f4c885ffb6/variables" for 127.0.0.1 at 2017-12-22 03:10:25 -0300
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:10:34 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (4.0ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.4ms)
+
+
+
+NoMethodError - undefined method `to_model' for 1:Integer
+Did you mean?  to_yaml:
+  app/views/enrolls/index.html.erb:22:in `block in _app_views_enrolls_index_html_erb__3657794422829846931_69838886754380'
+  app/views/enrolls/index.html.erb:16:in `_app_views_enrolls_index_html_erb__3657794422829846931_69838886754380'
+
+Started POST "/__better_errors/fd57a3d70f691233/variables" for 127.0.0.1 at 2017-12-22 03:10:34 -0300
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:10:35 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.8ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (4.4ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.8ms)
+
+
+
+NoMethodError - undefined method `to_model' for 1:Integer
+Did you mean?  to_yaml:
+  app/views/enrolls/index.html.erb:22:in `block in _app_views_enrolls_index_html_erb__3657794422829846931_69838963103640'
+  app/views/enrolls/index.html.erb:16:in `_app_views_enrolls_index_html_erb__3657794422829846931_69838963103640'
+
+Started POST "/__better_errors/0c4896189f437431/variables" for 127.0.0.1 at 2017-12-22 03:10:35 -0300
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:10:35 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (5.6ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.4ms)
+
+
+
+NoMethodError - undefined method `to_model' for 1:Integer
+Did you mean?  to_yaml:
+  app/views/enrolls/index.html.erb:22:in `block in _app_views_enrolls_index_html_erb__3657794422829846931_69838585270480'
+  app/views/enrolls/index.html.erb:16:in `_app_views_enrolls_index_html_erb__3657794422829846931_69838585270480'
+
+Started POST "/__better_errors/c89a485449039b2c/variables" for 127.0.0.1 at 2017-12-22 03:10:35 -0300
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:10:36 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.9ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (7.6ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.9ms)
+
+
+
+NoMethodError - undefined method `to_model' for 1:Integer
+Did you mean?  to_yaml:
+  app/views/enrolls/index.html.erb:22:in `block in _app_views_enrolls_index_html_erb__3657794422829846931_47386834852360'
+  app/views/enrolls/index.html.erb:16:in `_app_views_enrolls_index_html_erb__3657794422829846931_47386834852360'
+
+Started POST "/__better_errors/5b8d476a595bb7a3/variables" for 127.0.0.1 at 2017-12-22 03:10:36 -0300
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:11:58 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (2.3ms)
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (1.9ms)
+  Rendered layouts/_navigation.html.erb (3.0ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 120ms (Views: 111.7ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/courses/1/enroll/1" for 127.0.0.1 at 2017-12-22 03:12:03 -0300
+  
+ActionController::RoutingError (No route matches [DELETE] "/courses/1/enroll/1"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:12:43 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (1.8ms)
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (1.8ms)
+  Rendered layouts/_navigation.html.erb (2.9ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 90ms (Views: 82.6ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/courses/1/enrolls/1" for 127.0.0.1 at 2017-12-22 03:12:46 -0300
+Processing by EnrollsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"V2FnrjyDDm4+tQ8SYDYwjGYtDJYWhuEBdraQb0haVi5IVjyDdoTooKJHygDe8eRYmHqlVYenPvbVUob6DC9+Gg==", "course_id"=>"1", "id"=>"1"}
+  [1m[36mEnroll Load (0.1ms)[0m  [1m[34mSELECT  "enrolls".* FROM "enrolls" WHERE "enrolls"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.2ms)[0m  [1m[31mDELETE FROM "enrolls" WHERE "enrolls"."id" = ?[0m  [["id", 1]]
+  [1m[35m (177.2ms)[0m  [1m[36mcommit transaction[0m
+Completed 500 Internal Server Error in 398ms (ActiveRecord: 180.2ms)
+
+
+
+NameError - undefined local variable or method `enrolls_url' for #<EnrollsController:0x007f094a25e3d8>
+Did you mean?  enroll_params:
+  app/controllers/enrolls_controller.rb:63:in `block (2 levels) in destroy'
+  app/controllers/enrolls_controller.rb:62:in `destroy'
+
+Started POST "/__better_errors/ba6239dc27d7b52e/variables" for 127.0.0.1 at 2017-12-22 03:12:47 -0300
+Started DELETE "/courses/1/enrolls/1" for 127.0.0.1 at 2017-12-22 03:13:44 -0300
+Processing by EnrollsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"V2FnrjyDDm4+tQ8SYDYwjGYtDJYWhuEBdraQb0haVi5IVjyDdoTooKJHygDe8eRYmHqlVYenPvbVUob6DC9+Gg==", "course_id"=>"1", "id"=>"1"}
+  [1m[36mEnroll Load (0.1ms)[0m  [1m[34mSELECT  "enrolls".* FROM "enrolls" WHERE "enrolls"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 404 Not Found in 6ms (ActiveRecord: 1.2ms)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find Enroll with 'id'=1:
+  app/controllers/enrolls_controller.rb:71:in `set_enroll'
+
+Started POST "/__better_errors/48b69db93f5ff2b2/variables" for 127.0.0.1 at 2017-12-22 03:13:44 -0300
+Started GET "/courses" for 127.0.0.1 at 2017-12-22 03:13:51 -0300
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  Rendered courses/index.html.erb within layouts/application (5.7ms)
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (14.6ms)
+  Rendered layouts/_navigation.html.erb (15.9ms)
+  Rendered layouts/_messages.html.erb (0.6ms)
+Completed 200 OK in 107ms (Views: 92.5ms | ActiveRecord: 1.8ms)
+
+
+Started DELETE "/courses/1/enrolls/4" for 127.0.0.1 at 2017-12-22 03:13:55 -0300
+Processing by EnrollsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"V2FnrjyDDm4+tQ8SYDYwjGYtDJYWhuEBdraQb0haVi5IVjyDdoTooKJHygDe8eRYmHqlVYenPvbVUob6DC9+Gg==", "course_id"=>"1", "id"=>"4"}
+  [1m[36mEnroll Load (0.1ms)[0m  [1m[34mSELECT  "enrolls".* FROM "enrolls" WHERE "enrolls"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[31mDELETE FROM "enrolls" WHERE "enrolls"."id" = ?[0m  [["id", 4]]
+  [1m[35m (183.3ms)[0m  [1m[36mcommit transaction[0m
+Completed 500 Internal Server Error in 404ms (ActiveRecord: 184.3ms)
+
+
+
+NameError - undefined local variable or method `course' for #<EnrollsController:0x007f094d9e9230>
+Did you mean?  course_url:
+  app/controllers/enrolls_controller.rb:63:in `block (2 levels) in destroy'
+  app/controllers/enrolls_controller.rb:62:in `destroy'
+
+Started POST "/__better_errors/5ba51a245741cfee/variables" for 127.0.0.1 at 2017-12-22 03:13:56 -0300
+Started DELETE "/courses/1/enrolls/1" for 127.0.0.1 at 2017-12-22 03:14:29 -0300
+Processing by EnrollsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"V2FnrjyDDm4+tQ8SYDYwjGYtDJYWhuEBdraQb0haVi5IVjyDdoTooKJHygDe8eRYmHqlVYenPvbVUob6DC9+Gg==", "course_id"=>"1", "id"=>"1"}
+  [1m[36mEnroll Load (0.1ms)[0m  [1m[34mSELECT  "enrolls".* FROM "enrolls" WHERE "enrolls"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 404 Not Found in 6ms (ActiveRecord: 1.1ms)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find Enroll with 'id'=1:
+  app/controllers/enrolls_controller.rb:72:in `set_enroll'
+
+Started POST "/__better_errors/14e9810f7fcf50ed/variables" for 127.0.0.1 at 2017-12-22 03:14:29 -0300
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:14:39 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (2.1ms)
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (16.0ms)
+  Rendered layouts/_navigation.html.erb (17.6ms)
+  Rendered layouts/_messages.html.erb (0.6ms)
+Completed 200 OK in 127ms (Views: 107.7ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:14:40 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (1.6ms)
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (1.9ms)
+  Rendered layouts/_navigation.html.erb (3.3ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 68ms (Views: 62.6ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/courses/1/enrolls/3" for 127.0.0.1 at 2017-12-22 03:14:43 -0300
+Processing by EnrollsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"3cJkGfMv4RWdl495C8Zyh8MriP4rbS1zFcjPSeBxn3bC9T80uSgH2wFlSmu1AaZTPXwhPbpM8oS2LNncpAS3Qg==", "course_id"=>"1", "id"=>"3"}
+  [1m[36mEnroll Load (0.2ms)[0m  [1m[34mSELECT  "enrolls".* FROM "enrolls" WHERE "enrolls"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[31mDELETE FROM "enrolls" WHERE "enrolls"."id" = ?[0m  [["id", 3]]
+  [1m[35m (50.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/courses/1/enrolls
+Completed 302 Found in 67ms (ActiveRecord: 52.9ms)
+
+
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:14:43 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (1.7ms)
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (1.6ms)
+  Rendered layouts/_navigation.html.erb (2.6ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 72ms (Views: 66.3ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/courses/1/enrolls/2" for 127.0.0.1 at 2017-12-22 03:14:46 -0300
+Processing by EnrollsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"1WDvAfqjijRdgS6c8lqEfR4y2Siai7mlct3VLZu3jZ/KV7QssKRs+sFz645MnVCp4GVw6wuqZlLROcO438Klqw==", "course_id"=>"1", "id"=>"2"}
+  [1m[36mEnroll Load (0.1ms)[0m  [1m[34mSELECT  "enrolls".* FROM "enrolls" WHERE "enrolls"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "enrolls" WHERE "enrolls"."id" = ?[0m  [["id", 2]]
+  [1m[35m (181.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/courses/1/enrolls
+Completed 302 Found in 186ms (ActiveRecord: 182.0ms)
+
+
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:14:46 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (2.2ms)
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (2.5ms)
+  Rendered layouts/_navigation.html.erb (4.1ms)
+  Rendered layouts/_messages.html.erb (0.7ms)
+Completed 200 OK in 114ms (Views: 106.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:15:11 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (1.6ms)
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (14.7ms)
+  Rendered layouts/_navigation.html.erb (15.9ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 98ms (Views: 81.1ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:15:12 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (2.6ms)
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (1.7ms)
+  Rendered layouts/_navigation.html.erb (2.9ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 79ms (Views: 72.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:15:13 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (1.7ms)
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (1.8ms)
+  Rendered layouts/_navigation.html.erb (3.3ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 85ms (Views: 78.8ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/courses/1/enrolls/" for 127.0.0.1 at 2017-12-22 03:15:19 -0300
+  
+ActionController::RoutingError (No route matches [DELETE] "/courses/1/enrolls"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:15:33 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (1.9ms)
+  [1m[36mTeacher Load (0.4ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (2.1ms)
+  Rendered layouts/_navigation.html.erb (3.2ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 81ms (Views: 75.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:15:53 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (5.1ms)
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (2.2ms)
+  Rendered layouts/_navigation.html.erb (3.7ms)
+  Rendered layouts/_messages.html.erb (0.8ms)
+Completed 200 OK in 108ms (Views: 100.9ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:15:58 -0300
+Processing by EnrollsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Jf9m+T2Rw70eElre2IUH5jlNwNeSHKU+lLM3/zHkl6s6yD3Ud5Ylc4Lgn8xmQtMyxxppFAM9esk3VyFqdZG/nw==", "student_id"=>"", "course_id"=>"1", "commit"=>"Enroll"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 12ms (ActiveRecord: 1.1ms)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find Student with 'id'=:
+  app/controllers/enrolls_controller.rb:30:in `create'
+
+Started POST "/__better_errors/8c102d008e414132/variables" for 127.0.0.1 at 2017-12-22 03:15:58 -0300
+Started POST "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:19:19 -0300
+Processing by EnrollsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Jf9m+T2Rw70eElre2IUH5jlNwNeSHKU+lLM3/zHkl6s6yD3Ud5Ylc4Lgn8xmQtMyxxppFAM9esk3VyFqdZG/nw==", "student_id"=>"", "course_id"=>"1", "commit"=>"Enroll"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.3ms)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find Student with 'id'=:
+  app/controllers/enrolls_controller.rb:30:in `create'
+
+Started POST "/__better_errors/3bd3c537d80872d2/variables" for 127.0.0.1 at 2017-12-22 03:19:19 -0300
+Started POST "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:19:20 -0300
+Processing by EnrollsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Jf9m+T2Rw70eElre2IUH5jlNwNeSHKU+lLM3/zHkl6s6yD3Ud5Ylc4Lgn8xmQtMyxxppFAM9esk3VyFqdZG/nw==", "student_id"=>"", "course_id"=>"1", "commit"=>"Enroll"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find Student with 'id'=:
+  app/controllers/enrolls_controller.rb:30:in `create'
+
+Started POST "/__better_errors/3e69e078e697d0fa/variables" for 127.0.0.1 at 2017-12-22 03:19:20 -0300
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:19:23 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.7ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (5.1ms)
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (1.9ms)
+  Rendered layouts/_navigation.html.erb (3.2ms)
+  Rendered layouts/_messages.html.erb (0.7ms)
+Completed 200 OK in 85ms (Views: 78.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:19:25 -0300
+Processing by EnrollsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"T+gnXybEXU33qZUQbWGNPL9BlHsYDrU1WaH1E9XfmgpQ33xybMO7g2tbUALTplnoQRY9uIkvasL6ReOGkaqyPg==", "student_id"=>"39831179", "course_id"=>"1", "commit"=>"Enroll"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 39831179], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find Student with 'id'=39831179:
+  app/controllers/enrolls_controller.rb:30:in `create'
+
+Started POST "/__better_errors/aa183e06b97d7b54/variables" for 127.0.0.1 at 2017-12-22 03:19:25 -0300
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:21:46 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (2.9ms)
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (12.9ms)
+  Rendered layouts/_navigation.html.erb (13.9ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 93ms (Views: 72.0ms | ActiveRecord: 3.1ms)
+
+
+Started POST "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:21:47 -0300
+Processing by EnrollsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hzGosuTbKD3f+3zsbY1zKm7+ZHkfAnbxkSrffN8EC2WYBvOfrtzO80MJuf7TSqf+kKnNuo4jqQYyzsnpm3EjUQ==", "student_id"=>"39831181", "course_id"=>"1", "commit"=>"Enroll"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."dni" = ? LIMIT ?[0m  [["dni", 39831181], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "enrolls" ("student_id", "course_id") VALUES (?, ?)[0m  [["student_id", 4], ["course_id", 1]]
+  [1m[35m (229.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/courses/1/enrolls
+Completed 302 Found in 250ms (ActiveRecord: 231.7ms)
+
+
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:21:48 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (3.5ms)
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (2.2ms)
+  Rendered layouts/_navigation.html.erb (3.7ms)
+  Rendered layouts/_messages.html.erb (0.7ms)
+Completed 200 OK in 95ms (Views: 88.6ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/courses/1/enrolls/6" for 127.0.0.1 at 2017-12-22 03:21:52 -0300
+Processing by EnrollsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"8eSJaQsw6dW+/4QdXQKG0WcQyv7dtBX/rg2fA24wNEru09JEQTcPGyINQQ/jxVIFmUdjPUyVyggN6YmWKkUcfg==", "course_id"=>"1", "id"=>"6"}
+  [1m[36mEnroll Load (0.4ms)[0m  [1m[34mSELECT  "enrolls".* FROM "enrolls" WHERE "enrolls"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[31mDELETE FROM "enrolls" WHERE "enrolls"."id" = ?[0m  [["id", 6]]
+  [1m[35m (170.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/courses/1/enrolls
+Completed 302 Found in 178ms (ActiveRecord: 171.6ms)
+
+
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:21:52 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.9ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (3.8ms)
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (2.0ms)
+  Rendered layouts/_navigation.html.erb (3.2ms)
+  Rendered layouts/_messages.html.erb (0.6ms)
+Completed 200 OK in 99ms (Views: 91.8ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:21:55 -0300
+Processing by EnrollsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lFKix+8jUtlWsPVXoRzzxBNURi7lUA4FWLcf+SMPdUSLZfnqpSS0F8pCMEUf2ycQ7QPv7XRx0fL7UwlsZ3pdcA==", "student_id"=>"39831183", "course_id"=>"1", "commit"=>"Enroll"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."dni" = ? LIMIT ?[0m  [["dni", 39831183], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "enrolls" ("student_id", "course_id") VALUES (?, ?)[0m  [["student_id", 6], ["course_id", 1]]
+  [1m[35m (166.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/courses/1/enrolls
+Completed 302 Found in 174ms (ActiveRecord: 167.2ms)
+
+
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:21:55 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (3.7ms)
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (1.7ms)
+  Rendered layouts/_navigation.html.erb (2.9ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 74ms (Views: 68.7ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/courses/1/enrolls/7" for 127.0.0.1 at 2017-12-22 03:21:59 -0300
+Processing by EnrollsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"5n69K2R2VPJcO5Sb/68JOEUiB18i0ga50NRhcp9xwf75SeYGLnGyPMDJUYlBaN3su3WunLPz2U5zMHfn2wTpyg==", "course_id"=>"1", "id"=>"7"}
+  [1m[36mEnroll Load (0.1ms)[0m  [1m[34mSELECT  "enrolls".* FROM "enrolls" WHERE "enrolls"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "enrolls" WHERE "enrolls"."id" = ?[0m  [["id", 7]]
+  [1m[35m (171.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/courses/1/enrolls
+Completed 302 Found in 176ms (ActiveRecord: 171.5ms)
+
+
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:21:59 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (5.6ms)
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (2.3ms)
+  Rendered layouts/_navigation.html.erb (3.9ms)
+  Rendered layouts/_messages.html.erb (0.6ms)
+Completed 200 OK in 99ms (Views: 91.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/courses/1/1" for 127.0.0.1 at 2017-12-22 03:22:08 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/courses/1/1"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:22:11 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (3.8ms)
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (2.0ms)
+  Rendered layouts/_navigation.html.erb (3.4ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 72ms (Views: 66.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/courses/1/1" for 127.0.0.1 at 2017-12-22 03:22:16 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/courses/1/1"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.11.0) lib/puma/configuration.rb:225:in `call'
+puma (3.11.0) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.0) lib/puma/server.rb:438:in `process_client'
+puma (3.11.0) lib/puma/server.rb:302:in `block in run'
+puma (3.11.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:22:17 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (4.4ms)
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (2.4ms)
+  Rendered layouts/_navigation.html.erb (4.1ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 101ms (Views: 95.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:23:01 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (8.5ms)
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (1.5ms)
+  Rendered layouts/_navigation.html.erb (2.7ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 110ms (Views: 103.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/courses/1" for 127.0.0.1 at 2017-12-22 03:23:04 -0300
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mTest Load (0.1ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "test_courses" ON "test_courses"."test_id" = "tests"."id" WHERE (course_id = '1')[0m
+  Rendered courses/show.html.erb within layouts/application (11.8ms)
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (1.7ms)
+  Rendered layouts/_navigation.html.erb (2.8ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 81ms (Views: 76.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2017-12-22 03:23:06 -0300
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  Rendered courses/index.html.erb within layouts/application (2.5ms)
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (1.7ms)
+  Rendered layouts/_navigation.html.erb (15.0ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 89ms (Views: 87.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/courses/1/tests/new" for 127.0.0.1 at 2017-12-22 03:23:09 -0300
+Processing by TestsController#new as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering tests/new.html.erb within layouts/application
+  Rendered tests/_form.html.erb (155.1ms)
+  Rendered tests/new.html.erb within layouts/application (172.8ms)
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (2.0ms)
+  Rendered layouts/_navigation.html.erb (3.3ms)
+  Rendered layouts/_messages.html.erb (0.7ms)
+Completed 200 OK in 252ms (Views: 249.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2017-12-22 03:23:11 -0300
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  Rendered courses/index.html.erb within layouts/application (2.7ms)
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (1.5ms)
+  Rendered layouts/_navigation.html.erb (2.5ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 64ms (Views: 62.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/courses/1" for 127.0.0.1 at 2017-12-22 03:23:13 -0300
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mTest Load (0.4ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "test_courses" ON "test_courses"."test_id" = "tests"."id" WHERE (course_id = '1')[0m
+  Rendered courses/show.html.erb within layouts/application (4.3ms)
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (2.1ms)
+  Rendered layouts/_navigation.html.erb (3.7ms)
+  Rendered layouts/_messages.html.erb (0.8ms)
+Completed 200 OK in 92ms (Views: 88.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2017-12-22 03:23:15 -0300
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  Rendered courses/index.html.erb within layouts/application (2.2ms)
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (1.5ms)
+  Rendered layouts/_navigation.html.erb (2.6ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 70ms (Views: 68.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/courses/1" for 127.0.0.1 at 2017-12-22 03:23:22 -0300
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mTest Load (0.3ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "test_courses" ON "test_courses"."test_id" = "tests"."id" WHERE (course_id = '1')[0m
+  Rendered courses/show.html.erb within layouts/application (2.9ms)
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (1.6ms)
+  Rendered layouts/_navigation.html.erb (2.7ms)
+  Rendered layouts/_messages.html.erb (0.6ms)
+Completed 200 OK in 71ms (Views: 66.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2017-12-22 03:23:51 -0300
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  Rendered courses/index.html.erb within layouts/application (4.5ms)
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (1.5ms)
+  Rendered layouts/_navigation.html.erb (2.9ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 92ms (Views: 90.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 03:23:53 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (6.7ms)
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (1.5ms)
+  Rendered layouts/_navigation.html.erb (2.8ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 80ms (Views: 74.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/courses/1" for 127.0.0.1 at 2017-12-22 03:23:58 -0300
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mTest Load (0.3ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "test_courses" ON "test_courses"."test_id" = "tests"."id" WHERE (course_id = '1')[0m
+  Rendered courses/show.html.erb within layouts/application (2.8ms)
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (1.6ms)
+  Rendered layouts/_navigation.html.erb (2.6ms)
+  Rendered layouts/_messages.html.erb (0.4ms)
+Completed 200 OK in 82ms (Views: 78.7ms | ActiveRecord: 0.6ms)
+
+

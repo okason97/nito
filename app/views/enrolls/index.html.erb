@@ -18,15 +18,16 @@
         <td><%= student.first_name + ' ' + student.last_name %></td>
         <td><%= student.dni %></td>
         <td><%= student.legajo %></td>
-        <% if student.respond_to?(:enroll_id) %>
-          <td><%= link_to 'Disenroll', delete_course_enroll_path(@course, student.enroll_id), data: { confirm: 'Are you sure?' } %></td>
-        <% else %>
+        <% if student.id.nil? %>
           <td>
             <%= form_tag("/courses/#{@course}/enrolls", method: "post") do %>
-              <%= hidden_field_tag(:student_id, student.id) %>
+              <%= hidden_field_tag(:student_id, student.dni) %>
+              <%= hidden_field_tag(:course_id, @course) %>
               <%= submit_tag("Enroll") %>
             <% end %>
           </td>
+        <% else %>
+          <td><%= link_to 'Disenroll', "/courses/#{@course}/enrolls/#{student.id}", method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
       </tr>
     <% end %>
@@ -35,4 +36,4 @@
 
 <br>
 
-<%= link_to 'Back', @course %>
+<%= link_to 'Back', course_path(@course) %>
