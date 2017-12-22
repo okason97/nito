@@ -29,8 +29,8 @@ class EnrollsController < ApplicationController
     course = Course.find(params[:course_id])
     student = Student.find_by(dni: params[:student_id])
     @enroll = Enroll.new( student: student, course: course)
-    Test.of(course).each do |test|
-      @score = Score.new( student: student, test: test, value: -2)
+    TestCourse.of(course).each do |tc|
+      @score = Score.new( student: student, test_id: tc.test_id, value: -2)
     end
     
     respond_to do |format|
@@ -62,6 +62,11 @@ class EnrollsController < ApplicationController
   # DELETE /enrolls/1.json
   def destroy
     course = Course.find(params[:course_id])
+    TestCourse.of(course).each do |tc|
+      Score.where( student_id: @enroll.student_id, test_id: tc.test_id).each do |score|
+        score.destroy
+      end
+    end
     @enroll.destroy
     respond_to do |format|
       format.html { redirect_to course_enrolls_path(course), notice: 'Enroll was successfully destroyed.' }

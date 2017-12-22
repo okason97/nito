@@ -23148,3 +23148,866 @@ Processing by CoursesController#index as HTML
 Completed 200 OK in 100ms (Views: 97.6ms | ActiveRecord: 0.9ms)
 
 
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 04:04:57 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (3.7ms)
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (18.7ms)
+  Rendered layouts/_navigation.html.erb (20.0ms)
+  Rendered layouts/_messages.html.erb (0.8ms)
+Completed 200 OK in 138ms (Views: 117.4ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 04:09:24 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (5.1ms)
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (14.8ms)
+  Rendered layouts/_navigation.html.erb (16.0ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 121ms (Views: 96.1ms | ActiveRecord: 2.7ms)
+
+
+Started DELETE "/courses/1/enrolls/8" for 127.0.0.1 at 2017-12-22 04:09:28 -0300
+Processing by EnrollsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"5NO5xtO37fmjsWp2Aj7qAlWK1ZxWA534W3a9oqgBlLr75OLrmbALNz9Dr2S8+T7Wq918X8ciQg/4kqs37HS8jg==", "course_id"=>"1", "id"=>"8"}
+  [1m[36mEnroll Load (0.2ms)[0m  [1m[34mSELECT  "enrolls".* FROM "enrolls" WHERE "enrolls"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTest Load (0.5ms)[0m  [1m[34mSELECT "tests".* FROM "tests" WHERE (course_id = 1)[0m
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 1.9ms)
+
+
+
+SQLite3::SQLException - no such column: course_id:
+  app/controllers/enrolls_controller.rb:65:in `destroy'
+
+Started POST "/__better_errors/d8c0290010fd9d57/variables" for 127.0.0.1 at 2017-12-22 04:09:28 -0300
+Started DELETE "/courses/1/enrolls/8" for 127.0.0.1 at 2017-12-22 04:09:44 -0300
+Processing by EnrollsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"5NO5xtO37fmjsWp2Aj7qAlWK1ZxWA534W3a9oqgBlLr75OLrmbALNz9Dr2S8+T7Wq918X8ciQg/4kqs37HS8jg==", "course_id"=>"1", "id"=>"8"}
+  [1m[36mEnroll Load (0.3ms)[0m  [1m[34mSELECT  "enrolls".* FROM "enrolls" WHERE "enrolls"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTest Load (0.5ms)[0m  [1m[34mSELECT "tests".* FROM "tests" WHERE (course_id = 1)[0m
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 1.1ms)
+
+
+
+SQLite3::SQLException - no such column: course_id:
+  app/controllers/enrolls_controller.rb:65:in `destroy'
+
+Started POST "/__better_errors/464aa5cf9f65158b/variables" for 127.0.0.1 at 2017-12-22 04:09:44 -0300
+Started DELETE "/courses/1/enrolls/8" for 127.0.0.1 at 2017-12-22 04:11:06 -0300
+Processing by EnrollsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"5NO5xtO37fmjsWp2Aj7qAlWK1ZxWA534W3a9oqgBlLr75OLrmbALNz9Dr2S8+T7Wq918X8ciQg/4kqs37HS8jg==", "course_id"=>"1", "id"=>"8"}
+  [1m[36mEnroll Load (0.1ms)[0m  [1m[34mSELECT  "enrolls".* FROM "enrolls" WHERE "enrolls"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTest Load (0.4ms)[0m  [1m[34mSELECT "tests".* FROM "tests" WHERE (course_id = 1)[0m
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 2.3ms)
+
+
+
+SQLite3::SQLException - no such column: course_id:
+  app/controllers/enrolls_controller.rb:65:in `destroy'
+
+Started POST "/__better_errors/c6206bb1bffd40bb/variables" for 127.0.0.1 at 2017-12-22 04:11:06 -0300
+Started DELETE "/courses/1/enrolls/8" for 127.0.0.1 at 2017-12-22 04:11:08 -0300
+Processing by EnrollsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"5NO5xtO37fmjsWp2Aj7qAlWK1ZxWA534W3a9oqgBlLr75OLrmbALNz9Dr2S8+T7Wq918X8ciQg/4kqs37HS8jg==", "course_id"=>"1", "id"=>"8"}
+  [1m[36mEnroll Load (0.3ms)[0m  [1m[34mSELECT  "enrolls".* FROM "enrolls" WHERE "enrolls"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTest Load (0.4ms)[0m  [1m[34mSELECT "tests".* FROM "tests" WHERE (course_id = 1)[0m
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.9ms)
+
+
+
+SQLite3::SQLException - no such column: course_id:
+  app/controllers/enrolls_controller.rb:65:in `destroy'
+
+Started POST "/__better_errors/9ac95c58f9799736/variables" for 127.0.0.1 at 2017-12-22 04:11:08 -0300
+Started DELETE "/courses/1/enrolls/8" for 127.0.0.1 at 2017-12-22 04:11:31 -0300
+Processing by EnrollsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"5NO5xtO37fmjsWp2Aj7qAlWK1ZxWA534W3a9oqgBlLr75OLrmbALNz9Dr2S8+T7Wq918X8ciQg/4kqs37HS8jg==", "course_id"=>"1", "id"=>"8"}
+  [1m[36mEnroll Load (0.2ms)[0m  [1m[34mSELECT  "enrolls".* FROM "enrolls" WHERE "enrolls"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTest Load (0.4ms)[0m  [1m[34mSELECT "tests".* FROM "tests" WHERE (courses_id = 1)[0m
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 2.2ms)
+
+
+
+SQLite3::SQLException - no such column: courses_id:
+  app/controllers/enrolls_controller.rb:65:in `destroy'
+
+Started POST "/__better_errors/256afc681724b874/variables" for 127.0.0.1 at 2017-12-22 04:11:32 -0300
+Started DELETE "/courses/1/enrolls/8" for 127.0.0.1 at 2017-12-22 04:11:32 -0300
+Processing by EnrollsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"5NO5xtO37fmjsWp2Aj7qAlWK1ZxWA534W3a9oqgBlLr75OLrmbALNz9Dr2S8+T7Wq918X8ciQg/4kqs37HS8jg==", "course_id"=>"1", "id"=>"8"}
+  [1m[36mEnroll Load (0.3ms)[0m  [1m[34mSELECT  "enrolls".* FROM "enrolls" WHERE "enrolls"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTest Load (0.7ms)[0m  [1m[34mSELECT "tests".* FROM "tests" WHERE (courses_id = 1)[0m
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 1.1ms)
+
+
+
+SQLite3::SQLException - no such column: courses_id:
+  app/controllers/enrolls_controller.rb:65:in `destroy'
+
+Started POST "/__better_errors/e545904cc57bbd7c/variables" for 127.0.0.1 at 2017-12-22 04:11:33 -0300
+Started POST "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 04:11:47 -0300
+Processing by EnrollsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5NO5xtO37fmjsWp2Aj7qAlWK1ZxWA534W3a9oqgBlLr75OLrmbALNz9Dr2S8+T7Wq918X8ciQg/4kqs37HS8jg==", "student_id"=>"39831186", "course_id"=>"1", "commit"=>"Enroll"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."dni" = ? LIMIT ?[0m  [["dni", 39831186], ["LIMIT", 1]]
+  [1m[36mTest Load (0.4ms)[0m  [1m[34mSELECT "tests".* FROM "tests" WHERE (courses_id = 1)[0m
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 2.3ms)
+
+
+
+SQLite3::SQLException - no such column: courses_id:
+  app/controllers/enrolls_controller.rb:32:in `create'
+
+Started POST "/__better_errors/705e939e9cf9d7a5/variables" for 127.0.0.1 at 2017-12-22 04:11:48 -0300
+Started POST "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 04:12:14 -0300
+Processing by EnrollsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5NO5xtO37fmjsWp2Aj7qAlWK1ZxWA534W3a9oqgBlLr75OLrmbALNz9Dr2S8+T7Wq918X8ciQg/4kqs37HS8jg==", "student_id"=>"39831186", "course_id"=>"1", "commit"=>"Enroll"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."dni" = ? LIMIT ?[0m  [["dni", 39831186], ["LIMIT", 1]]
+  [1m[36mTest Load (0.4ms)[0m  [1m[34mSELECT "tests".* FROM "tests" WHERE (course_id = 1)[0m
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 2.8ms)
+
+
+
+SQLite3::SQLException - no such column: course_id:
+  app/controllers/enrolls_controller.rb:32:in `create'
+
+Started POST "/__better_errors/0bcc51d24490a63e/variables" for 127.0.0.1 at 2017-12-22 04:12:14 -0300
+Started POST "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 04:12:15 -0300
+Processing by EnrollsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5NO5xtO37fmjsWp2Aj7qAlWK1ZxWA534W3a9oqgBlLr75OLrmbALNz9Dr2S8+T7Wq918X8ciQg/4kqs37HS8jg==", "student_id"=>"39831186", "course_id"=>"1", "commit"=>"Enroll"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."dni" = ? LIMIT ?[0m  [["dni", 39831186], ["LIMIT", 1]]
+  [1m[36mTest Load (0.4ms)[0m  [1m[34mSELECT "tests".* FROM "tests" WHERE (course_id = 1)[0m
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 1.1ms)
+
+
+
+SQLite3::SQLException - no such column: course_id:
+  app/controllers/enrolls_controller.rb:32:in `create'
+
+Started POST "/__better_errors/99ae8d1f71301671/variables" for 127.0.0.1 at 2017-12-22 04:12:15 -0300
+Started POST "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 04:12:35 -0300
+Processing by EnrollsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5NO5xtO37fmjsWp2Aj7qAlWK1ZxWA534W3a9oqgBlLr75OLrmbALNz9Dr2S8+T7Wq918X8ciQg/4kqs37HS8jg==", "student_id"=>"39831186", "course_id"=>"1", "commit"=>"Enroll"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."dni" = ? LIMIT ?[0m  [["dni", 39831186], ["LIMIT", 1]]
+  [1m[36mTest Load (0.3ms)[0m  [1m[34mSELECT "tests".* FROM "tests" WHERE (tests.course_id = 1)[0m
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 3.0ms)
+
+
+
+SQLite3::SQLException - no such column: tests.course_id:
+  app/controllers/enrolls_controller.rb:32:in `create'
+
+Started POST "/__better_errors/99b2e94c43dcc43c/variables" for 127.0.0.1 at 2017-12-22 04:12:35 -0300
+Started GET "/courses" for 127.0.0.1 at 2017-12-22 04:14:14 -0300
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  Rendered courses/index.html.erb within layouts/application (7.5ms)
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (18.1ms)
+  Rendered layouts/_navigation.html.erb (19.4ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 124ms (Views: 118.4ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/courses/1/tests/new" for 127.0.0.1 at 2017-12-22 04:14:16 -0300
+Processing by TestsController#new as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering tests/new.html.erb within layouts/application
+  Rendered tests/_form.html.erb (12.1ms)
+  Rendered tests/new.html.erb within layouts/application (14.1ms)
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (2.8ms)
+  Rendered layouts/_navigation.html.erb (4.6ms)
+  Rendered layouts/_messages.html.erb (1.1ms)
+Completed 200 OK in 166ms (Views: 148.3ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/courses/1/tests" for 127.0.0.1 at 2017-12-22 04:14:23 -0300
+Processing by TestsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2bPAeegnda0k8/ihkpkDuCqQ1V86nogdnkP1BNRWBu3IugRnZkuyOjA/IdRO4zR7N33FVk6d5B0NhAe2Ss/gug==", "test"=>{"title"=>"ghfgh", "date"=>"2018-01-06", "min_score"=>"10", "max_score"=>"15"}, "commit"=>"Create Test", "course_id"=>"1"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "tests" ("title", "date", "min_score", "max_score") VALUES (?, ?, ?, ?)[0m  [["title", "ghfgh"], ["date", "2018-01-06 00:00:00"], ["min_score", 10.0], ["max_score", 15.0]]
+  [1m[36mTest Load (0.3ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "test_courses" ("course_id", "test_id") VALUES (?, ?)[0m  [["course_id", 1], ["test_id", 19]]
+  [1m[35m (91.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/courses/1
+Completed 302 Found in 177ms (ActiveRecord: 94.1ms)
+
+
+Started GET "/courses/1" for 127.0.0.1 at 2017-12-22 04:14:23 -0300
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mTest Load (0.3ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "test_courses" ON "test_courses"."test_id" = "tests"."id" WHERE (course_id = '1')[0m
+  Rendered courses/show.html.erb within layouts/application (5.0ms)
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (1.9ms)
+  Rendered layouts/_navigation.html.erb (3.2ms)
+  Rendered layouts/_messages.html.erb (0.6ms)
+Completed 200 OK in 99ms (Views: 94.8ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/courses/1/tests/19" for 127.0.0.1 at 2017-12-22 04:15:44 -0300
+Processing by TestsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"zfHtbVhEkPPfnuBviXwEfVJJZ47pzWCoEKraj0BIdSPSxrZAEkN2PUNsJX03u9CprB7OTXjsv1+zTswaBD1dFw==", "course_id"=>"1", "id"=>"19"}
+  [1m[36mTest Load (0.2ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "tests" WHERE "tests"."id" = ?[0m  [["id", 19]]
+  [1m[35m (90.0ms)[0m  [1m[36mcommit transaction[0m
+Completed 500 Internal Server Error in 383ms (ActiveRecord: 91.4ms)
+
+
+
+NameError - undefined local variable or method `tests_url' for #<TestsController:0x007f66389ba258>
+Did you mean?  test_params:
+  app/controllers/tests_controller.rb:71:in `block (2 levels) in destroy'
+  app/controllers/tests_controller.rb:70:in `destroy'
+
+Started POST "/__better_errors/bd5092dd342be597/variables" for 127.0.0.1 at 2017-12-22 04:15:45 -0300
+Started DELETE "/courses/1/tests/19" for 127.0.0.1 at 2017-12-22 04:16:04 -0300
+Processing by TestsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"zfHtbVhEkPPfnuBviXwEfVJJZ47pzWCoEKraj0BIdSPSxrZAEkN2PUNsJX03u9CprB7OTXjsv1+zTswaBD1dFw==", "course_id"=>"1", "id"=>"19"}
+  [1m[36mTest Load (0.2ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+Completed 404 Not Found in 6ms (ActiveRecord: 1.1ms)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find Test with 'id'=19:
+  app/controllers/tests_controller.rb:79:in `set_test'
+
+Started POST "/__better_errors/340cfe32fe028740/variables" for 127.0.0.1 at 2017-12-22 04:16:05 -0300
+Started DELETE "/courses/1/tests/19" for 127.0.0.1 at 2017-12-22 04:16:17 -0300
+Processing by TestsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"zfHtbVhEkPPfnuBviXwEfVJJZ47pzWCoEKraj0BIdSPSxrZAEkN2PUNsJX03u9CprB7OTXjsv1+zTswaBD1dFw==", "course_id"=>"1", "id"=>"19"}
+  [1m[36mTest Load (0.2ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find Test with 'id'=19:
+  app/controllers/tests_controller.rb:79:in `set_test'
+
+Started POST "/__better_errors/530ae19037f4e6bd/variables" for 127.0.0.1 at 2017-12-22 04:16:17 -0300
+Started GET "/courses/1" for 127.0.0.1 at 2017-12-22 04:16:21 -0300
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mTest Load (0.3ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "test_courses" ON "test_courses"."test_id" = "tests"."id" WHERE (course_id = '1')[0m
+  Rendered courses/show.html.erb within layouts/application (21.0ms)
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (24.2ms)
+  Rendered layouts/_navigation.html.erb (26.0ms)
+  Rendered layouts/_messages.html.erb (1.2ms)
+Completed 200 OK in 217ms (Views: 200.9ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2017-12-22 04:16:24 -0300
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  Rendered courses/index.html.erb within layouts/application (3.2ms)
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (2.0ms)
+  Rendered layouts/_navigation.html.erb (3.1ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 90ms (Views: 88.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/courses/1/tests/new" for 127.0.0.1 at 2017-12-22 04:16:25 -0300
+Processing by TestsController#new as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering tests/new.html.erb within layouts/application
+  Rendered tests/_form.html.erb (9.5ms)
+  Rendered tests/new.html.erb within layouts/application (10.9ms)
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (1.8ms)
+  Rendered layouts/_navigation.html.erb (3.0ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 114ms (Views: 111.7ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/courses/1/tests" for 127.0.0.1 at 2017-12-22 04:16:31 -0300
+Processing by TestsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7UX1gchgN4oUb6Jp9iISMXpBCFp4oDsgKySucGhvZLP8TDGfRgzwHQCjexwqWCXyZ6wYUwyjVyC441zC9vaC5A==", "test"=>{"title"=>"dfgdfg", "date"=>"2018-01-04", "min_score"=>"10", "max_score"=>"15"}, "commit"=>"Create Test", "course_id"=>"1"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "tests" ("title", "date", "min_score", "max_score") VALUES (?, ?, ?, ?)[0m  [["title", "dfgdfg"], ["date", "2018-01-04 00:00:00"], ["min_score", 10.0], ["max_score", 15.0]]
+  [1m[36mTest Load (0.1ms)[0m  [1m[34mSELECT  "tests".* FROM "tests" WHERE "tests"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "test_courses" ("course_id", "test_id") VALUES (?, ?)[0m  [["course_id", 1], ["test_id", 20]]
+  [1m[35m (99.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/courses/1
+Completed 302 Found in 121ms (ActiveRecord: 102.0ms)
+
+
+Started GET "/courses/1" for 127.0.0.1 at 2017-12-22 04:16:31 -0300
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mTest Load (0.3ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "test_courses" ON "test_courses"."test_id" = "tests"."id" WHERE (course_id = '1')[0m
+  Rendered courses/show.html.erb within layouts/application (3.2ms)
+  [1m[36mTeacher Load (0.4ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (3.5ms)
+  Rendered layouts/_navigation.html.erb (5.2ms)
+  Rendered layouts/_messages.html.erb (1.0ms)
+Completed 200 OK in 110ms (Views: 106.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2017-12-22 04:17:58 -0300
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  Rendered courses/index.html.erb within layouts/application (6.7ms)
+  [1m[36mTeacher Load (0.1ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (15.3ms)
+  Rendered layouts/_navigation.html.erb (16.8ms)
+  Rendered layouts/_messages.html.erb (0.6ms)
+Completed 200 OK in 116ms (Views: 111.5ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 04:17:59 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (3.7ms)
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (2.6ms)
+  Rendered layouts/_navigation.html.erb (4.3ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 136ms (Views: 116.8ms | ActiveRecord: 1.5ms)
+
+
+Started DELETE "/courses/1/enrolls/5" for 127.0.0.1 at 2017-12-22 04:18:03 -0300
+Processing by EnrollsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"G+pWLllkC4nFprwEKUPyVrns8r1ro4eMh9PMY0RMcfsE3Q0DE2PtR1lUeRaXhCaCR7tbfvqCWHskN9r2ADlZzw==", "course_id"=>"1", "id"=>"5"}
+  [1m[36mEnroll Load (0.2ms)[0m  [1m[34mSELECT  "enrolls".* FROM "enrolls" WHERE "enrolls"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 1.1ms)
+
+
+
+NameError - uninitialized constant EnrollsController::TestCourses:
+  app/controllers/enrolls_controller.rb:65:in `destroy'
+
+Started POST "/__better_errors/ff919f562b0ff2dc/variables" for 127.0.0.1 at 2017-12-22 04:18:03 -0300
+Started POST "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 04:18:16 -0300
+Processing by EnrollsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"54k47CQfbwxR2ID/c/JD7tdxno0CJiSY1e6j5pmjN06JyfgMesKVXk/1EFg+7VNWtJhhi4LUn4e+7l4kKgse+A==", "student_id"=>"39831180", "course_id"=>"1", "commit"=>"Enroll"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."dni" = ? LIMIT ?[0m  [["dni", 39831180], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.3ms)
+
+
+
+NameError - uninitialized constant EnrollsController::TestCourses:
+  app/controllers/enrolls_controller.rb:32:in `create'
+
+Started POST "/__better_errors/c5f279e581e53016/variables" for 127.0.0.1 at 2017-12-22 04:18:16 -0300
+Started POST "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 04:18:47 -0300
+Processing by EnrollsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"54k47CQfbwxR2ID/c/JD7tdxno0CJiSY1e6j5pmjN06JyfgMesKVXk/1EFg+7VNWtJhhi4LUn4e+7l4kKgse+A==", "student_id"=>"39831180", "course_id"=>"1", "commit"=>"Enroll"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."dni" = ? LIMIT ?[0m  [["dni", 39831180], ["LIMIT", 1]]
+  [1m[36mTestCourse Load (0.2ms)[0m  [1m[34mSELECT "test_courses".* FROM "test_courses" WHERE (course_id = 1)[0m
+Completed 500 Internal Server Error in 46ms (ActiveRecord: 3.8ms)
+
+
+
+ActiveRecord::AssociationTypeMismatch - Test(#70038651493880) expected, got #<TestCourse id: 1, course_id: 1, test_id: 16> which is an instance of TestCourse(#70038652132020):
+  app/controllers/enrolls_controller.rb:33:in `block in create'
+  app/controllers/enrolls_controller.rb:32:in `create'
+
+Started POST "/__better_errors/c5ebe80c33ab35ab/variables" for 127.0.0.1 at 2017-12-22 04:18:47 -0300
+Started POST "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 04:19:38 -0300
+Processing by EnrollsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"54k47CQfbwxR2ID/c/JD7tdxno0CJiSY1e6j5pmjN06JyfgMesKVXk/1EFg+7VNWtJhhi4LUn4e+7l4kKgse+A==", "student_id"=>"39831180", "course_id"=>"1", "commit"=>"Enroll"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."dni" = ? LIMIT ?[0m  [["dni", 39831180], ["LIMIT", 1]]
+  [1m[36mTestCourse Load (0.2ms)[0m  [1m[34mSELECT "test_courses".* FROM "test_courses" WHERE (course_id = 1)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "enrolls" ("student_id", "course_id") VALUES (?, ?)[0m  [["student_id", 3], ["course_id", 1]]
+  [1m[35m (111.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/courses/1/enrolls
+Completed 302 Found in 162ms (ActiveRecord: 115.4ms)
+
+
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 04:19:38 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (4.9ms)
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (14.6ms)
+  Rendered layouts/_navigation.html.erb (15.8ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 113ms (Views: 106.7ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 04:19:42 -0300
+Processing by EnrollsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HQV64oS4+SSl35y5igWzZsYKSNwn7NgV3aVfRZhKoVUCMiHPzr8f6jktWas0wmeyOF3hH7bNB+J+QUnQ3D+JYQ==", "student_id"=>"39831186", "course_id"=>"1", "commit"=>"Enroll"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."dni" = ? LIMIT ?[0m  [["dni", 39831186], ["LIMIT", 1]]
+  [1m[36mTestCourse Load (0.2ms)[0m  [1m[34mSELECT "test_courses".* FROM "test_courses" WHERE (course_id = 1)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "enrolls" ("student_id", "course_id") VALUES (?, ?)[0m  [["student_id", 9], ["course_id", 1]]
+  [1m[35m (215.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/courses/1/enrolls
+Completed 302 Found in 224ms (ActiveRecord: 216.4ms)
+
+
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 04:19:42 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (7.0ms)
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (2.5ms)
+  Rendered layouts/_navigation.html.erb (4.6ms)
+  Rendered layouts/_messages.html.erb (0.6ms)
+Completed 200 OK in 130ms (Views: 122.2ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/courses/1/enrolls/9" for 127.0.0.1 at 2017-12-22 04:19:46 -0300
+Processing by EnrollsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"FgwTd+YDQ771HSPPbNzRuTlzQ6famoWj7hn1UQRkjqQJO0harASlcGnv5t3SGwVtxyTqZEu7WlRN/ePEQBGmkA==", "course_id"=>"1", "id"=>"9"}
+  [1m[36mEnroll Load (0.3ms)[0m  [1m[34mSELECT  "enrolls".* FROM "enrolls" WHERE "enrolls"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTestCourse Load (0.3ms)[0m  [1m[34mSELECT "test_courses".* FROM "test_courses" WHERE (course_id = 1)[0m
+  [1m[36mScore Load (0.2ms)[0m  [1m[34mSELECT "scores".* FROM "scores" WHERE "scores"."student_id" = ? AND "scores"."test_id" = ?[0m  [["student_id", 3], ["test_id", 16]]
+  [1m[36mScore Load (0.2ms)[0m  [1m[34mSELECT "scores".* FROM "scores" WHERE "scores"."student_id" = ? AND "scores"."test_id" = ?[0m  [["student_id", 3], ["test_id", 17]]
+  [1m[36mScore Load (0.3ms)[0m  [1m[34mSELECT "scores".* FROM "scores" WHERE "scores"."student_id" = ? AND "scores"."test_id" = ?[0m  [["student_id", 3], ["test_id", 18]]
+  [1m[36mScore Load (0.3ms)[0m  [1m[34mSELECT "scores".* FROM "scores" WHERE "scores"."student_id" = ? AND "scores"."test_id" = ?[0m  [["student_id", 3], ["test_id", 19]]
+  [1m[36mScore Load (0.2ms)[0m  [1m[34mSELECT "scores".* FROM "scores" WHERE "scores"."student_id" = ? AND "scores"."test_id" = ?[0m  [["student_id", 3], ["test_id", 20]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[31mDELETE FROM "enrolls" WHERE "enrolls"."id" = ?[0m  [["id", 9]]
+  [1m[35m (272.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/courses/1/enrolls
+Completed 302 Found in 288ms (ActiveRecord: 275.0ms)
+
+
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 04:19:46 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (4.2ms)
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (2.0ms)
+  Rendered layouts/_navigation.html.erb (12.2ms)
+  Rendered layouts/_messages.html.erb (0.6ms)
+Completed 200 OK in 104ms (Views: 98.2ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/courses/1/enrolls/5" for 127.0.0.1 at 2017-12-22 04:19:52 -0300
+Processing by EnrollsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"8rYkJXBZVFDZmd2SljfNCqwybYDu0hk7kpLYEnK5HDXtgX8IOl6ynkVrGIAo8BneUmXEQ3/zxswxds6HNsw0AQ==", "course_id"=>"1", "id"=>"5"}
+  [1m[36mEnroll Load (0.2ms)[0m  [1m[34mSELECT  "enrolls".* FROM "enrolls" WHERE "enrolls"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTestCourse Load (0.2ms)[0m  [1m[34mSELECT "test_courses".* FROM "test_courses" WHERE (course_id = 1)[0m
+  [1m[36mScore Load (0.2ms)[0m  [1m[34mSELECT "scores".* FROM "scores" WHERE "scores"."student_id" = ? AND "scores"."test_id" = ?[0m  [["student_id", 1], ["test_id", 16]]
+  [1m[36mScore Load (0.3ms)[0m  [1m[34mSELECT "scores".* FROM "scores" WHERE "scores"."student_id" = ? AND "scores"."test_id" = ?[0m  [["student_id", 1], ["test_id", 17]]
+  [1m[36mScore Load (0.2ms)[0m  [1m[34mSELECT "scores".* FROM "scores" WHERE "scores"."student_id" = ? AND "scores"."test_id" = ?[0m  [["student_id", 1], ["test_id", 18]]
+  [1m[36mScore Load (0.2ms)[0m  [1m[34mSELECT "scores".* FROM "scores" WHERE "scores"."student_id" = ? AND "scores"."test_id" = ?[0m  [["student_id", 1], ["test_id", 19]]
+  [1m[36mScore Load (0.2ms)[0m  [1m[34mSELECT "scores".* FROM "scores" WHERE "scores"."student_id" = ? AND "scores"."test_id" = ?[0m  [["student_id", 1], ["test_id", 20]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[31mDELETE FROM "enrolls" WHERE "enrolls"."id" = ?[0m  [["id", 5]]
+  [1m[35m (65.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/courses/1/enrolls
+Completed 302 Found in 81ms (ActiveRecord: 67.2ms)
+
+
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 04:19:52 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (4.0ms)
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (1.7ms)
+  Rendered layouts/_navigation.html.erb (2.8ms)
+  Rendered layouts/_messages.html.erb (0.6ms)
+Completed 200 OK in 104ms (Views: 97.5ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/courses/1/enrolls/8" for 127.0.0.1 at 2017-12-22 04:19:55 -0300
+Processing by EnrollsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"U4lcVDqTLH0uPjU4KFEgO1eFsmW6MRRO2Et97tiZP6VMvgd5cJTKs7LM8CqWlvTvqdIbpisQy7l7r2t7nOwXkQ==", "course_id"=>"1", "id"=>"8"}
+  [1m[36mEnroll Load (0.2ms)[0m  [1m[34mSELECT  "enrolls".* FROM "enrolls" WHERE "enrolls"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTestCourse Load (0.3ms)[0m  [1m[34mSELECT "test_courses".* FROM "test_courses" WHERE (course_id = 1)[0m
+  [1m[36mScore Load (0.3ms)[0m  [1m[34mSELECT "scores".* FROM "scores" WHERE "scores"."student_id" = ? AND "scores"."test_id" = ?[0m  [["student_id", 11], ["test_id", 16]]
+  [1m[36mScore Load (0.3ms)[0m  [1m[34mSELECT "scores".* FROM "scores" WHERE "scores"."student_id" = ? AND "scores"."test_id" = ?[0m  [["student_id", 11], ["test_id", 17]]
+  [1m[36mScore Load (0.2ms)[0m  [1m[34mSELECT "scores".* FROM "scores" WHERE "scores"."student_id" = ? AND "scores"."test_id" = ?[0m  [["student_id", 11], ["test_id", 18]]
+  [1m[36mScore Load (0.5ms)[0m  [1m[34mSELECT "scores".* FROM "scores" WHERE "scores"."student_id" = ? AND "scores"."test_id" = ?[0m  [["student_id", 11], ["test_id", 19]]
+  [1m[36mScore Load (0.2ms)[0m  [1m[34mSELECT "scores".* FROM "scores" WHERE "scores"."student_id" = ? AND "scores"."test_id" = ?[0m  [["student_id", 11], ["test_id", 20]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[31mDELETE FROM "enrolls" WHERE "enrolls"."id" = ?[0m  [["id", 8]]
+  [1m[35m (226.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/courses/1/enrolls
+Completed 302 Found in 239ms (ActiveRecord: 229.3ms)
+
+
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 04:19:55 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (4.5ms)
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (2.0ms)
+  Rendered layouts/_navigation.html.erb (3.6ms)
+  Rendered layouts/_messages.html.erb (0.6ms)
+Completed 200 OK in 108ms (Views: 100.5ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/courses/1/enrolls/10" for 127.0.0.1 at 2017-12-22 04:19:57 -0300
+Processing by EnrollsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"LAJV2EwxQTc6pckUlG2NehKy4VWJ+Cdc1jfp/YFhlXAzNQ71Bjan+aZXDAYqqlmu7OVIlhjZ+Kt10/9oxRS9RA==", "course_id"=>"1", "id"=>"10"}
+  [1m[36mEnroll Load (0.2ms)[0m  [1m[34mSELECT  "enrolls".* FROM "enrolls" WHERE "enrolls"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTestCourse Load (0.3ms)[0m  [1m[34mSELECT "test_courses".* FROM "test_courses" WHERE (course_id = 1)[0m
+  [1m[36mScore Load (0.3ms)[0m  [1m[34mSELECT "scores".* FROM "scores" WHERE "scores"."student_id" = ? AND "scores"."test_id" = ?[0m  [["student_id", 9], ["test_id", 16]]
+  [1m[36mScore Load (0.2ms)[0m  [1m[34mSELECT "scores".* FROM "scores" WHERE "scores"."student_id" = ? AND "scores"."test_id" = ?[0m  [["student_id", 9], ["test_id", 17]]
+  [1m[36mScore Load (0.2ms)[0m  [1m[34mSELECT "scores".* FROM "scores" WHERE "scores"."student_id" = ? AND "scores"."test_id" = ?[0m  [["student_id", 9], ["test_id", 18]]
+  [1m[36mScore Load (0.2ms)[0m  [1m[34mSELECT "scores".* FROM "scores" WHERE "scores"."student_id" = ? AND "scores"."test_id" = ?[0m  [["student_id", 9], ["test_id", 19]]
+  [1m[36mScore Load (0.4ms)[0m  [1m[34mSELECT "scores".* FROM "scores" WHERE "scores"."student_id" = ? AND "scores"."test_id" = ?[0m  [["student_id", 9], ["test_id", 20]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "enrolls" WHERE "enrolls"."id" = ?[0m  [["id", 10]]
+  [1m[35m (223.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/courses/1/enrolls
+Completed 302 Found in 237ms (ActiveRecord: 226.1ms)
+
+
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 04:19:57 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (5.6ms)
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (2.1ms)
+  Rendered layouts/_navigation.html.erb (3.5ms)
+  Rendered layouts/_messages.html.erb (0.9ms)
+Completed 200 OK in 107ms (Views: 101.6ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 04:20:05 -0300
+Processing by EnrollsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eK0vZNaq7CwPkIf/HgQz9ptw7QvPXIawOi2ME2IrOMxnmnRJnK0K4pNiQu2gw+ciZSdEyF59WUeZyZqGJl4Q+A==", "student_id"=>"39831180", "course_id"=>"1", "commit"=>"Enroll"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."dni" = ? LIMIT ?[0m  [["dni", 39831180], ["LIMIT", 1]]
+  [1m[36mTestCourse Load (0.2ms)[0m  [1m[34mSELECT "test_courses".* FROM "test_courses" WHERE (course_id = 1)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO "enrolls" ("student_id", "course_id") VALUES (?, ?)[0m  [["student_id", 3], ["course_id", 1]]
+  [1m[35m (120.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/courses/1/enrolls
+Completed 302 Found in 132ms (ActiveRecord: 123.2ms)
+
+
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 04:20:06 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (6.1ms)
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (2.4ms)
+  Rendered layouts/_navigation.html.erb (4.0ms)
+  Rendered layouts/_messages.html.erb (0.6ms)
+Completed 200 OK in 126ms (Views: 118.9ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 04:20:07 -0300
+Processing by EnrollsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CE+JLydM43IWbLOm9tTJ8CISOa8uliE0Byl0TA3F228XeNICbUsFvIqedrRIEx0k3EWQbL+3/sOkzWLZSbDzWw==", "student_id"=>"39831181", "course_id"=>"1", "commit"=>"Enroll"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."dni" = ? LIMIT ?[0m  [["dni", 39831181], ["LIMIT", 1]]
+  [1m[36mTestCourse Load (0.3ms)[0m  [1m[34mSELECT "test_courses".* FROM "test_courses" WHERE (course_id = 1)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "enrolls" ("student_id", "course_id") VALUES (?, ?)[0m  [["student_id", 4], ["course_id", 1]]
+  [1m[35m (236.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/courses/1/enrolls
+Completed 302 Found in 245ms (ActiveRecord: 237.7ms)
+
+
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 04:20:07 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.6ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (4.3ms)
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (1.8ms)
+  Rendered layouts/_navigation.html.erb (3.0ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 115ms (Views: 106.3ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 04:20:09 -0300
+Processing by EnrollsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ldr3aLaQx52b7YExH2CI70KUVFTLQmLqy0vOSayrYBgy7axF/JchUwcfRCOhp1w7vMP9l1pjvR1or9jc6N5ILA==", "student_id"=>"39831182", "course_id"=>"1", "commit"=>"Enroll"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."dni" = ? LIMIT ?[0m  [["dni", 39831182], ["LIMIT", 1]]
+  [1m[36mTestCourse Load (0.2ms)[0m  [1m[34mSELECT "test_courses".* FROM "test_courses" WHERE (course_id = 1)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "enrolls" ("student_id", "course_id") VALUES (?, ?)[0m  [["student_id", 5], ["course_id", 1]]
+  [1m[35m (300.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/courses/1/enrolls
+Completed 302 Found in 312ms (ActiveRecord: 301.2ms)
+
+
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 04:20:09 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (4.2ms)
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (1.8ms)
+  Rendered layouts/_navigation.html.erb (3.1ms)
+  Rendered layouts/_messages.html.erb (0.6ms)
+Completed 200 OK in 98ms (Views: 92.4ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 04:20:10 -0300
+Processing by EnrollsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IYK+i7ColWmfAbk+LMNeVBsV/27tUjVtPYBgjMJwvTA+teWm+q9zpwPzfCySBIqA5UJWrXxz6pqeZHYZhgWVBA==", "student_id"=>"39831187", "course_id"=>"1", "commit"=>"Enroll"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."dni" = ? LIMIT ?[0m  [["dni", 39831187], ["LIMIT", 1]]
+  [1m[36mTestCourse Load (0.2ms)[0m  [1m[34mSELECT "test_courses".* FROM "test_courses" WHERE (course_id = 1)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "enrolls" ("student_id", "course_id") VALUES (?, ?)[0m  [["student_id", 10], ["course_id", 1]]
+  [1m[35m (219.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/courses/1/enrolls
+Completed 302 Found in 233ms (ActiveRecord: 220.8ms)
+
+
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 04:20:11 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (4.0ms)
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (2.3ms)
+  Rendered layouts/_navigation.html.erb (3.9ms)
+  Rendered layouts/_messages.html.erb (0.6ms)
+Completed 200 OK in 113ms (Views: 104.7ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 04:20:12 -0300
+Processing by EnrollsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"U87zqx7ZJA64uAf52Qrqm0iuf+xRYtunf6VcXZvlIKFM+aiGVN7CwCRKwutnzT5PtvnWL8BDBFDcQUrI35AIlQ==", "student_id"=>"39831183", "course_id"=>"1", "commit"=>"Enroll"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mStudent Load (0.1ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."dni" = ? LIMIT ?[0m  [["dni", 39831183], ["LIMIT", 1]]
+  [1m[36mTestCourse Load (0.3ms)[0m  [1m[34mSELECT "test_courses".* FROM "test_courses" WHERE (course_id = 1)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "enrolls" ("student_id", "course_id") VALUES (?, ?)[0m  [["student_id", 6], ["course_id", 1]]
+  [1m[35m (238.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/courses/1/enrolls
+Completed 302 Found in 248ms (ActiveRecord: 239.6ms)
+
+
+Started GET "/courses/1/enrolls" for 127.0.0.1 at 2017-12-22 04:20:12 -0300
+Processing by EnrollsController#index as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mStudent Load (0.7ms)[0m  [1m[34mSELECT students.*, e.* FROM "students" LEFT JOIN 
+            (SELECT * 
+            FROM enrolls 
+            WHERE enrolls.course_id = '1') as e 
+                ON e.student_id = students.id[0m
+  Rendering enrolls/index.html.erb within layouts/application
+  Rendered enrolls/index.html.erb within layouts/application (3.8ms)
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (1.8ms)
+  Rendered layouts/_navigation.html.erb (3.3ms)
+  Rendered layouts/_messages.html.erb (0.7ms)
+Completed 200 OK in 115ms (Views: 106.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2017-12-22 04:20:15 -0300
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  Rendered courses/index.html.erb within layouts/application (2.6ms)
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (1.8ms)
+  Rendered layouts/_navigation.html.erb (3.0ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 74ms (Views: 71.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/courses/1/tests/new" for 127.0.0.1 at 2017-12-22 04:20:17 -0300
+Processing by TestsController#new as HTML
+  Parameters: {"course_id"=>"1"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering tests/new.html.erb within layouts/application
+  Rendered tests/_form.html.erb (7.3ms)
+  Rendered tests/new.html.erb within layouts/application (8.4ms)
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (1.7ms)
+  Rendered layouts/_navigation.html.erb (2.8ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 108ms (Views: 94.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2017-12-22 04:20:19 -0300
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  Rendered courses/index.html.erb within layouts/application (3.3ms)
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (2.1ms)
+  Rendered layouts/_navigation.html.erb (3.6ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 95ms (Views: 92.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/courses/1" for 127.0.0.1 at 2017-12-22 04:20:21 -0300
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.1ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mTest Load (0.4ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "test_courses" ON "test_courses"."test_id" = "tests"."id" WHERE (course_id = '1')[0m
+  Rendered courses/show.html.erb within layouts/application (4.3ms)
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (1.8ms)
+  Rendered layouts/_navigation.html.erb (3.0ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 83ms (Views: 79.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2017-12-22 04:20:22 -0300
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  Rendered courses/index.html.erb within layouts/application (2.5ms)
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (1.8ms)
+  Rendered layouts/_navigation.html.erb (3.0ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 88ms (Views: 85.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/courses/1" for 127.0.0.1 at 2017-12-22 04:20:23 -0300
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mTest Load (0.3ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "test_courses" ON "test_courses"."test_id" = "tests"."id" WHERE (course_id = '1')[0m
+  Rendered courses/show.html.erb within layouts/application (3.9ms)
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (2.2ms)
+  Rendered layouts/_navigation.html.erb (3.7ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 93ms (Views: 86.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/courses" for 127.0.0.1 at 2017-12-22 04:20:26 -0300
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  Rendered courses/index.html.erb within layouts/application (2.2ms)
+  [1m[36mTeacher Load (0.2ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (1.7ms)
+  Rendered layouts/_navigation.html.erb (2.7ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 92ms (Views: 90.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/courses/1" for 127.0.0.1 at 2017-12-22 04:20:27 -0300
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mTest Load (0.3ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "test_courses" ON "test_courses"."test_id" = "tests"."id" WHERE (course_id = '1')[0m
+  Rendered courses/show.html.erb within layouts/application (4.7ms)
+  [1m[36mTeacher Load (0.3ms)[0m  [1m[34mSELECT  "teachers".* FROM "teachers" WHERE "teachers"."id" = ? ORDER BY "teachers"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_navigation_links.html.erb (1.9ms)
+  Rendered layouts/_navigation.html.erb (3.0ms)
+  Rendered layouts/_messages.html.erb (0.5ms)
+Completed 200 OK in 86ms (Views: 81.9ms | ActiveRecord: 0.8ms)
+
+

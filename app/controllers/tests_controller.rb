@@ -35,6 +35,8 @@ class TestsController < ApplicationController
       test: @test, course: Course.find(params[:course_id])
     )
 
+    puts @test_course.as_json
+
     respond_to do |format|
       if @test.save && @test_course.save
         format.html { redirect_to course_path(params[:course_id]), notice: 'Test was successfully created.' }
@@ -66,7 +68,7 @@ class TestsController < ApplicationController
   def destroy
     @test.destroy
     respond_to do |format|
-      format.html { redirect_to tests_url, notice: 'Test was successfully destroyed.' }
+      format.html { redirect_to course_tests_url, notice: 'Test was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

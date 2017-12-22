@@ -11,6 +11,12 @@ class CoursesController < ApplicationController
   # GET /courses/1.json
   def show
     @tests = Test.joins(:test_course).where("course_id = ?", params[:id])
+    students_course = Student.joins(:enroll).where("course_id = ?", params[:id])
+    @students = students_course.as_json
+    @students.map! do |student|
+      student[:scores] << students_course.joins("INNER JOIN scores ON #{student[:id]} = scores.student_id").as_json
+    end
+    puts @students
   end
 
   # GET /courses/new
