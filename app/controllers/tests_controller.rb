@@ -15,20 +15,29 @@ class TestsController < ApplicationController
   # GET /tests/new
   def new
     @test = Test.new
+    @course = Course.find(params[:course_id])
   end
 
   # GET /tests/1/edit
   def edit
+    @course = Course.find(params[:course_id])
   end
 
   # POST /tests
   # POST /tests.json
   def create
-    @test = Test.new(test_params)
+    @test = Test.new(
+      title: params[:test][:title], date: params[:test][:date], 
+      min_score: params[:test][:min_score], max_score: params[:test][:max_score]
+    )
+
+    @test_course = TestCourse.new(
+      test: @test, course: Course.find(params[:course_id])
+    )
 
     respond_to do |format|
-      if @test.save
-        format.html { redirect_to @test, notice: 'Test was successfully created.' }
+      if @test.save && @test_course.save
+        format.html { redirect_to course_path(params[:course_id]), notice: 'Test was successfully created.' }
         format.json { render :show, status: :created, location: @test }
       else
         format.html { render :new }
@@ -41,8 +50,9 @@ class TestsController < ApplicationController
   # PATCH/PUT /tests/1.json
   def update
     respond_to do |format|
-      if @test.update(test_params)
-        format.html { redirect_to @test, notice: 'Test was successfully updated.' }
+      if @test.update(title: params[:test][:title], date: params[:test][:date], 
+        min_score: params[:test][:min_score], max_score: params[:test][:max_score])
+        format.html { redirect_to course_path(params[:course_id]), notice: 'Test was successfully updated.' }
         format.json { render :show, status: :ok, location: @test }
       else
         format.html { render :edit }

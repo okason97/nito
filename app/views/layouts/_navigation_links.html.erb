@@ -1,0 +1,5 @@
+<%# add navigation links to this file %>
+<% if teacher_signed_in? %>
+    <li><%= link_to 'Courses', courses_path %></li>
+    <li><%= link_to 'Students', students_path %></li>
+<% end %>

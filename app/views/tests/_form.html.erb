@@ -1,6 +1,8 @@
-<%= simple_form_for test do |f| %>
+<%= simple_form_for [@course, @test] do |f| %>
   <%= f.input :title %>
-  <%= f.input :date %>
+  <%= f.input :date, 
+    as: :date, html5: true, 
+    input_html: { min: "1-1-#{@course.year}", max: "31-12-#{@course.year}"} %>
   <%= f.input :min_score %>
   <%= f.input :max_score %>
   <%= f.button :submit %>

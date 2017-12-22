@@ -10,6 +10,11 @@ class CoursesController < ApplicationController
   # GET /courses/1
   # GET /courses/1.json
   def show
+    @tests = Test.joins(:test_course).where("course_id = ?", params[:id])
+    puts "TESTS"
+    for value in @tests do
+      puts value.title      
+    end
   end
 
   # GET /courses/new
@@ -41,7 +46,7 @@ class CoursesController < ApplicationController
   # PATCH/PUT /courses/1.json
   def update
     respond_to do |format|
-      if @course.update(course_params)
+      if @course.update(year: params[:course][:year])
         format.html { redirect_to @course, notice: 'Course was successfully updated.' }
         format.json { render :show, status: :ok, location: @course }
       else

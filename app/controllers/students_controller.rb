@@ -24,7 +24,13 @@ class StudentsController < ApplicationController
   # POST /students
   # POST /students.json
   def create
-    @student = Student.new(student_params)
+    puts params[:student]
+    hash = params[:student]
+    @student = Student.new(
+      last_name: params[:student][:last_name], first_name: params[:student][:first_name],
+      email: params[:student][:email], dni: params[:student][:dni], 
+      legajo: params[:student][:legajo]
+    )
 
     respond_to do |format|
       if @student.save
@@ -41,7 +47,9 @@ class StudentsController < ApplicationController
   # PATCH/PUT /students/1.json
   def update
     respond_to do |format|
-      if @student.update(student_params)
+      if @student.update(last_name: params[:student][:last_name], first_name: params[:student][:first_name],
+        email: params[:student][:email], dni: params[:student][:dni], 
+        legajo: params[:student][:legajo])
         format.html { redirect_to @student, notice: 'Student was successfully updated.' }
         format.json { render :show, status: :ok, location: @student }
       else

@@ -1,24 +1,19 @@
-# README
+# Como usar la aplicacion
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Para usar la aplicacion:
 
-Things you may want to cover:
+* bundle install
 
-* Ruby version
+* rake db:migrate
 
-* System dependencies
+* rake db:setup
 
-* Configuration
+* bundle exec rails s
 
-* Database creation
+Para reiniciar la db:
 
-* Database initialization
+* rake db:drop
 
-* How to run the test suite
+* rake db:migrate
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* rake db:setup

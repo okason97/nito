@@ -6,8 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Teacher.create(username: 'admin', password: 'pass')
-
 Course.create year: Time.zone.today.year
 Course.create year: (Time.zone.today.year - 1)
 
