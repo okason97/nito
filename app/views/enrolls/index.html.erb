@@ -1,4 +1,3 @@
-<p id="notice"><%= notice %></p>
 
 <h1>Enrolls</h1>
 
@@ -23,11 +22,11 @@
             <%= form_tag("/courses/#{@course}/enrolls", method: "post") do %>
               <%= hidden_field_tag(:student_id, student.dni) %>
               <%= hidden_field_tag(:course_id, @course) %>
-              <%= submit_tag("Enroll") %>
+              <%= submit_tag("Enroll", class: "btn") %>
             <% end %>
           </td>
         <% else %>
-          <td><%= link_to 'Disenroll', "/courses/#{@course}/enrolls/#{student.id}", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Disenroll', "/courses/#{@course}/enrolls/#{student.id}", method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
         <% end %>
       </tr>
     <% end %>
@@ -36,4 +35,4 @@
 
 <br>
 
-<%= link_to 'Back', courses_path %>
+<%= link_to 'Back', courses_path, class: "btn" %>

@@ -16,6 +16,11 @@ class Test < ApplicationRecord
         Score.where(['test_id = ? and value = -2', id]).count
     end
     def percentage
-        (pass/Score.where(test: self).count.to_f*100).to_s + '%'
+        total = Score.where(test: self).count
+        if total == 0
+            '0%'
+        else
+            (pass/total.to_f*100).to_s + '%'            
+        end
     end
 end

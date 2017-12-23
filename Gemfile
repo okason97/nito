@@ -51,6 +51,8 @@ gem 'jquery-rails'
 
 gem 'jquery-datatables-rails'
 
+gem "font-awesome-rails"
+
 group :production do
   gem 'pg'
 end

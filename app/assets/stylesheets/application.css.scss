@@ -12,6 +12,15 @@
  *
  *= require_tree .
  *= require_self
- *= require dataTables/extras/dataTables.responsive
  *= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
+ *= require dataTables/extras/dataTables.responsive
+ *= require font-awesome
  */
+
+ #enrolls-table_filter label{
+    text-align: right
+ }
+
+ .table-icon {
+    padding-left: 5px
+ }

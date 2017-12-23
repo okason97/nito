@@ -1,11 +1,16 @@
-<p id="notice"><%= notice %></p>
 
 <h1>Tests</h1>
 
-<table>
+<table id="enrolls-table" class="display responsive no-wrap" cellspacing="0" width="100%">
   <thead>
     <tr>
-      <th colspan="3"></th>
+      <th>Title</th>
+      <th>Date</th>
+      <th>Minimal Aprobal Score</th>
+      <th>Highest Score</th>
+      <th>Scores</th>
+      <th>Edit</th>
+      <th>Destroy</th>
     </tr>
   </thead>
 
@@ -16,9 +21,9 @@
         <td><%= test.date.strftime("%d/%m/%Y") %></td>
         <td><%= test.min_score %></td>
         <td><%= test.max_score %></td>
-        <td><%= link_to 'Scores', course_test_scores_path(@course, test) %></td>
-        <td><%= link_to 'Edit', edit_course_test_path(@course, test) %></td>
-        <td><%= link_to 'Destroy', [@course, test], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Scores', course_test_scores_path(@course, test) %><%= fa_icon "star" , class: "table-icon"%></td>
+        <td><%= link_to 'Edit', edit_course_test_path(@course, test) %><%= fa_icon "pencil" , class: "table-icon"%></td>
+        <td><%= link_to 'Destroy', [@course, test], method: :delete, data: { confirm: 'Are you sure?' } %><%= fa_icon "trash" , class: "table-icon"%></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,5 +31,5 @@
 
 <br>
 
-<%= link_to 'New Test', new_course_test_path(@course) %>
-<%= link_to 'Back', courses_path %>
+<%= link_to 'New Test', new_course_test_path(@course), class: "btn" %>
+<%= link_to 'Back', courses_path, class: "btn" %>

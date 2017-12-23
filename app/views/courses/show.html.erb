@@ -1,8 +1,7 @@
-<p id="notice"><%= notice %></p>
-
-<table>
+<table id="state-table" class="display responsive no-wrap" cellspacing="0" width="100%">
   <thead>
     <tr>
+      <th></th>
       <th>Students</th>
       <% @tests.each do |test| %>
         <th><%= test.title %></th>
@@ -11,8 +10,10 @@
   </thead>
 
   <tbody>
+    <% i = 1 %>
     <% @students.each do |student| %>
       <tr>
+        <td> <%= i %> </td>
         <td><%= student['first_name'] + ' ' + student['last_name'] %></td>
         <% student['scores'].each do |score| %>
           <% if score['value'] == -2 %>
@@ -22,34 +23,42 @@
           <% end %>
         <% end %>
       </tr>
+    <% i += 1 %>
     <% end %>
-    <tr></tr>
     <tr>
+        <td> <%= i %> </td>
       <td>Cantidad de aprobados</td>
       <% @tests.each do |test| %>
         <td><%= test.pass %></td>
       <% end %>
+    <% i += 1 %>
     </tr>
     <tr>
+        <td> <%= i %> </td>
       <td>Cantidad de desaprobados</td>
       <% @tests.each do |test| %>
         <td><%= test.fail %></td>
       <% end %>
+    <% i += 1 %>
     </tr>
     <tr>
+        <td> <%= i %> </td>
       <td>Cantidad de ausentes</td>
       <% @tests.each do |test| %>
         <td><%= test.absent %></td>
       <% end %>
+    <% i += 1 %>
     </tr>
     <tr>
+        <td> <%= i %> </td>
       <td>Porcentaje de aprobacion</td>
       <% @tests.each do |test| %>
         <td><%= test.percentage %></td>
       <% end %>
+    <% i += 1 %>
     </tr>
   </tbody>
 </table>
 
 
-<%= link_to 'Back', courses_path %>
+<%= link_to 'Back', courses_path, class: "btn" %>

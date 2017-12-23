@@ -1,9 +1,8 @@
-<p id="notice"><%= notice %></p>
 
 <h1>Scores</h1>
 
 <%= form_tag("/courses/#{@course.id}/tests/#{@test.id}/scores", method: "post") do %>
-  <table>
+  <table id="enrolls-table" class="display responsive no-wrap" cellspacing="0" width="100%">
     <thead>
       <tr>
         <th>Name</th>
@@ -34,4 +33,4 @@
   <%= submit_tag("Accept") %>
 <% end %>
 
-<%= link_to 'Back', course_tests_path(@course) %>
+<%= link_to 'Back', course_tests_path(@course) , class: "btn"%>
