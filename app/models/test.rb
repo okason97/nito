@@ -20,7 +20,7 @@ class Test < ApplicationRecord
         if total == 0
             '0%'
         else
-            (pass/total.to_f*100).to_s + '%'            
+            ((pass/total.to_f)*100).to_s + '%'            
         end
     end
 end
